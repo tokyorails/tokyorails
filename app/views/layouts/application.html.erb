@@ -11,16 +11,16 @@
   <div class="topbar">
     <div class="fill">
       <div class="container">
-        <a class="brand" href="/">TOKYO Rails</a>
+        <%= link_to "TOKYO Rails", root_path, :class => "brand" %>
         <ul class="nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="/members.html">Members</a></li>
-          <li><a href="#">Meetups</a></li>
-          <li><a href="#">Projects</a></li>
+          <li class="active"><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Members", "#" %></li>
+          <li><%= link_to "Meetups", "#" %></li>
+          <li><%= link_to "Projects", "#" %></li>
         </ul>
         <ul class="nav secondary-nav">
-          <li class="active"><a href="#">English</a></li>
-          <li><a href="#">日本語</a></li>
+          <li class="active"><%= link_to "English", "#" %></li>
+          <li><%= link_to "日本語", "#" %></li>
         </ul>
       </div>
     </div>
@@ -33,10 +33,6 @@
 
 
   <footer>
-  <!--
-  <p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" /></a><br />licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0</a>.
-    </p>
-  -->
   </footer>
 
 </body>
