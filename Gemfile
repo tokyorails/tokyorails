@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails', '3.1.1'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -25,10 +25,7 @@ group :test do
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'capybara'
-#  gem 'capybara-envjs'
-  gem 'cucumber'
-  gem 'cucumber-rails'
-  gem 'pickle'
+  gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'webmock'
