@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tokyorails</title>
+  <title>TOKYO Rails</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <div class="topbar">
+    <div class="fill">
+      <div class="container">
+        <a class="brand" href="/">TOKYO Rails</a>
+        <ul class="nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="/members.html">Members</a></li>
+          <li><a href="#">Meetups</a></li>
+          <li><a href="#">Projects</a></li>
+        </ul>
+        <ul class="nav secondary-nav">
+          <li class="active"><a href="#">English</a></li>
+          <li><a href="#">日本語</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+  <%= yield %>
+  </div>
+
+
+  <footer>
+  <!--
+  <p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" /></a><br />licensed under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0</a>.
+    </p>
+  -->
+  </footer>
 
 </body>
 </html>
