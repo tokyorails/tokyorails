@@ -1,0 +1,26 @@
+<div class="hero-unit">
+  <h1>Current Members</h1>
+
+  <ul class="media-grid">
+    <% @members.shuffle.each do |member| %>
+    <li class="member_photo">
+    <%= link_to image_tag(member.photo_url, :width => 90, :height => 90, :alt => sanitize(member.name),
+        :class => "thumbnail", :'data-original-title' => sanitize(member.name), :'data-content' => member.bio), "#" if member.photo_url %>
+    </li>
+  <% end %>
+  </ul>
+
+<!--
+  <div class="pagination">
+    <ul>
+      <li class="prev disabled"><a href="#">&larr; Previous</a></li>
+      <li class="active"><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li class="next"><a href="#">Next &rarr;</a></li>
+    </ul>
+
+    <button class="btn success large pull-right">Join the Group</button>
+
+  </div>
+-->
