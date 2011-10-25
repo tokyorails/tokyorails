@@ -18,6 +18,10 @@ end
 
 gem 'jquery-rails'
 
+group :development, :test do
+  gem 'pry'
+end
+
 group :test do
   gem 'rspec'
   gem 'rspec-rails'
@@ -28,7 +32,8 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'webmock'
-  gem 'watchr'
+  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'guard-rspec'
 end
 
 # Use unicorn as the web server
