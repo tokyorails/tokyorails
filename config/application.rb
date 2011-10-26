@@ -48,5 +48,8 @@ module Tokyorails
     config.generators do |g|
       g.test_framework :rspec
     end
+
+    # Application specific
+    config.meetup_com_api_key = '4a23512f7d763695f69234442173162'
   end
 end
