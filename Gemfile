@@ -19,6 +19,10 @@ end
 
 gem 'jquery-rails'
 
+group :production do
+  gem 'pg'
+end
+
 group :development, :test do
   gem 'pry'
 end

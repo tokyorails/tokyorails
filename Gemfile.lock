@@ -90,6 +90,7 @@ GEM
     mime-types (1.16)
     multi_json (1.0.3)
     nokogiri (1.5.0)
+    pg (0.11.0)
     polyglot (0.3.2)
     pry (0.9.6.2)
       coderay (~> 0.9.8)
@@ -192,6 +193,7 @@ DEPENDENCIES
   jquery-rails
   json
   launchy
+  pg
   pry
   rails (= 3.1.1)
   rb-fsevent
