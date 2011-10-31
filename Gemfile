@@ -23,13 +23,13 @@ group :production do
 end
 
 group :development, :test do
+  gem 'rspec-rails'
   gem 'pry'
   gem 'sqlite3'
 end
 
 group :test do
   gem 'rspec'
-  gem 'rspec-rails'
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'capybara'
@@ -39,6 +39,7 @@ group :test do
   gem 'webmock'
   gem 'rb-fsevent', :require => false
   gem 'guard-rspec'
+  gem 'rcov'
 end
 
 # Use unicorn as the web server
