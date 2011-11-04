@@ -1,2 +1,2 @@
-rvm ruby-1.9.3-head
+rvm ruby-1.9.3-p0
 rvm gemset use rails31-ruby193
