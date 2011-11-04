@@ -34,7 +34,7 @@ To run the tests:
 Contributing
 ------------
 
-All contributions are warmly welcomed as pull requests. The basicflow is
+All contributions are warmly welcomed as pull requests. The basic flow is:
 
 1. Fork it.
 2. Push your code (`git push origin tokyorails`)
