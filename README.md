@@ -12,24 +12,24 @@ It's recommended to use the amazing [rvm][1] and as such an .rvmrc file
 is checked in to the repo. To use this, install the following ruby and
 create a gemset
 
-  $ rvm install ruby-1.9.3-head
-  $ rvm gemset create 'rails31-ruby193'
+    $ rvm install ruby-1.9.3-p0
+    $ rvm gemset create 'rails31-ruby193'
 
 Next fork the repo and clone your fork to your dev machine:
 
-  $ git clone git@github.com:[your github name]/tokyorails.git
+    $ git clone git@github.com:[your github name]/tokyorails.git
 
 Then simply bundle install and you should be good to go:
 
-  $ cd tokyorails
-  $ bundle install
+    $ cd tokyorails
+    $ bundle install
 
 Testing
 -------
 
 To run the tests:
 
-  $ rspec spec
+    $ rspec spec
 
 Contributing
 ------------
