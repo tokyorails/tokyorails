@@ -1,9 +1,25 @@
 Welcome to TOKYO Rails
 =========================
 
-The TOKYO Rails Meetup Group is for web engineers who are using, or are interested in learning more about the Ruby on Rails framework. You can find out more or join at http://tokyorails.org
+The TOKYO Rails Meetup Group is for web engineers who are using, or are
+interested in learning more about the Ruby on Rails framework. You can
+find out more or join at http://tokyorails.org
 
-This goal of this github project is to make a simple website for the group that can serve as a learning tool we can collaborate on, as well as a real site we can use as a focal point for group activities.
+This goal of this github project is to make a simple website for the group
+that can serve as a learning tool we can collaborate on, as well as a real
+site we can use as a focal point for group activities.
+
+What Can I Do?
+--------------
+
+Since this is a community project, any ideas/features that are useful to
+others are welcome.
+
+We're using the github issue tracking to organize user stories. some
+initial ideas are added to get us going and feel free to comment or add
+your own ideas  https://github.com/tokyorails/tokyorails/issues
+
+if you are working on a story or bug, please assign it to yourself.
 
 Getting Started
 ---------------
