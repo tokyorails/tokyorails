@@ -22,6 +22,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'fog'
 end
 
 group :development, :test do
