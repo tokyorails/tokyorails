@@ -4,8 +4,8 @@
   <ul class="media-grid">
     <% @members.shuffle.each do |member| %>
     <li class="member_photo">
-    <%= link_to image_tag(member.photo_url, :width => 90, :height => 90, :alt => sanitize(member.name),
-        :class => "thumbnail", :'data-original-title' => sanitize(member.name), :'data-content' => member.bio), "#" if member.photo_url.present? %>
+      <%= link_to image_tag(member.photo.thumb('90x90#').url, :alt => sanitize(member.name),
+        :class => "thumbnail", :'data-original-title' => sanitize(member.name), :'data-content' => member.bio), "#" if member.photo %>
     </li>
   <% end %>
   </ul>

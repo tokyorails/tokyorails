@@ -6,4 +6,4 @@ tmp/
 .rvmrc
 config/database.yml
 .DS_Store
-rerun.txt
+public/system/**/*

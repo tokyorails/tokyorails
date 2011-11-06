@@ -34,7 +34,8 @@ feature "Viewing users" do
          to_return(:status => 200, :body => API_MEMBERS_RESPONSE, :headers => {})
     visit members_path
     page.should have_content('1 Current Members')
-    page.should have_css("img[src='http://example.com/photos/member/1.jpg']")
+    page.should have_css("img", :src => "#{Photo.last.thumb('90x90#').url}")
+    page.should have_css("img", :alt => "Mr Member.")
   end
 
   scenario "Viewing members page when the meetup.com api returns a timeout" do

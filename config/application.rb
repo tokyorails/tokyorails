@@ -49,6 +49,14 @@ module Tokyorails
       g.test_framework :rspec
     end
 
+    # Dragonfly
+    config.middleware.insert 0, 'Dragonfly::Middleware', :images
+    config.middleware.insert_before 'Dragonfly::Middleware', 'Rack::Cache', {
+      :verbose     => false,
+      :metastore   => URI.encode("file:#{Rails.root}/tmp/dragonfly/cache/meta"),
+      :entitystore => URI.encode("file:#{Rails.root}/tmp/dragonfly/cache/body")
+    }
+
     # Application specific
     config.meetup_com_api_key = '4a23512f7d763695f69234442173162'
   end
