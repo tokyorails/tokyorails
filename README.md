@@ -15,11 +15,12 @@ What Can I Do?
 Since this is a community project, any ideas/features that are useful to
 others are welcome.
 
-We're using the github issue tracking to organize user stories. some
-initial ideas are added to get us going and feel free to comment or add
-your own ideas  https://github.com/tokyorails/tokyorails/issues
+We're using http://trello.com to organize user stories. some
+initial stories are added to get us going so please email
+tokyorails@gmail.com if you want to get access.
 
-if you are working on a story or bug, please assign it to yourself.
+The first milestone is to get to a point where we can have the
+tokyorails.org domain resolve to our own site rather than meetup.com
 
 Getting Started
 ---------------
