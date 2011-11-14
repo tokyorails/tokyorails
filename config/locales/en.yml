@@ -3,3 +3,22 @@
 
 en:
   hello: "Hello world"
+  sections:
+    home:
+      title: "Home"
+      intro1: "The TOKYO Rails Meetup Group is for web engineers who are using, or are interested in learning more about the Ruby on Rails framework."
+      intro2: "We want to encourage all Rubyists and Railers to join us on the first Thursday of every month for good food, drinks and conversation at the COOKPAD offices in Shirokanedai, Tokyo."
+      intro3: "The events are free and open to all who register, and we particularly want to encourage both Japanese and English speakers to come and join in."
+    members:
+      title: "Members"
+      brief: "Everyone is welcome to join the TOKYO Rails community. Join here or see the current membership list to meet those involved."
+      roster: "%{number} Current Members"
+    meetups:
+      title: "Meetups"
+      brief: "See what meetups we have scheduled and review all the previous events here. Register early for the next event if you plan to come."
+    projects:
+      title: "Projects"
+      brief: "Current open source projects members are working on, and ideas for new projects you can join are listed here."
+  more: "More"
+  buttons:
+    register: "Register for the Next Event"
