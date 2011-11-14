@@ -1,5 +1,7 @@
+<% content_for :on_members do %>active<% end %>
+
 <div class="hero-unit">
-  <h1><%= @members.size %> Current Members</h1>
+  <h1><%= t 'sections.members.roster', :number => @members.size %></h1>
 
   <ul class="media-grid">
     <% @members.shuffle.each do |member| %>

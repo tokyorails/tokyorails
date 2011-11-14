@@ -1,10 +1,12 @@
+<% content_for :on_home do %>active<% end %>
+
 <div class="hero-unit">
 
   <h1>TOKYO Rails Meetup</h1>
 
-  <p>The TOKYO Rails Meetup Group is for web engineers who are using, or are interested in learning more about the Ruby on Rails framework.</p>
-  <p>We want to encourage all Rubyists and Railers to join us on the first Thursday of every month for good food, drinks and conversation at the COOKPAD offices in Shirokanedai, Tokyo.</p>
-  <p>The events are free and open to all who register, and we particularly want to encourage both Japanese and English speakers to come and join in.</p>
+  <p><%= t 'sections.home.intro1' %></p>
+  <p><%= t 'sections.home.intro2' %></p>
+  <p><%= t 'sections.home.intro3' %></p>
 
   <ul class="media-grid">
     <li>
@@ -22,7 +24,7 @@
   </ul>
 
   <p>
-    <%= link_to "Register for the Next Event", "http://meetup.com/tokyo-rails", :class => "btn success large pull-right" %>
+    <%= link_to t('buttons.register'), "http://meetup.com/tokyo-rails", :class => "btn success large pull-right" %>
   </p>
 
 </div>
@@ -30,21 +32,21 @@
 <div class="row">
 
   <div class="span6">
-    <h2>Members</h2>
-    <p>Everyone is welcome to join the TOKYO Rails community. Join here or see the current membership list to meet those involved.
-    <p><%= link_to "More &raquo;".html_safe, members_path, :class => "btn" %></p>
+    <h2><%= t 'sections.members.title' %></h2>
+    <p><%= t 'sections.members.brief' %>
+    <p><%= link_to "#{t :more} &raquo;".html_safe, members_path, :class => "btn" %></p>
   </div>
 
   <div class="span5">
-    <h2>Meetups</h2>
-    <p>See what meetups we have scheduled and review all the previous events here. Register early for the next event if you plan to come.</p>
-    <p><%= link_to "More &raquo;".html_safe, "#", :class => "btn" %></p>
+    <h2><%= t 'sections.meetups.title' %></h2>
+    <p><%= t 'sections.meetups.brief' %></p>
+    <p><%= link_to "#{t :more} &raquo;".html_safe, "#", :class => "btn" %></p>
   </div>
 
   <div class="span5">
-    <h2>Projects</h2>
-    <p>Current open source projects members are working on, and ideas for new projects you can join are listed here.</p>
-    <p><%= link_to "More &raquo;".html_safe, "#", :class => "btn" %></p>
+    <h2><%= t 'sections.projects.title' %></h2>
+    <p><%= t 'sections.projects.brief' %></p>
+    <p><%= link_to "#{t :more} &raquo;".html_safe, "#", :class => "btn" %></p>
   </div>
 
 </div>
