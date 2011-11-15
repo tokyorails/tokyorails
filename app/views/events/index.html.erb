@@ -1,0 +1,21 @@
+<div class="hero-unit">
+  <%- if @past_events.empty? or @upcoming_events.empty? %>
+    Sorry, the meetup.com API is not available right now. Please check back a bit later.
+  <%- else %>
+    <h2><%= @upcoming_events.size %> Upcoming Events</h2>
+    <%- @upcoming_events.each do |event| %>
+      <div class="event">
+        <h3><%= link_to event.name, event.event_url %></h3>
+        <p> <%= event.shortened_date %> </p>
+      </div>  
+    <%- end %>
+    
+    <h2><%= @past_events.size %> Previous Events</h2>
+    <%- @past_events.each do |event| %>
+      <div class="event">
+        <h3><%= link_to event.name, event.event_url %></h3>
+        <p> <%= event.shortened_date %> </p>
+      </div>  
+    <%- end %>
+  <%- end %>
+</div>
