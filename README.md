@@ -25,9 +25,16 @@ tokyorails.org domain resolve to our own site rather than meetup.com
 Getting Started
 ---------------
 
-It's recommended to use the amazing [rvm][1] and as such an .rvmrc file
-is checked in to the repo. To use this, install the following ruby and
-create a gemset
+It's recommended to use the amazing [rvm][1] so either install:
+
+    http://beginrescueend.com/rvm/install/
+
+or if you already have it installed,  make sure you are up to date
+
+    $ rvm get latest
+
+An .rvmrc file is checked in to the repo. To use this, install the
+following ruby and create a gemset
 
     $ rvm install ruby-1.9.3-p0
     $ rvm gemset create 'rails31-ruby193'
@@ -35,6 +42,10 @@ create a gemset
 Next fork the repo and clone your fork to your dev machine:
 
     $ git clone git@github.com:[your github name]/tokyorails.git
+
+The project uses bundler, so if you dont have this installed already:
+
+    $ gem install bundler
 
 Then simply bundle install and you should be good to go:
 
