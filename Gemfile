@@ -43,6 +43,7 @@ group :test do
   gem 'rb-fsevent', :require => false
   gem 'guard-rspec'
   gem 'rcov'
+  gem 'vcr'
 end
 
 # Use unicorn as the web server
