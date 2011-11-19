@@ -13,14 +13,14 @@
       <div class="container">
         <%= link_to "TOKYO Rails", locale_root_path, :class => "brand" %>
         <ul class="nav">
-          <li class="<%= yield :on_home %>"><%= link_to t('sections.home.title'), locale_root_path %></li>
-          <li class="<%= yield :on_members %>"><%= link_to t('sections.members.title'), members_path %></li>
-          <li class="<%= yield :on_meetups %>"><%= link_to t('sections.meetups.title'), "#" %></li>
-          <li class="<%= yield :on_projects %>"><%= link_to t('sections.projects.title'), "#" %></li>
+          <li class="<%= yield :on_home %>"><%= link_to t('.home.title'), locale_root_path %></li>
+          <li class="<%= yield :on_members %>"><%= link_to t('.members.title'), members_path %></li>
+          <li class="<%= yield :on_meetups %>"><%= link_to t('.meetups.title'), events_path %></li>
+          <li class="<%= yield :on_projects %>"><%= link_to t('.projects.title'), "#" %></li>
         </ul>
         <ul class="nav secondary-nav">
-          <li class="<%= params[:locale] && params[:locale]!='en' ? '' : 'active' %>"><%= link_to "English", :locale => :en %></li>
-          <li class="<%= params[:locale]=='ja' ? 'active' : '' %>"><%= link_to "日本語", :locale => :ja %></li>
+          <li class="<%= params[:locale] && params[:locale]!='en' ? '' : 'active' %>"><%= link_to t('.locales.en'), :locale => :en %></li>
+          <li class="<%= params[:locale]=='ja' ? 'active' : '' %>"><%= link_to t('.locales.ja'), :locale => :ja %></li>
         </ul>
       </div>
     </div>

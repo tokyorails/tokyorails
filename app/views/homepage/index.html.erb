@@ -4,9 +4,9 @@
 
   <h1>TOKYO Rails Meetup</h1>
 
-  <p><%= t 'sections.home.intro1' %></p>
-  <p><%= t 'sections.home.intro2' %></p>
-  <p><%= t 'sections.home.intro3' %></p>
+  <p><%= t '.intro1' %></p>
+  <p><%= t '.intro2' %></p>
+  <p><%= t '.intro3' %></p>
 
   <ul class="media-grid">
     <li>
@@ -24,7 +24,7 @@
   </ul>
 
   <p>
-    <%= link_to t('buttons.register'), "http://meetup.com/tokyo-rails", :class => "btn success large pull-right" %>
+    <%= link_to t('.register'), "http://meetup.com/tokyo-rails", :class => "btn success large pull-right" %>
   </p>
 
 </div>
@@ -32,21 +32,21 @@
 <div class="row">
 
   <div class="span6">
-    <h2><%= t 'sections.members.title' %></h2>
-    <p><%= t 'sections.members.brief' %>
-    <p><%= link_to "#{t :more} &raquo;".html_safe, members_path, :class => "btn" %></p>
+    <h2><%= t '.members.title' %></h2>
+    <p><%= t '.members.brief' %>
+    <p><%= link_to t('.more.html'), members_path, :class => "btn" %></p>
   </div>
 
   <div class="span5">
-    <h2><%= t 'sections.meetups.title' %></h2>
-    <p><%= t 'sections.meetups.brief' %></p>
-    <p><%= link_to "#{t :more} &raquo;".html_safe, "#", :class => "btn" %></p>
+    <h2><%= t '.meetups.title' %></h2>
+    <p><%= t '.meetups.brief' %></p>
+    <p><%= link_to t('.more.html'), events_path, :class => "btn" %></p>
   </div>
 
   <div class="span5">
-    <h2><%= t 'sections.projects.title' %></h2>
-    <p><%= t 'sections.projects.brief' %></p>
-    <p><%= link_to "#{t :more} &raquo;".html_safe, "#", :class => "btn" %></p>
+    <h2><%= t '.projects.title' %></h2>
+    <p><%= t '.projects.brief' %></p>
+    <p><%= link_to t('.more.html'), "#", :class => "btn" %></p>
   </div>
 
 </div>

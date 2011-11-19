@@ -33,7 +33,7 @@ feature "Viewing users" do
          with(:headers => {'Accept'=>'application/json', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent'=>'Ruby'}).
          to_return(:status => 200, :body => API_MEMBERS_RESPONSE, :headers => {})
     visit members_path
-    page.should have_content('1 Current Members')
+    page.should have_content('Group Members (1)')
     page.should have_css("img", :src => "#{Photo.last.thumb('90x90#').url}")
     page.should have_css("img", :alt => "Mr Member.")
   end
