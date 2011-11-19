@@ -22,6 +22,10 @@ ja:
       upcoming: 今後のイベント (%{number})
       previous: 過去のイベント (%{number})
       api_error: 申し訳ありませんが、meetup.comイベントAPIは現在利用できません。少し後で確認してください。
+      next_meetup: "%{days}の次のミートアップ"
+      attending: "%{number} これまでに出席する予定"
+      attended: "%{number} 出席"
+      join: 参加する!
 
   members:
     index:
@@ -47,3 +51,9 @@ ja:
       default: "%Y/%m/%d"
       short: "%m/%d"
       long: "%Y年%m月%d日(%a)"
+
+  datetime:
+    distance_in_words:
+      x_days:
+        one:   "1日"
+        other: "%{count}日"

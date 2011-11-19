@@ -1,21 +1,28 @@
-<div class="hero-unit">
-  <% if @past_events.empty? or @upcoming_events.empty? %>
-    <%= t '.api_error' %>
-  <% else %>
-    <h2><%= t '.upcoming', :number => @upcoming_events.size %></h1>
+<% if @past_events.empty? or @upcoming_events.empty? %>
+  <%= t '.api_error' %>
+<% else %>
+  <div class="hero-unit">
     <% @upcoming_events.each do |event| %>
-      <div class="event">
-        <h3><%= link_to event.name, event.event_url %></h3>
-        <p> <%= l event.date, :format => :long %> </p>
-      </div>
+      <h1><%= t '.next_meetup', :days => distance_of_time_in_words_to_now(event.date) %>
+      <h2><%= link_to event.name, event.event_url %></h3>
+      <h3><%= t '.attending', :number => event.yes_rsvp_count %></h3>
+      <p><%= l event.date, :format => :long %></p>
+      <p>
+        <%= link_to t('.join'), event.event_url, :class => "btn success large pull-right" %>
+      </p>
     <% end %>
+  </div>
 
+  <div class="row">
     <h2><%= t '.previous', :number => @past_events.size %></h1>
-    <% @past_events.each do |event| %>
-      <div class="event">
-        <h3><%= link_to event.name, event.event_url %></h3>
-        <p> <%= l event.date, :format => :long %> </p>
-      </div>
-    <% end %>
+  </div>
+
+  <% @past_events.each do |event| %>
+    <div class="row">
+      <h2><%= link_to event.name, event.event_url %></h3>
+      <h3><%= t '.attended', :number => event.yes_rsvp_count %></h3>
+      <p> <%= l event.date, :format => :long %> </p>
+    </div>
   <% end %>
+<% end %>
 </div>
