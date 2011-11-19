@@ -3,11 +3,9 @@ class Event < ActiveResource::Base
   self.prefix = "/2/"
   self.timeout = 5
 
-  def shortened_date
-    event_date = Time.at(self.time/1000)
-    event_date.strftime("%d %b %y")
+  def date
+    Time.at(self.time/1000).to_date
   end
-
 
   def self.upcoming
     all(:params => {:key => Rails.application.config.meetup_com_api_key,

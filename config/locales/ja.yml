@@ -17,9 +17,16 @@ ja:
       more:
         html: さらに &raquo;
 
+  events:
+    index:
+      upcoming: 今後のイベント (%{number})
+      previous: 過去のイベント (%{number})
+      api_error: 申し訳ありませんが、meetup.comイベントAPIは現在利用できません。少し後で確認してください。
+
   members:
     index:
       roster: 現在メンバー%{number}人
+      api_error: 申し訳ありませんが、meetup.comメンバーAPIは現在利用できません。少し後で確認してください。
 
   layouts:
     application:
@@ -34,3 +41,9 @@ ja:
       locales:
         en: English
         ja: 日本語
+
+  date:
+    formats:
+      default: "%Y/%m/%d"
+      short: "%m/%d"
+      long: "%Y年%m月%d日(%a)"

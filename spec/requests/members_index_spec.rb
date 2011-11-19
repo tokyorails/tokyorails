@@ -41,12 +41,12 @@ feature "Viewing users" do
   scenario "Viewing members page when the meetup.com api returns a timeout" do
     stub_request(:get, API_MEMBERS_URL).to_timeout
     visit members_path
-    page.should have_content("Sorry, the meetup.com API is not available right now. Please check back a bit later.")
+    page.should have_content("Sorry, the meetup.com Members API is not available right now. Please check back a bit later.")
   end
 
   scenario "Viewing members page when the meetup.com api returns a 400 Bad request" do
     stub_request(:get, API_MEMBERS_URL).to_return(:body => "Bad Request", :status => 400)
     visit members_path
-    page.should have_content("Sorry, the meetup.com API is not available right now. Please check back a bit later.")
+    page.should have_content("Sorry, the meetup.com Members API is not available right now. Please check back a bit later.")
   end
 end

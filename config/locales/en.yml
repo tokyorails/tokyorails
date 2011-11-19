@@ -17,9 +17,16 @@ en:
       more:
         html: More &raquo;
 
+  events:
+    index:
+      upcoming: Upcoming Events (%{number})
+      previous: Previous Events (%{number})
+      api_error: Sorry, the meetup.com Events API is not available right now. Please check back a bit later.
+
   members:
     index:
       roster: Group Members (%{number})
+      api_error: Sorry, the meetup.com Members API is not available right now. Please check back a bit later.
 
   layouts:
     application:
@@ -34,3 +41,9 @@ en:
       locales:
         en: English
         ja: 日本語
+
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"

@@ -12,7 +12,7 @@
   <% end %>
   </ul>
   <% if @members.blank? %>
-    Sorry, the meetup.com API is not available right now. Please check back a bit later.
+    <%= t '.api_error' %>
   <% end %>
 </div>
 

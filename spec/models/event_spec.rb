@@ -6,7 +6,7 @@ describe Event do
     WebMock.allow_net_connect!
     describe ".all" do
       it "returns a list of upcoming events" do
-        events = Event.all(:params => { :key => Rails.application.config.meetup_com_api_key, :page => 100, :group_id => '2270561', :status => :upcoming  })
+        events = Event.all(:params => { :key => Rails.application.config.meetup_com_api_key, :page => 100, :group_id => '2270561', :status => :upcoming })
         events.size.should >= 1
       end
 
@@ -15,5 +15,10 @@ describe Event do
         events.size.should >= 3
       end
     end
+  end
+
+  describe ".date" do
+    events = Event.all(:params => { :key => Rails.application.config.meetup_com_api_key, :page => 100, :group_id => '2270561', :status => :past })
+    events.first.date.to_s.should == "2011-09-01"
   end
 end
