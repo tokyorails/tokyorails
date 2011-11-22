@@ -1,44 +1,44 @@
---- 
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
     method: :get
     uri: https://api.meetup.com:443/2/events.json?group_id=2270561&key=4a23512f7d763695f69234442173162&page=100&status=past
     body: 
-    headers: 
-      accept: 
+    headers:
+      accept:
       - application/json
-      accept-encoding: 
+      accept-encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
       code: 200
       message: OK
-    headers: 
-      date: 
-      - Mon, 14 Nov 2011 13:51:03 GMT
-      server: 
+    headers:
+      date:
+      - Tue, 22 Nov 2011 12:49:42 GMT
+      server:
       - Apache-Coyote/1.1
-      x-meetup-server: 
-      - api1.int.meetup.com
-      x-ratelimit-limit: 
-      - "100"
-      x-ratelimit-remaining: 
-      - "29"
-      x-ratelimit-reset: 
-      - "1321282263"
-      x-oauth-scopes: 
+      x-meetup-server:
+      - api0.int.meetup.com
+      x-ratelimit-limit:
+      - '100'
+      x-ratelimit-remaining:
+      - '91'
+      x-ratelimit-reset:
+      - '1321969782'
+      x-oauth-scopes:
       - basic
-      x-accepted-oauth-scopes: 
+      x-accepted-oauth-scopes:
       - basic
-      content-type: 
+      content-type:
       - text/javascript;charset=utf-8
-      vary: 
+      vary:
       - Accept-Encoding,User-Agent
-      content-encoding: 
+      content-encoding:
       - gzip
-      content-length: 
-      - "2142"
-    body: !binary |
+      content-length:
+      - '2142'
+    body: !binary |-
       H4sIAAAAAAAAA+VYa28bNxb9vr+COwWUNpBG89A7kVMj2cUGQdZBbLRYVIVA
       zVAaWhxySnIsq0H++95Lzlhy/Nim28WmrWHYEh+Xl/dxzpn5EGhmamFNMPvh
       Q6DNVbUUvOQ2mKVRN7jihq+44HYfzIKqXgmeBd3AWGprgyPUWPhe0v2KLd3e
@@ -87,48 +87,47 @@
       UdAEleZXWNButXHPqfQK8kdXAsSD9C1Ha6hqCciLPjUWjacNfC/v94bQTKBN
       qM6K1pUV7q6AHt0ze+ZESNe9MPnBPe97N378GgDCXWEJeVv0c5UZlzIsr6U3
       9Q0qY3y0Vxg7v69VvAGU2l/+DeDmebi8GgAA
-
-    http_version: "1.1"
-- !ruby/struct:VCR::HTTPInteraction 
-  request: !ruby/struct:VCR::Request 
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
     method: :get
     uri: https://api.meetup.com:443/2/events.json?group_id=2270561&key=4a23512f7d763695f69234442173162&page=100&status=upcoming
     body: 
-    headers: 
-      accept: 
+    headers:
+      accept:
       - application/json
-      accept-encoding: 
+      accept-encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response: !ruby/struct:VCR::Response 
-    status: !ruby/struct:VCR::ResponseStatus 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
       code: 200
       message: OK
-    headers: 
-      date: 
-      - Mon, 14 Nov 2011 13:51:04 GMT
-      server: 
+    headers:
+      date:
+      - Tue, 22 Nov 2011 12:49:44 GMT
+      server:
       - Apache-Coyote/1.1
-      x-meetup-server: 
-      - api2.int.meetup.com
-      x-ratelimit-limit: 
-      - "100"
-      x-ratelimit-remaining: 
-      - "28"
-      x-ratelimit-reset: 
-      - "1321282264"
-      x-oauth-scopes: 
+      x-meetup-server:
+      - api1.int.meetup.com
+      x-ratelimit-limit:
+      - '100'
+      x-ratelimit-remaining:
+      - '89'
+      x-ratelimit-reset:
+      - '1321969784'
+      x-oauth-scopes:
       - basic
-      x-accepted-oauth-scopes: 
+      x-accepted-oauth-scopes:
       - basic
-      content-type: 
+      content-type:
       - text/javascript;charset=utf-8
-      vary: 
+      vary:
       - Accept-Encoding,User-Agent
-      content-encoding: 
+      content-encoding:
       - gzip
-      content-length: 
-      - "1310"
-    body: !binary |
+      content-length:
+      - '1309'
+    body: !binary |-
       H4sIAAAAAAAAA5VW/W/bNhD9fX/FgQPcFpBlS/6K3Tptl2xAVxQJ0mDAUBcG
       LdEWY4rUSMquW+R/3x0lxw3Qjy2AA5s6vns8vrunL8wKVyvv2OzDF2bdrloq
       WUrPZoN+xHbSyZVU0h/YjFX1SsmMRcx57mvcwOoqM6XUG1wr+WEllmF/ZmqN
@@ -136,28 +135,27 @@
       RkSe50jNLRN8NOomaXcC7wtpzZZrkXP5VUSKEe+k5t50tzWuK070R/H4bDo8
       O4tYIGTpCHcVPs6a49ya7cGw+4jVPlua9doJ2pUO+/QXBcpsMJ1MhukoxV1e
       EslkkKaTwegYJPCEfllbhbGF99Vs0Vv09vt97AnccqlcbOxm0QuBbtE7Ai56
-      CHkQ7lHFkmHEcuEyKysvqUjsRXX+p5EaagdrY4Fr4wthYWMF90CYWHwwa7ip
-      V4cIbihfBH8Yk2NoDpnRO2EdJzAHuKOtcPxi0avOFxrRO3rlquen39dKcCfg
-      5v1f1yGjL6SDpwSGiaEUwtcVpjf4X67hYGooONJ44oErJJUfnoEzsBew1WYP
-      BX5Krg8IpbYOvAHxqRKZ/37+Nw3onmtP4RvhQeqdUTuR4xcgLDwucamsuUMo
-      PC/SJBIgc+QeQdUcQeFWLFvg8YJDYcV6vkCZSuXN7HQ9rza0FKOOF+z8tAyv
-      4OEBsuPnMTiBVUByWH7pi3qF+UKV9+KJUoBaDMyRNLHDS+dafg6lh/aQDyRI
-      KS5IpUEK2Xun5MjkZyGB0/fL6LJC5LUSs9NSMsUOhC5cGmMdXFVCn56l/Vmf
-      nt1ytV303mNPEe3b3y4fhYTtJK4ILq3UeKEdXlbP4aLgX91omjZYF8o48X2G
-      NyLjFd2l4s5DabQvnrijwB6XKpTBi6zAIphtxfOmGGk/SRY9+oSydENdug1C
-      V5udKFfCdimqaylZXPhSUWmFFT8p3zfyl7xy8caYjRJNelp4+c+cxgw2dTqK
-      aKJN0jQZhKoUai50+PZ5nozaG/0fSHH8E45XJETDFWCDOllW6kDaw67YYR8E
-      DeJsRLVmwgWZrnlGg1yKZpTg8LAHo7FrtMeCON80WBgh9IUAwoQEjn1N0FRZ
-      xNzUiltM5kjoOFOw1zOucdYoxVcoTi9gj5INObETrYa1NSUInhUQptcPps8P
-      fy80e7CK26u3f1+1ZH8dodoSnKhJowls3XbOYXwYVUcHwtHdH42TdnX5YBPj
-      6XR6lpBbjAbJN3O8C6piDzuPDjaZoA0M00mK1jbF6X2Hw3pZmpz2G2wx3IHm
-      0AJ+JVN2f/8RPVN4TtwCHGOtUSEyWhj2V+spzRjglYwbbbfqP3pKfOdMqIz4
-      5BsUbzxXyxPWyZ7+C9TLrTjMhzwdjJJ0Pckn48F4OlqPp+lgOBymyWSQjNNO
-      UwaZz9uSdppXgvnxhaBjbC7snDyzQ442X3PlRKdx2Xm/gwosuZ9Tvk7FN2Ke
-      9HFRCpW7OWu9N3iuV1S5pvzwe2AJO7LjuspRanlw5P7ZaDAcp8GRH/vn6wzl
-      f7w+aE6JrkCuyRsbi1DXNCiCjYQAnOvxMRU2QmXljkQdoh11A/Ad3iFfKRzz
-      umk7XqOytZcZcWoRXeNUOAXbvTE2FLoIt9gJLZUV7a5kRsmVyYJdRBgj4ANN
-      6JbGx6c4JMIRlnh3i15uMheujSS2bKCe0SsTCqowVLtm3/FViKHcfvkX/7RW
-      M+kJAAA=
-
-    http_version: "1.1"
+      CHkQ7lHFUkTMhcusrLykIrEX1fmfRmqoHayNBa6NL4SFjRXcA2Fi8cGs4aZe
+      HSK4oXwR/GFMjqE5ZEbvhHWcwBzgjrbC8YtFrzpfaETv6JWrnp9+XyvBnYCb
+      939dh4y+kA6eEhgmhlIIX1eY3uB/uYaDqaHgSOOJB66QVH54Bs7AXsBWmz0U
+      +Cm5PiCU2jrwBsSnSmT++/nfNKB7rj2Fb4QHqXdG7USOX4Cw8LjEpbLmDqHw
+      vEiTSIDMkXsEVXMEhVuxbIHHCw6FFev5AmUqlTez0/W82tBSjDpesPPTMryC
+      hwfIjp/H4ARWAclh+aUv6hXmC1XeiydKAWoxMEfSxA4vnWv5OZQe2kM+kCCl
+      uCCVBilk752SI5OfhQRO3y+jywqR10rMTkvJFDsQunBpjHVwVQl9epb2Z316
+      dsvVdtF7jz1FtG9/u3wUEraTuCK4tFLjhXZ4WT2Hi4J/daNp2mBdKOPE9xne
+      iIxXdJeKOw+l0b544o4Ce1yqUAYvsgKLYLYVz5tipP0kWfToE8rSDXXpNghd
+      bXaiXAnbpaiupWRx4UtFpRVW/KR838hf8srFG2M2SjTpaeHlP3MaM9jU6Sii
+      iTZJ02QQqlKoudDh2+d5Mmpv9H8gxfFPOF6REA1XgA3qZFmpA2kPu2KHfRA0
+      iLMR1ZoJF2S65hkNcimaUYLDwx6Mxq7RHgvifNNgYYTQFwIIExI49jVBU2UR
+      c1MrbjGZI6HjTMFez7jGWaMUX6E4vYA9SjbkxE60GtbWlCB4VkCYXj+YPj/8
+      vdDswSpur97+fdWS/XWEaktwoiaNJrB12zmH8WFUHR0IR3d/NE7a1eWDTYyn
+      0+lZQm4xGiTfzPEuqIo97Dw62GSCNjBMJyla23QYsTsc1svS5LTfYIvhDjSH
+      FvArmbL7+4/omcJz4hbgGGuNCpHRwrC/Wk9pxgCvZNxou1X/0VPiO2dCZcQn
+      36B447lanrBO9vRfoF5uxWE+5OlglKTrST4ZD8bT0Xo8TQfD4TBNJoNknHaa
+      Msh83pa007wSzI8vBB1jc2Hn5JkdcrT5misnOo3LzvsdVGDJ/ZzydSq+EfOk
+      j4tSqNzNWeu9wXO9oso15YffA0vYkR3XVY5Sy4Mj989Gg+E4DY782D9fZyj/
+      4/VBc0p0BXJN3thYhLqmQRFsJATgXI+PqbARKit3JOoQ7agbgO/wDvlK4ZjX
+      TdvxGpWtvcyIU4voGqfCKdjujbGh0EW4xU5oqaxodyUzSq5MFuwiwhgBH2hC
+      tzQ+PsUhEY6wxLtb9HKTuXBtJLFlA/WMXplQUIWh2jX7jq9CDOX2y787Fphe
+      6QkAAA==
+    http_version: '1.1'
