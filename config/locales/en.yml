@@ -45,6 +45,7 @@ en:
       locales:
         en: English
         ja: 日本語
+      page_title: TOKYO Rails | Ruby on Rails Meetup Group
 
   date:
     formats:
