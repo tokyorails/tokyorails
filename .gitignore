@@ -7,3 +7,4 @@ tmp/
 config/database.yml
 .DS_Store
 public/system/**/*
+spec/fixtures/vcr_cassettes/*
