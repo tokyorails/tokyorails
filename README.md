@@ -43,6 +43,11 @@ Next fork the repo and clone your fork to your dev machine:
 
     $ git clone git@github.com:[your github name]/tokyorails.git
 
+We're using capybara-webkit which depends on QT. To install QT, refer to
+the article here (OSX/Linux):
+
+    https://github.com/thoughtbot/capybara-webkit/wiki/Installing-QT
+
 The project uses bundler, so if you dont have this installed already:
 
     $ gem install bundler
