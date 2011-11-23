@@ -1,0 +1,8 @@
+@mixin active {
+  background-color: #222;
+  background-color: rgba(0, 0, 0, 0.5);
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
