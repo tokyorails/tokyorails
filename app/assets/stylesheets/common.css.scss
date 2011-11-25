@@ -1,0 +1,12 @@
+@import 'mixins';
+
+body.en {
+  li.en_locale {
+    @include active
+  }
+}
+body.ja {
+  li.ja_locale {
+    @include active
+  }
+}

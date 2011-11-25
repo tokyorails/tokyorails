@@ -6,7 +6,7 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body class="<%= controller_name %> <%= action_name %>">
+<body class="<%= controller_name %> <%= action_name %> <%= I18n.locale %>">
 
   <div class="topbar">
     <div class="fill">
@@ -19,8 +19,8 @@
           <li class="projects"><%= link_to t('.projects.title'), "#" %></li>
         </ul>
         <ul class="nav secondary-nav">
-          <li class="<%= params[:locale] && params[:locale] != 'en' ? '' : 'active' %>"><%= link_to t('.locales.en'), :locale => :en %></li>
-          <li class="<%= params[:locale] == 'ja' ? 'active' : '' %>"><%= link_to t('.locales.ja'), :locale => :ja %></li>
+          <li class="en_locale"><%= link_to t('.locales.en'), :locale => :en %></li>
+          <li class="ja_locale"><%= link_to t('.locales.ja'), :locale => :ja %></li>
         </ul>
       </div>
     </div>
