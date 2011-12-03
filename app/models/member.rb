@@ -3,6 +3,6 @@ class Member < ActiveResource::Base
   self.timeout = 5
 
   def photo
-    Photo.where(:member_id => id).first || Photo.create(:member_id => id, :file_url => photo_url) unless photo_url.blank?
+    Image.where(:member_id => id).first || Image.create(:member_id => id, :file_url => photo_url) unless photo_url.blank?
   end
 end
