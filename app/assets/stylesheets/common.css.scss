@@ -10,3 +10,7 @@ body.ja {
     @include active
   }
 }
+
+body .hero-unit h1 {
+  margin-bottom: 20px
+}
