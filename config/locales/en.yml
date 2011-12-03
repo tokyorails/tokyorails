@@ -32,12 +32,19 @@ en:
       roster: Group Members (%{number})
       api_error: Sorry, the meetup.com Members API is not available right now. Please check back a bit later.
 
+  photos:
+    index:
+      title: Photos
+      api_error: Sorry, the meetup.com Photos API is not available right now. Please check back a bit later.
+
   layouts:
     application:
       home:
         title: Home
       members:
         title: Members
+      photos:
+        title: Photos
       meetups:
         title: Meetups
       projects:

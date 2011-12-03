@@ -7,7 +7,7 @@ feature "Viewing users" do
   scenario "A list of registered users" do
     visit members_path
     page.should have_content('Group Members (')
-    page.should have_css("img", :src => "#{Photo.last.thumb('90x90#').url}")
+    page.should have_css("img", :src => "#{Image.last.thumb('90x90#').url}")
     page.should have_css("img", :alt => "Mr Member.")
   end
 

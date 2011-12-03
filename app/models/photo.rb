@@ -1,6 +1,4 @@
-class Photo < ActiveRecord::Base
-  belongs_to :member
-
-  delegate :thumb, :to => :file
-  image_accessor :file
+class Photo < ActiveResource::Base
+  self.site = "https://api.meetup.com"
+  self.timeout = 5
 end
