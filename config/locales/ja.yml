@@ -32,12 +32,19 @@ ja:
       roster: 現在メンバー%{number}人
       api_error: 申し訳ありませんが、meetup.comメンバーAPIは現在利用できません。少し後で確認してください。
 
+  photos:
+    index:
+      title: 写真
+      api_error: 申し訳ありませんが、meetup.com写真APIは現在利用できません。少し後で確認してください。
+
   layouts:
     application:
       home:
         title: ホーム
       members:
         title: メンバー
+      photos:
+        title: 写真
       meetups:
         title: ミートアップ
       projects:
