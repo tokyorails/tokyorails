@@ -20,7 +20,6 @@ group :assets do
   gem 'uglifier'
 end
 
-
 group :production do
   gem 'pg'
   gem 'fog'
@@ -30,6 +29,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'pry'
   gem 'sqlite3'
+  gem 'yard'
+  gem 'redcarpet' # Used by yard for markdown documents
 end
 
 group :test do
