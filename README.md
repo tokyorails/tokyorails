@@ -48,6 +48,21 @@ the article here (OSX/Linux):
 
     https://github.com/thoughtbot/capybara-webkit/wiki/Installing-QT
 
+The project uses ImageMagick for image manipulation
+
+To install on Debian based Linux distributions:
+
+    $ sudo apt-get install imagemagick
+
+To install on Mac:
+
+   TODO
+
+To install on Windows: 
+
+    http://www.imagemagick.org/script/binary-releases.php#windows
+
+
 The project uses bundler, so if you dont have this installed already:
 
     $ gem install bundler
