@@ -11,13 +11,13 @@ module MeetupTasks
   # @example
   #   rake meetup:import_members
   # @see http://www.meetup.com/meetup_api/docs/2/profiles/ Meetup Profiles API
-  #   documentation  
+  #   documentation
   def self.import_members
 
-    meetup_member_list = get_members_list   
+    meetup_member_list = get_members_list
     meetup_member_list.each do |meetup_member|
 
-      member = Member.where(:meetup_id => meetup_member['member_id']).first
+      member = Member.where(:meetup_id => meetup_member['member_id'].to_s).first
 
       if member.nil?
         update_member(Member.new, meetup_member)
@@ -26,7 +26,7 @@ module MeetupTasks
         # some reason instead so we need to divide by 1000 before converting
         update_member(member, meetup_member) if member.updated_at < Time.zone.at((meetup_member['updated'].to_i / 1000))
       end
-    end    
+    end
   end
 
   protected
@@ -54,7 +54,7 @@ module MeetupTasks
   # @note currently hardcoded to retrieve a maximum of 200 members, should
   #   probably improve to retrieve all members in batches etc.
   def self.get_members_list
-    
+
     uri = URI('https://api.meetup.com/2/profiles.json')
     uri.query = URI.encode_www_form( { :key => Rails.application.config.meetup_com_api_key, :page => 200, :group_id => '2270561'})
     http = Net::HTTP.new(uri.host,uri.port)
@@ -71,7 +71,7 @@ module MeetupTasks
     # to UTF-8 which is what this site is using.
     encoded_response = response.body.force_encoding(Encoding::ISO_8859_1).encode(Encoding::UTF_8)
     JSON.parse(encoded_response)['results']
-    
+
   end
 
   # Parse out the github username for this member
@@ -94,10 +94,10 @@ module MeetupTasks
   #
   #   >> get_github_username("No github users here I am afraid")
   #   => nil
-  def self.get_github_username(string)   
+  def self.get_github_username(string)
       match = /github:([^\s]*)/.match(string)
 
       # Return the first match if there is one, otherwise nil
-      match ? match[1] : nil    
-  end 
+      match ? match[1] : nil
+  end
 end
