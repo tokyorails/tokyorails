@@ -10,3 +10,5 @@ public/system/**/*
 *.swp
 public/assets
 spec/fixtures/vcr_cassettes/*
+doc/
+.yardoc/
