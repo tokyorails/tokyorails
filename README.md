@@ -56,9 +56,12 @@ To install on Debian based Linux distributions:
 
 To install on Mac:
 
-   TODO
+    If you don't have homebrew installed, do that first:
+    https://github.com/mxcl/homebrew/wiki/installation
 
-To install on Windows: 
+    $ brew install imagemagick
+
+To install on Windows:
 
     http://www.imagemagick.org/script/binary-releases.php#windows
 
@@ -72,7 +75,7 @@ Then simply bundle install and you should be good to go:
     $ cd tokyorails
     $ bundle install
 
-If bundler fails because of problems regarding the 'pg' gem then you can 
+If bundler fails because of problems regarding the 'pg' gem then you can
 either install the relevant libraries required on your system or use:
 
     $ bundle install --without production
