@@ -72,6 +72,14 @@ Then simply bundle install and you should be good to go:
     $ cd tokyorails
     $ bundle install
 
+If bundler fails because of problems regarding the 'pg' gem then you can 
+either install the relevant libraries required on your system or use:
+
+    $ bundle install --without production
+
+The 'pg' gem is for Postgresql database support which is only needed on
+production in Heroku, not our development environments
+
 Testing
 -------
 
