@@ -22,10 +22,14 @@ group :assets do
   gem 'uglifier'
 end
 
-
 group :production do
   gem 'pg'
   gem 'fog'
+end
+
+group :development do
+  gem 'yard'
+  gem 'redcarpet' # Used by yard for markdown documents
 end
 
 group :development, :test do
@@ -36,6 +40,7 @@ end
 
 group :test do
   gem 'rspec'
+  gem 'shoulda-matchers'
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'capybara'
