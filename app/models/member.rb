@@ -7,6 +7,6 @@ class Member < ActiveRecord::Base
   has_one :image
   
   def photo
-    Image.where(:member_id => id).first || Image.create(:member_id => id, :file_url => photo_url) unless photo_url.blank?
+    self.image || Image.create(:member_id => id, :file_url => photo_url) unless photo_url.blank?
   end
 end

@@ -4,7 +4,7 @@ FactoryGirl.define do
     sequence(:name) {|n| "User #{n}" }
     sequence(:bio) {|n| "Bio of user #{n}" }
     sequence(:github_username) {|n| "user#{n}" }
-    photo_url Rails.root.join('spec','fixtures','example.jpg')
+    photo_url 'http://localhost/photo.jpg'
     image
   end
 end

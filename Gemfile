@@ -25,16 +25,20 @@ group :production do
   gem 'fog'
 end
 
-group :development, :test do
-  gem 'rspec-rails'
-  gem 'pry'
-  gem 'sqlite3'
+group :development do
   gem 'yard'
   gem 'redcarpet' # Used by yard for markdown documents
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'pry'
+  gem 'sqlite3'
+end
+
 group :test do
   gem 'rspec'
+  gem 'shoulda-matchers'
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'capybara'
