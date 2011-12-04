@@ -48,6 +48,21 @@ the article here (OSX/Linux):
 
     https://github.com/thoughtbot/capybara-webkit/wiki/Installing-QT
 
+The project uses ImageMagick for image manipulation
+
+To install on Debian based Linux distributions:
+
+    $ sudo apt-get install imagemagick
+
+To install on Mac:
+
+   TODO
+
+To install on Windows: 
+
+    http://www.imagemagick.org/script/binary-releases.php#windows
+
+
 The project uses bundler, so if you dont have this installed already:
 
     $ gem install bundler
@@ -56,6 +71,14 @@ Then simply bundle install and you should be good to go:
 
     $ cd tokyorails
     $ bundle install
+
+If bundler fails because of problems regarding the 'pg' gem then you can 
+either install the relevant libraries required on your system or use:
+
+    $ bundle install --without production
+
+The 'pg' gem is for Postgresql database support which is only needed on
+production in Heroku, not our development environments
 
 Testing
 -------
