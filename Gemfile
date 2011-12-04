@@ -26,8 +26,8 @@ group :production do
 end
 
 group :development do
-  gem 'yard'
-  gem 'redcarpet' # Used by yard for markdown documents
+#  gem 'yard'
+#  gem 'redcarpet' # Used by yard for markdown documents
 end
 
 group :development, :test do
