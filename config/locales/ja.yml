@@ -23,9 +23,11 @@ ja:
       previous: 過去のイベント (%{number})
       api_error: 申し訳ありませんが、meetup.comイベントAPIは現在利用できません。少し後で確認してください。
       next_meetup: "%{days}の次のミートアップ"
+      no_upcoming_meetups: 次のミートはまだ予定ですが、通知を受け取るために登録してくださいされていません。
       attending: "%{number} これまでに出席する予定"
       attended: "%{number} 出席"
       join: 参加する!
+      register: 次のイベントに申込む
 
   members:
     index:

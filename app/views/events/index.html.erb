@@ -1,15 +1,22 @@
-<% if @past_events.empty? or @upcoming_events.empty? %>
+<% if @past_events.empty? && @upcoming_events.empty? %>
   <%= t '.api_error' %>
 <% else %>
   <div class="hero-unit">
-    <% @upcoming_events.each do |event| %>
-      <h1><%= t '.next_meetup', :days => distance_of_time_in_words_to_now(event.date) %>
-      <h2><%= link_to event.name, event.event_url %></h3>
-      <h3><%= t '.attending', :number => event.yes_rsvp_count %></h3>
-      <p><%= l event.date, :format => :long %></p>
+    <% if @upcoming_events.empty? %>
+      <h2><%= t '.no_upcoming_meetups' %></h2>
       <p>
-        <%= link_to t('.join'), event.event_url, :class => "btn success large pull-right" %>
+        <%= link_to t('.register'), "http://meetup.com/tokyo-rails", :class => "btn success large pull-right" %>
       </p>
+    <% else %>
+      <% @upcoming_events.each do |event| %>
+        <h1><%= t '.next_meetup', :days => distance_of_time_in_words_to_now(event.date) %></h1>
+        <h2><%= link_to event.name, event.event_url %></h3>
+        <h3><%= t '.attending', :number => event.yes_rsvp_count %></h3>
+        <p><%= l event.date, :format => :long %></p>
+        <p>
+          <%= link_to t('.join'), event.event_url, :class => "btn success large pull-right" %>
+        </p>
+        <% end %>
     <% end %>
   </div>
 

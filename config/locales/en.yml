@@ -23,9 +23,11 @@ en:
       previous: Previous Events (%{number})
       api_error: Sorry, the meetup.com Events API is not available right now. Please check back a bit later.
       next_meetup: Next Meetup in %{days}!
+      no_upcoming_meetups: The next meetup is not yet scheduled, but please register to get notified.
       attending: "%{number} planning to attend so far..."
       attended: "%{number} attended"
       join: Count me in!
+      register: Register to Get Notified
 
   members:
     index:
