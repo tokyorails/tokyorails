@@ -12,7 +12,7 @@ class Event < ActiveResource::Base
                           :status => "upcoming", :group_id => '2270561',
                           :page => 100})
     rescue ActiveResource::TimeoutError, ActiveResource::BadRequest => e
-      return []
+      return nil
   end
 
   def self.past
@@ -20,6 +20,6 @@ class Event < ActiveResource::Base
                           :status => "past", :group_id => '2270561',
                           :page => 100})
     rescue ActiveResource::TimeoutError, ActiveResource::BadRequest => e
-      return []
+      return nil
   end
 end

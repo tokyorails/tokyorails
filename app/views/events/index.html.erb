@@ -1,4 +1,4 @@
-<% if @past_events.empty? && @upcoming_events.empty? %>
+<% if @past_events.nil? && @upcoming_events.nil? %>
   <%= t '.api_error' %>
 <% else %>
   <div class="hero-unit">
@@ -24,7 +24,7 @@
     <h2><%= t '.previous', :number => @past_events.size %></h1>
   </div>
 
-  <% @past_events.each do |event| %>
+  <% @past_events.reverse.each do |event| %>
     <div class="row">
       <h2><%= link_to event.name, event.event_url %></h3>
       <h3><%= t '.attended', :number => event.yes_rsvp_count %></h3>

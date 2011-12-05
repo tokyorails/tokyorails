@@ -30,3 +30,7 @@ VCR.config do |c|
   c.cassette_library_dir = "#{::Rails.root}/spec/fixtures/vcr_cassettes"
   c.stub_with :webmock # or :fakeweb
 end
+
+def get_response(filename)
+  File.read(Rails.root.join('spec','fixtures','http_responses',filename))
+end
