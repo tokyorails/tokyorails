@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20111203121725) do
 
   create_table "images", :force => true do |t|
-    t.string   "member_id"
+    t.integer  "member_id"
     t.string   "file_uid"
     t.datetime "created_at"
     t.datetime "updated_at"
