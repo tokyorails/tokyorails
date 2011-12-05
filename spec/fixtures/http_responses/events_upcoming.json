@@ -1,0 +1,50 @@
+{
+  "results":[
+    {
+      "rsvp_limit":30,
+      "visibility":"public",
+      "status":"upcoming",
+      "maybe_rsvp_count":0,
+      "venue":{
+        "id":3046071,
+        "lon":139.691706,
+        "name":"COOKPAD Inc.",
+        "address_1":"5-12-7 Shirokanedai",
+        "address_2":"Minato-ku",
+        "lat":35.689488,
+        "country":"jp",
+        "city":"Tokyo"
+      },
+      "utc_offset":32400000,
+      "id":"28350831",
+      "time":1314873000000,
+      "event_url":"http:\/\/www.tokyorails.org\/events\/28351500\/",
+      "yes_rsvp_count":21,
+      "description":"<p>\n<br \/> \n<img src=\"http:\/\/photos3.meetupstatic.com\/photos\/event\/c\/6\/f\/3\/event_48170931.jpeg\" style=\"max-height : 700px ; max-width : 700px ; margin : 5px\" \/><\/p>\n<p>&nbsp;<\/p>\n<p>The kick off event last time was a great night. Hope those that came really enjoyed it and we're looking forward to more of the same next time. This month, we'll take a brief look at an open source project started by an engineer here at COOKPAD, and attempt to collect some ideas for new open source projects or contributions we can make as a group. This event is for the Tokyo Rails community. Come and join us!<\/p>\n<p>&nbsp;<\/p>\n<p>19:30 - Doors Open<\/p>\n<p>20:00 - Starting an Open Source project<\/p>\n<p>20:30 - Food, Drinks &amp; Chat<\/p>\n<p>22:00 - Close<\/p>\n<p>&nbsp;<\/p>\n<p><a href=\"http:\/\/maps.google.com\/maps?q=35.639725,139.72213&amp;hl=en&amp;z=15\">http:\/\/maps.google.com\/maps?q=35.639725,139...<\/a><\/p>\n<p>&nbsp;<\/p>\n",
+      "name":"Tokyo Rails Upcoming Test Event",
+      "group":{
+        "id":2270561,
+        "group_lat":35.66999816894531,
+        "name":"TOKYO Rails Meetup",
+        "group_lon":139.77000427246094,
+        "join_mode":"open",
+        "urlname":"tokyo-rails"
+      }
+    }
+  ],
+  "meta":{
+    "lon":"",
+    "count":4,
+    "signed_url":"http:\/\/api.meetup.com\/2\/events?group_id=2270561&status=upcoming&order=time&desc=false&offset=0&format=json&page=100&fields=&sig_id=16436691&sig=d3794604c52a605534bef857380b46f50642bfcb",
+    "link":"https:\/\/api.meetup.com\/2\/events",
+    "next":"",
+    "total_count":4,
+    "url":"https:\/\/api.meetup.com\/2\/events?group_id=2270561&key=30296f736c2b15523e1f66135964294&status=upcoming&order=time&desc=false&offset=0&format=json&page=100&fields=&sign=true",
+    "id":"",
+    "title":"Meetup Events v2",
+    "updated":1322806824000,
+    "description":"Access Meetup events using a group, member, or event id. Events in private groups are available only to authenticated members of those groups. To search events by topic or location, see [Open Events](\/meetup_api\/docs\/2\/open_events).",
+    "method":"Events",
+    "lat":""
+  }
+}
