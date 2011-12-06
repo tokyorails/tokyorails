@@ -17,7 +17,7 @@ module MeetupTasks
     meetup_member_list = get_members_list
     meetup_member_list.each do |meetup_member|
 
-      member = Member.where(:meetup_id => meetup_member['member_id'].to_i).first
+      member = Member.where(:meetup_id => meetup_member['member_id'].to_s).first
 
       if member.nil?
         update_member(Member.new, meetup_member)
