@@ -4,9 +4,9 @@ class Member < ActiveRecord::Base
   validates_uniqueness_of :meetup_id
   validates_uniqueness_of :github_username, :allow_blank => true
 
-#  has_one :image
+  has_one :image
 
   def photo
-    Image.where(:member_id => meetup_id).first || Image.create(:member_id => meetup_id, :file_url => photo_url) unless photo_url.blank?
+    self.image || self.create_image(:file_url => photo_url) unless photo_url.blank?
   end
 end
