@@ -1,6 +1,14 @@
 @import 'mixins';
 
 body.homepage.index {
+  padding-top: 40px;
+  div.logo {
+    display: block;
+    text-align: center;
+  }
+  div.hero-unit {
+    padding: 10px 60px 60px 60px;
+  }
   li.home {
     @include active
   }
