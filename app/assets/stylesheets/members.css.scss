@@ -5,3 +5,9 @@ body.members.index {
     @include active
   }
 }
+
+body.members.show {
+  .bio {
+    margin-top: 20px
+  }
+}

@@ -1,0 +1,25 @@
+<div class="hero-unit">
+
+
+	<div class="row">
+	  <div class="span3">
+    	<%= image_tag(@member.photo.thumb('150x150#').url, :alt => sanitize(@member.name)) %>
+	  </div>
+	  <div class="span10">
+			<h1><%= @member.name %></h1>
+			<!-- twitter_username here? -->
+		</div>
+	</div>
+
+	<div class="bio">
+	  <%= @member.bio %>
+	</div>
+
+	<h4>Other Interests</h4>
+	<%= join_interests(@member) %>
+	
+	<h2>Projects on Github</h2>
+	<!-- Github projects here -->
+	</div>
+</div>
+
