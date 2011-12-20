@@ -9,4 +9,12 @@ class Member < ActiveRecord::Base
   def photo
     self.image || self.create_image(:file_url => photo_url) unless photo_url.blank?
   end
+  
+  def interests
+    [] # coming from somewhere
+  end
+  
+  def github_projects
+    # From Github import
+  end
 end
