@@ -1,0 +1,20 @@
+{
+  "results":[
+
+  ],
+  "meta":{
+    "lon":"",
+    "count":0,
+    "signed_url":"http:\/\/api.meetup.com\/2\/events?group_id=2270561&status=upcoming&order=time&desc=false&offset=0&format=json&page=100&fields=&sig_id=16436691&sig=4821447fbf148119a8d663e0dbd16589074fb8f1",
+    "link":"https:\/\/api.meetup.com\/2\/events",
+    "next":"",
+    "total_count":0,
+    "url":"https:\/\/api.meetup.com\/2\/events?group_id=2270561&key=30296f736c2b15523e1f66135964294&status=upcoming&order=time&desc=false&offset=0&format=json&page=100&fields=&sign=true",
+    "id":"",
+    "title":"Meetup Events v2",
+    "updated":1323105604486,
+    "description":"Access Meetup events using a group, member, or event id. Events in private groups are available only to authenticated members of those groups. To search events by topic or location, see [Open Events](\/meetup_api\/docs\/2\/open_events).",
+    "method":"Events",
+    "lat":""
+  }
+}

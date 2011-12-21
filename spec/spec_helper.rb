@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start 'rails'
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
@@ -29,4 +32,8 @@ end
 VCR.config do |c|
   c.cassette_library_dir = "#{::Rails.root}/spec/fixtures/vcr_cassettes"
   c.stub_with :webmock # or :fakeweb
+end
+
+def get_response(filename)
+  File.read(Rails.root.join('spec','fixtures','http_responses',filename))
 end
