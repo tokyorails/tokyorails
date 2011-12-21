@@ -1,11 +1,7 @@
 require 'spec_helper'
 
 describe "Event requests" do
-
-  def api_url(period)
-    %r{https://api.meetup.com/2/events.*status=#{period}}
-  end
-  
+ 
   before(:each) do
     WebMock.reset!
     WebMock.disable_net_connect!

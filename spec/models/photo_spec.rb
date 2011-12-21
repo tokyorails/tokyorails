@@ -3,7 +3,10 @@ require 'spec_helper'
 describe Photo do
   context "given there are photos on meetup.com" do
 
-    WebMock.allow_net_connect!
+    before(:each) do
+      WebMock.allow_net_connect!
+    end
+
     describe ".all" do
       it "returns a list of all photos" do
         photo_albums = Photo.all(:params => { :key => Rails.application.config.meetup_com_api_key, :page => 100, :group_id => '2270561' })
