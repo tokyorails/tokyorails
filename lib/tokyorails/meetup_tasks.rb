@@ -1,6 +1,6 @@
 # This module contains all tasks related to the Meetup API that are called via
 # a scheduled task.
-module MeetupTasks
+module Tokyorails::MeetupTasks
 
   # Import/update members from meetup.com
   #
