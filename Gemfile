@@ -14,6 +14,7 @@ gem 'psych'
 gem 'newrelic_rpm'
 gem 'airbrake'
 gem 'therubyracer'
+gem 'httparty'
 
 # Gems used only for assets and not required
 # in production environments by default.
