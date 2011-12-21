@@ -1,5 +1,7 @@
 class Member < ActiveRecord::Base
 
+  include Tokyorails::GithubMethods
+
   validates_presence_of :meetup_id, :name, :bio
   validates_uniqueness_of :meetup_id
   validates_uniqueness_of :github_username, :allow_blank => true
@@ -14,7 +16,4 @@ class Member < ActiveRecord::Base
     [] # coming from somewhere
   end
   
-  def github_projects
-    # From Github import
-  end
 end
