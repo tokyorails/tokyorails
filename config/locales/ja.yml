@@ -33,6 +33,9 @@ ja:
     index:
       roster: 現在メンバー%{number}人
       api_error: 申し訳ありませんが、meetup.comメンバーAPIは現在利用できません。少し後で確認してください。
+    show:
+      interests: 他の趣味
+      github_projects: GitHubのプロジェクト
 
   photos:
     index:

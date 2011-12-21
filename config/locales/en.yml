@@ -33,6 +33,9 @@ en:
     index:
       roster: Group Members (%{number})
       api_error: Sorry, the meetup.com Members API is not available right now. Please check back a bit later.
+    show:
+      interests: Other Interests
+      github_projects: Projects on GitHub
 
   photos:
     index:
