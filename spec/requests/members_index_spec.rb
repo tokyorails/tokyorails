@@ -4,7 +4,7 @@ feature "Viewing users" do
 
   scenario "A list of registered users" do
     10.times do
-      FactoryGirl.create(:member)
+      Factory(:member)
     end
     visit members_path
     page.should have_content("Group Members (#{Member.count}")

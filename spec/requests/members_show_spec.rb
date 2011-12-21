@@ -2,8 +2,8 @@ require 'spec_helper'
 
 feature "Showing a member" do
 
-  scenario "A Registered User's info" do
-    @member = FactoryGirl.create(:member)
+  scenario "renders a registered user's info" do
+    @member = Factory(:member)
 
     visit member_path(:id => @member.id)
     page.should have_content("#{@member.name}")
