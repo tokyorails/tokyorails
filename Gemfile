@@ -13,6 +13,7 @@ gem 'rack-cache', :require => 'rack/cache'
 gem 'psych'
 gem 'newrelic_rpm'
 gem 'airbrake'
+gem 'therubyracer'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -50,7 +51,7 @@ group :test do
   gem 'webmock'
   gem 'rb-fsevent', :require => false
   gem 'guard-rspec'
-  gem 'rcov'
+  gem 'simplecov', :require => false
   gem 'vcr'
 end
 
