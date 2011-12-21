@@ -12,3 +12,4 @@ public/assets
 spec/fixtures/vcr_cassettes/*
 doc/
 .yardoc/
+coverage
