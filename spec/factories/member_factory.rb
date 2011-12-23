@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 FactoryGirl.define do
   factory :member do
     sequence(:meetup_id) {|n| n }

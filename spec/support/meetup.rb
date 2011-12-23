@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # Return a regex'd URL for meetup events
 #
 # Return a regex of a URL which will match requests for past and upcoming meetup

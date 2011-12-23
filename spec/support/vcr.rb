@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 VCR.config do |c|
   c.stub_with :webmock
   c.default_cassette_options = {:record => :new_episodes}

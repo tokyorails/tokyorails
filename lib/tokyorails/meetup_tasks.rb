@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # This module contains all tasks related to the Meetup API that are called via
 # a scheduled task.
 module Tokyorails::MeetupTasks
@@ -5,7 +6,8 @@ module Tokyorails::MeetupTasks
   # Import/update members from meetup.com
   #
   # This method will import new members and update existing members if their
-  # meetup profile is newer.
+  # meetup profile is newer. It will also delete any members no longer in the
+  # meetup group
   #
   # It should not be called directly but should be called via a rake task
   # @example
@@ -15,8 +17,11 @@ module Tokyorails::MeetupTasks
   def self.import_members
 
     meetup_member_list = get_members_list
+    return unless meetup_member_list
+    present_members = []
     meetup_member_list.each do |meetup_member|
 
+      present_members << meetup_member['member_id'].to_s 
       member = Member.where(:meetup_id => meetup_member['member_id'].to_s).first
 
       if member.nil?
@@ -27,6 +32,9 @@ module Tokyorails::MeetupTasks
         update_member(member, meetup_member) if member.updated_at < Time.zone.at((meetup_member['updated'].to_i / 1000))
       end
     end
+
+    Member.where(Arel::Table.new(:members)[:meetup_id].not_in present_members).destroy_all
+    
   end
 
   protected
@@ -42,7 +50,8 @@ module Tokyorails::MeetupTasks
       record.bio = data['bio']
       record.photo_url = data['photo_url']
       record.github_username = get_github_username(data['additional'])
-      record.save!
+      record.image.destroy if record.image && record.photo_url_changed?
+      record.save!      
   end
 
   # Retrieve the member list from meetup
@@ -71,7 +80,9 @@ module Tokyorails::MeetupTasks
     # to UTF-8 which is what this site is using.
     encoded_response = response.body.force_encoding(Encoding::ISO_8859_1).encode(Encoding::UTF_8)
     JSON.parse(encoded_response)['results']
-
+    rescue => e
+      Airbrake.notify(e)
+      nil
   end
 
   # Parse out the github username for this member

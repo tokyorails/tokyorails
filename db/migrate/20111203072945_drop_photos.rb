@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class DropPhotos < ActiveRecord::Migration
   def up
     drop_table :photos

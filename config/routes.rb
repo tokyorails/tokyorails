@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Tokyorails::Application.routes.draw do
 
   scope "(:locale)", :locale => /en|ja/ do
