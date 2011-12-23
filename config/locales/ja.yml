@@ -48,6 +48,7 @@ ja:
         title: ホーム
       members:
         title: メンバー
+        profile: 私のプロフィール
       photos:
         title: 写真
       meetups:
@@ -58,6 +59,8 @@ ja:
         en: English
         ja: 日本語
       page_title: TOKYO Rails | ルビーオンレイルズルミートアプグループ
+      login: メンバーのログイン
+      logout: ログアウト
 
   date:
     formats:

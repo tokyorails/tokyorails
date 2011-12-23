@@ -7,6 +7,10 @@ Tokyorails::Application.routes.draw do
     resources :photos
   end
 
+  match '/auth/:provider/callback' => 'sessions#create'
+  match '/auth/failure' => 'sessions#failure'
+  match '/logout' => 'sessions#destroy', :as => :logout
+
   match '/:locale' => 'homepage#index', :as => :locale_root
 
   root :to => 'homepage#index'

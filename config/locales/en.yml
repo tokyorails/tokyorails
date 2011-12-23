@@ -48,6 +48,7 @@ en:
         title: Home
       members:
         title: Members
+        profile: My Profile
       photos:
         title: Photos
       meetups:
@@ -58,6 +59,8 @@ en:
         en: English
         ja: 日本語
       page_title: TOKYO Rails | Ruby on Rails Meetup Group
+      login: Member Login
+      logout: Logout
 
   date:
     formats:

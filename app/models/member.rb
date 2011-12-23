@@ -9,12 +9,23 @@ class Member < ActiveRecord::Base
 
   has_one :image, :dependent => :destroy
 
+  scope :authenticated, where('access_token is not null')
+
+  def self.authenticate(auth)
+    member = Member.find_by_meetup_id(auth['uid'])
+    if member
+      member.access_token = auth['credentials']['token']
+      member.save!
+    end
+    member
+  end
+
   def photo
     self.image || self.create_image(:file_url => photo_url) unless photo_url.blank?
   end
-  
+
   def interests
     [] # coming from somewhere
   end
-  
+
 end

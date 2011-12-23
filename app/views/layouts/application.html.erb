@@ -20,6 +20,9 @@
           <li class="photos"><%= link_to t('.photos.title'), photos_path %></li>
           <li class="events"><%= link_to t('.meetups.title'), events_path %></li>
           <li class="projects"><%= link_to t('.projects.title'), "#" %></li>
+          <% if current_user %>
+          <li class="myprofile"><%= link_to t('.members.profile'), member_path(current_user) %>
+          <% end %>
         </ul>
         <ul class="nav secondary-nav">
           <li class="en_locale"><%= link_to t('.locales.en'), :locale => :en %></li>
@@ -30,6 +33,11 @@
   </div>
 
   <div class="container">
+    <% if current_user %>
+      <%= link_to t('.logout'), logout_path, :class => 'login' %>
+    <% else %>
+      <%= link_to t('.login'), "/auth/meetup", :class => 'login' %>
+    <% end %>
   <%= yield %>
   </div>
 
