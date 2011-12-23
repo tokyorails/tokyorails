@@ -58,6 +58,17 @@ describe Tokyorails::MeetupTasks do
       Member.count.should == 1
       Member.first.name.should == 'Adam Akhtar'      
     end
+
+    it 'should do nothing if an exception is encountered' do
+      member1 = Member.first
+      member2 = Member.last
+
+      stub_request(:get, /.*/).to_timeout
+      Tokyorails::MeetupTasks.import_members
+      member1.should == Member.first
+      member2.should == Member.last
+      
+    end
     
   end
 

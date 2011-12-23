@@ -17,6 +17,7 @@ module Tokyorails::MeetupTasks
   def self.import_members
 
     meetup_member_list = get_members_list
+    return unless meetup_member_list
     present_members = []
     meetup_member_list.each do |meetup_member|
 
@@ -79,7 +80,9 @@ module Tokyorails::MeetupTasks
     # to UTF-8 which is what this site is using.
     encoded_response = response.body.force_encoding(Encoding::ISO_8859_1).encode(Encoding::UTF_8)
     JSON.parse(encoded_response)['results']
-
+    rescue => e
+      Airbrake.notify(e)
+      nil
   end
 
   # Parse out the github username for this member
