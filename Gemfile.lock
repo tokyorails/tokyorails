@@ -102,6 +102,7 @@ GEM
     launchy (2.0.5)
       addressable (~> 2.2.6)
     libv8 (3.3.10.4)
+    logglier (0.2.7)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -232,6 +233,7 @@ DEPENDENCIES
   jquery-rails
   json
   launchy
+  logglier
   newrelic_rpm
   pg
   pry
