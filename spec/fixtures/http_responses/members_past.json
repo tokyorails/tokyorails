@@ -1,0 +1,48 @@
+{
+  "results":[
+    {
+      "visited":"1323960602000",
+      "profile_url":"http://www.meetup.com/tokyo-rails/members/15426331/",
+      "bio":"Hi Im Adam ( @robodisco ) and from Manchester UK. Currently looking for a rails job. Apart from programming I also like djing, Brazillian jiujitsu, cooking and exploring japans microbrewery beer. ",
+      "status":"active",
+      "updated":"1313471066000",
+      "created":"1313471066000",
+      "additional": "github:robodisco",
+      "photo_url":"http://photos1.meetupstatic.com/photos/member/1/d/7/member_21546471.jpeg",
+      "name":"Adam Akhtar Updated",
+      "answers":[
+        {
+          "answer":"Individually yes. Im currently using 3.0.9 but have experimented with 3.1 rc4. In my Rails toolbox i usually use Haml and sass for html and css Coffeescript for js Compass + Blueprint and fancy-buttons for prettier web page design rspec for testing VCR for automatically stubbing out external network requests during testing.",
+          "question":"are you working with Rails at the moment?",
+          "question_id":762091
+        },
+        {
+          "answer":"presentations and hacksessions. Creating something opensource for rails would be fun too. ",
+          "question":"what activities wold you love to join in with at this event? eg. listen to presentations, hack on code, Q&A session ...",
+          "question_id":762081
+        }
+      ],
+      "member_id":15426331
+    },
+    {
+
+        "visited": "1323910638000",
+        "profile_url": "http://www.meetup.com/tokyo-rails/members/2182191/",
+        "bio": "Hi! I've changed to Rails a few years ago after stretching the capabilities of Drupal beyond reason.",
+        "status": "active",
+        "updated": "1321861111000",
+        "created": "1321861086000",
+        "photo_url": "http://photos1.meetupstatic.com/photos/member/3/7/3/member_9492883.jpeg",
+        "name": "Rémi Updated",
+        "answers": [
+            {
+                "answer": "Yes.",
+                "question": "are you working with Rails at the moment?",
+                "question_id": 762091
+            }
+        ],
+        "member_id": 2182191
+
+    }
+  ]
+}
