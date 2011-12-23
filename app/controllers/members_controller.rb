@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class MembersController < ApplicationController
   def index
     @members = Member.all
