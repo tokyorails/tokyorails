@@ -21,8 +21,8 @@ module Tokyorails::MeetupTasks
     present_members = []
     meetup_member_list.each do |meetup_member|
 
-      present_members << meetup_member['member_id'].to_s 
-      member = Member.where(:meetup_id => meetup_member['member_id'].to_s).first
+      present_members << meetup_member['member_id'].to_s
+      member = Member.where(:uid => meetup_member['member_id'].to_s).first
 
       if member.nil?
         update_member(Member.new, meetup_member)
@@ -33,8 +33,8 @@ module Tokyorails::MeetupTasks
       end
     end
 
-    Member.where(Arel::Table.new(:members)[:meetup_id].not_in present_members).destroy_all
-    
+    Member.where(Arel::Table.new(:members)[:uid].not_in present_members).destroy_all
+
   end
 
   protected
@@ -45,13 +45,13 @@ module Tokyorails::MeetupTasks
   # @param [Hash] data The data to use to update this member, see the meetup
   #  API documentation for a list of attributes
   def self.update_member(record, data)
-      record.meetup_id = data['member_id']
+      record.uid = data['member_id']
       record.name = data['name']
       record.bio = data['bio']
       record.photo_url = data['photo_url']
       record.github_username = get_github_username(data['additional'])
       record.image.destroy if record.image && record.photo_url_changed?
-      record.save!      
+      record.save!
   end
 
   # Retrieve the member list from meetup

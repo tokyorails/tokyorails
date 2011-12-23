@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111223104917) do
+ActiveRecord::Schema.define(:version => 20111223123843) do
 
   create_table "images", :force => true do |t|
     t.integer  "member_id"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20111223104917) do
   add_index "images", ["member_id"], :name => "index_images_on_member_id"
 
   create_table "members", :force => true do |t|
-    t.string   "meetup_id"
+    t.string   "uid"
     t.string   "name"
     t.string   "bio"
     t.string   "github_username"
@@ -33,6 +33,6 @@ ActiveRecord::Schema.define(:version => 20111223104917) do
     t.string   "access_token"
   end
 
-  add_index "members", ["meetup_id"], :name => "index_members_on_meetup_id"
+  add_index "members", ["uid"], :name => "index_members_on_uid"
 
 end

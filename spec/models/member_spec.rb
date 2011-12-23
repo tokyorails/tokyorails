@@ -4,11 +4,11 @@ require 'spec_helper'
 describe Member do
 
   context "validations" do
-    it { should validate_presence_of(:meetup_id) }
+    it { should validate_presence_of(:uid) }
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:bio) }
 
-    it { Factory(:member); should validate_uniqueness_of(:meetup_id) }
+    it { Factory(:member); should validate_uniqueness_of(:uid) }
     it { Factory(:member); should validate_uniqueness_of(:github_username) }
   end
 
@@ -37,14 +37,14 @@ describe Member do
 
   describe '#authenticate' do
     it "finds an existing member based on uid and saves the token" do
-      member = Factory(:member, :meetup_id => "654321", :access_token => nil)
+      member = Factory(:member, :uid => "654321", :access_token => nil)
       authenticated_member = Member.authenticate({"uid" => "654321", "credentials" => { "token" => "ab555"}})
       member.reload
       member.access_token.should == "ab555"
     end
 
     it "does not authenticate if there is no matching existing user" do
-      member = Factory(:member, :meetup_id => "7531", :access_token => nil)
+      member = Factory(:member, :uid => "7531", :access_token => nil)
       authenticated_member = Member.authenticate({"uid" => "654321", "credentials" => { "token" => "ab555"}})
       member.reload
       member.access_token.should == nil

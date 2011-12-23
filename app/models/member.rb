@@ -3,8 +3,8 @@ class Member < ActiveRecord::Base
 
   include Tokyorails::GithubMethods
 
-  validates_presence_of :meetup_id, :name, :bio
-  validates_uniqueness_of :meetup_id
+  validates_presence_of :uid, :name, :bio
+  validates_uniqueness_of :uid
   validates_uniqueness_of :github_username, :allow_blank => true
 
   has_one :image, :dependent => :destroy
@@ -12,7 +12,7 @@ class Member < ActiveRecord::Base
   scope :authenticated, where('access_token is not null')
 
   def self.authenticate(auth)
-    member = Member.find_by_meetup_id(auth['uid'])
+    member = Member.find_by_uid(auth['uid'])
     if member
       member.access_token = auth['credentials']['token']
       member.save!

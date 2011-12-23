@@ -9,7 +9,7 @@ feature "Authenticating members" do
 
   context "With an existing Meetup.com account" do
     scenario "authenticates on our site" do
-      member = Factory(:member, :meetup_id => 654321)
+      member = Factory(:member, :uid => 654321)
       visit root_path
       click_link('Member Login')
       Member.last.access_token.should == 'aeo127'
