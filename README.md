@@ -83,6 +83,13 @@ either install the relevant libraries required on your system or use:
 The 'pg' gem is for Postgresql database support which is only needed on
 production in Heroku, not our development environments
 
+We're using OmniAuth to authenticate with Meetup.com using their
+OAuth2.0 API. In order to test this locally, you need to add a couple of
+environment varibles to ~/.bashrc or ~/.zshrc as follow:
+
+    export MEETUP_KEY=dge0tlogc6cf2rfb2b0pppovg3
+    export MEETUP_SECRET=jkh9u2gk5krj4ki42f5v75cel8
+
 Testing
 -------
 
