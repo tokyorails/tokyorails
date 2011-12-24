@@ -13,7 +13,7 @@ ja:
       projects:
         title: プロジェクト
         brief: 現在メンバーが開発しているオープンソースのプロジェクトや新しいプロジェクトの提案はこちら。
-      register: 次のイベントに申込む
+      register: 次のミートアップのRSVP
       more:
         html: さらに &raquo;
 
@@ -26,7 +26,7 @@ ja:
       no_upcoming_meetups: 次のミートはまだ予定ですが、通知を受け取るために登録してくださいされていません。
       attending: "%{number} これまでに出席する予定"
       attended: "%{number} 出席"
-      join: 参加する!
+      join: 次のミートアップのRSVP
       register: 次のイベントに申込む
 
   members:

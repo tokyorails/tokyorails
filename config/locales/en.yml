@@ -13,7 +13,7 @@ en:
       projects:
         title: Projects
         brief: Current open source projects members are working on, and ideas for new projects you can join are listed here.
-      register: Register for the Next Event
+      register: RSVP for the Next Meetup
       more:
         html: More &raquo;
 
@@ -26,7 +26,7 @@ en:
       no_upcoming_meetups: The next meetup is not yet scheduled, but please register to get notified.
       attending: "%{number} planning to attend so far..."
       attended: "%{number} attended"
-      join: Count me in!
+      join: RSVP for the Next Meetup
       register: Register to Get Notified
 
   members:
