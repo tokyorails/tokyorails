@@ -16,6 +16,18 @@ describe Member do
     it { should have_one(:image) }
   end
 
+  context "scopes" do
+    it "should return users with names like given query" do
+      member_a = Factory(:member, :name => "Adam Akhtar")
+      member_b = Factory(:member, :name => "Adamski")
+      member_c = Factory(:member, :name => "Miles Newton")
+      Member.name_like("adam").size.should eq 2
+      Member.name_like("adam").should include member_a
+      Member.name_like("adam").should include member_b
+      Member.name_like("adam").should_not include member_c
+    end
+  end
+
   context 'photo' do
     it 'should return an existing photo' do
       member = Factory(:member)
