@@ -1,6 +1,14 @@
 <div class="hero-unit">
   <h1><%= t '.roster', :number => @members.size %></h1>
 
+  <%= form_tag members_path, :method => :get do %>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag "Search", :class => "btn default" %>
+    <%= link_to "Show All", members_path() %>
+  <% end %>
+
+
+
   <ul class="media-grid">
     <% @members.shuffle.each do |member| %>
     <li class="member_photo">
