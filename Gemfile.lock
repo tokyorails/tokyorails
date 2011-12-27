@@ -115,7 +115,7 @@ GEM
     method_source (0.6.6)
       ruby_parser (~> 2.0.5)
     mime-types (1.16)
-    multi_json (1.0.3)
+    multi_json (1.0.4)
     multi_xml (0.4.1)
     multipart-post (1.1.4)
     net-scp (1.0.4)
@@ -129,7 +129,7 @@ GEM
     omniauth (1.0.1)
       hashie (~> 1.2)
       rack
-    omniauth-meetup (0.0.1)
+    omniauth-meetup (0.0.2)
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.0)
     omniauth-oauth2 (1.0.0)
