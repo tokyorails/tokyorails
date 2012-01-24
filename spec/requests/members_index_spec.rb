@@ -2,7 +2,6 @@
 require 'spec_helper'
 
 feature "Viewing users" do
-
   scenario "A list of registered users" do
     10.times do
       Factory(:member)
@@ -15,4 +14,16 @@ feature "Viewing users" do
     end
   end
 
+  scenario "Searching for registered users" do
+    member_a = Factory(:member, :name => "adam")
+    member_b = Factory(:member, :name => "miles")
+    visit members_path
+    fill_in "query", :with => member_a.name
+    click_on "Search"
+    page.should have_selector("img[alt=#{member_a.name}]")
+    page.should have_no_selector("img[alt=#{member_b.name}]")
+
+    click_on "Show All"
+    page.should have_selector("img", :count => 2)
+  end
 end
