@@ -7,42 +7,42 @@
   <p><%= t '.intro2' %></p>
   <p><%= t '.intro3' %></p>
 
-  <ul class="media-grid">
+  <ul class="thumbnails">
     <li>
-      <%= link_to image_tag("http://photos2.meetupstatic.com/photos/event/c/6/f/3/global_48170931.jpeg", :class => "thumbnail"), "#" %>
+      <%= link_to image_tag("http://photos2.meetupstatic.com/photos/event/c/6/f/3/global_48170931.jpeg"), "#", :class => "thumbnail" %>
     </li>
     <li>
-      <%= link_to image_tag("http://photos3.meetupstatic.com/photos/event/5/5/2/a/global_55641802.jpeg", :class => "thumbnail"), "#" %>
+      <%= link_to image_tag("http://photos3.meetupstatic.com/photos/event/5/5/2/a/global_55641802.jpeg"), "#", :class => "thumbnail" %>
     </li>
     <li>
-      <%= link_to image_tag("http://photos4.meetupstatic.com/photos/event/5/6/3/8/global_55642072.jpeg", :class => "thumbnail"), "#" %>
+      <%= link_to image_tag("http://photos4.meetupstatic.com/photos/event/5/6/3/8/global_55642072.jpeg"), "#", :class => "thumbnail" %>
     </li>
     <li>
-      <%= link_to image_tag("http://photos4.meetupstatic.com/photos/event/c/5/e/f/global_48170671.jpeg", :class => "thumbnail"), "#" %>
+      <%= link_to image_tag("http://photos4.meetupstatic.com/photos/event/c/5/e/f/global_48170671.jpeg"), "#", :class => "thumbnail" %>
     </li>
   </ul>
 
   <p>
-    <%= link_to t('.register'), "http://meetup.com/tokyo-rails", :class => "btn success large pull-right" %>
+    <%= link_to t('.register'), "http://meetup.com/tokyo-rails", :class => "btn btn-success btn-large pull-right" %>
   </p>
 
 </div>
 
 <div class="row">
 
-  <div class="span6">
+  <div class="span4">
     <h2><%= t '.members.title' %></h2>
     <p><%= t '.members.brief' %>
     <p><%= link_to t('.more.html'), members_path, :class => "btn" %></p>
   </div>
 
-  <div class="span5">
+  <div class="span4">
     <h2><%= t '.meetups.title' %></h2>
     <p><%= t '.meetups.brief' %></p>
     <p><%= link_to t('.more.html'), events_path, :class => "btn" %></p>
   </div>
 
-  <div class="span5">
+  <div class="span4">
     <h2><%= t '.projects.title' %></h2>
     <p><%= t '.projects.brief' %></p>
     <p><%= link_to t('.more.html'), "#", :class => "btn" %></p>
