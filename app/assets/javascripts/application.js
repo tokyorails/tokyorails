@@ -6,6 +6,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-tooltip.js
+//= require bootstrap-popover.js
 //= require_tree .
-//= require ../../../vendor/assets/javascripts/bootstrap-twipsy.js
-//= require ../../../vendor/assets/javascripts/bootstrap-popover.js

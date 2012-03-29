@@ -5,7 +5,7 @@
     <% if @upcoming_events.empty? %>
       <h2><%= t '.no_upcoming_meetups' %></h2>
       <p>
-        <%= link_to t('.register'), "http://meetup.com/tokyo-rails", :class => "btn success large pull-right" %>
+        <%= link_to t('.register'), "http://meetup.com/tokyo-rails", :class => "btn btn-success btn-large pull-right" %>
       </p>
     <% else %>
       <% @upcoming_events.each do |event| %>
@@ -14,7 +14,7 @@
         <h3><%= t '.attending', :number => event.yes_rsvp_count %></h3>
         <p><%= l event.date, :format => :long %></p>
         <p>
-          <%= link_to t('.join'), event.event_url, :class => "btn success large pull-right" %>
+          <%= link_to t('.join'), event.event_url, :class => "btn btn-success btn-large pull-right" %>
         </p>
         <% end %>
     <% end %>

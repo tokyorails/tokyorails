@@ -10,8 +10,8 @@
 </head>
 <body class="<%= controller_name %> <%= action_name %> <%= I18n.locale %>">
 
-  <div class="topbar">
-    <div class="fill">
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
       <div class="container">
         <%= link_to "TOKYO Rails", locale_root_path, :class => "brand" %>
         <ul class="nav">
@@ -24,7 +24,7 @@
           <li class="myprofile"><%= link_to t('.members.profile'), member_path(current_user) %>
           <% end %>
         </ul>
-        <ul class="nav secondary-nav">
+        <ul class="nav pull-right">
           <li class="en_locale"><%= link_to t('.locales.en'), :locale => :en %></li>
           <li class="ja_locale"><%= link_to t('.locales.ja'), :locale => :ja %></li>
         </ul>

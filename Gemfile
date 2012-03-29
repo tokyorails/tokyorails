@@ -22,7 +22,11 @@ gem 'omniauth-meetup'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', "  ~> 3.1.0"
+  # Current version of sass-rails produces error 
+  # 'rake aborted! stack level too deep'
+  # https://github.com/rails/sass-rails/issues/78
+  # Temporarily specify version to make it work
+  gem 'sass-rails', "3.1.4"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
 end
