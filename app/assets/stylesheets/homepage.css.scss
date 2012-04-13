@@ -7,9 +7,46 @@ body.homepage.index {
     text-align: center;
   }
   div.hero-unit {
-    padding: 10px 60px 60px 60px;
+    padding: 10px 60px 20px 60px;
   }
   li.home {
     @include active
+  }
+  .well {
+    border: 1px solid #555;
+    margin: 20px 100px;
+  }
+  .event-date {
+    border: 1px solid #555;
+    float: left;
+    margin-right: 10px;
+    .event-month {
+      background-color: #555;
+      text-transform: uppercase;
+      color: #fff;
+      padding: 0 4px;
+    }
+    .event-day {
+      background-color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      padding: 2px 4px 4px 4px;
+    }
+  }
+  .event-details {
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: #aaa;
+    }
+    .rsvp {
+      position: relative;
+      right: 0;
+      top: -35px;
+    }
   }
 }

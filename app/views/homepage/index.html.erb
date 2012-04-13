@@ -3,28 +3,36 @@
 </div>
 <div class="hero-unit">
 
+  <div class="well">
+    <div class="event-date">
+      <div class="event-month">May</div>
+      <div class="event-day">10</div>
+    </div>
+    <div class="event-details">
+      <div class="title">TOKYO Rails Meetup #10 @ COOKPAD</div>
+      <div class="subtitle">Thursday, May 10th, 2012 7.30pm</div>
+      <div class="rsvp"><%= link_to t('.register'), "http://meetup.com/tokyo-rails/events/59784102/", :class => "btn btn-success btn-large pull-right" %></div>
+    </div>
+  </div>
+
   <p><%= t '.intro1' %></p>
-  <p><%= t '.intro2' %></p>
-  <p><%= t '.intro3' %></p>
 
   <ul class="thumbnails">
     <li>
-      <%= link_to image_tag("http://photos2.meetupstatic.com/photos/event/c/6/f/3/global_48170931.jpeg"), "#", :class => "thumbnail" %>
+      <%= link_to image_tag("crowd-180.jpg"), "#", :class => "thumbnail" %>
     </li>
     <li>
-      <%= link_to image_tag("http://photos3.meetupstatic.com/photos/event/5/5/2/a/global_55641802.jpeg"), "#", :class => "thumbnail" %>
+      <%= link_to image_tag("tofu-180.jpg"), "#", :class => "thumbnail" %>
     </li>
     <li>
-      <%= link_to image_tag("http://photos4.meetupstatic.com/photos/event/5/6/3/8/global_55642072.jpeg"), "#", :class => "thumbnail" %>
+      <%= link_to image_tag("info-180.jpg"), "#", :class => "thumbnail" %>
     </li>
     <li>
-      <%= link_to image_tag("http://photos4.meetupstatic.com/photos/event/c/5/e/f/global_48170671.jpeg"), "#", :class => "thumbnail" %>
+      <%= link_to image_tag("roomba-180.jpg"), "#", :class => "thumbnail" %>
     </li>
   </ul>
 
-  <p>
-    <%= link_to t('.register'), "http://meetup.com/tokyo-rails", :class => "btn btn-success btn-large pull-right" %>
-  </p>
+  <p><%= t '.intro3' %></p>
 
 </div>
 

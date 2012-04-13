@@ -13,7 +13,7 @@ ja:
       projects:
         title: プロジェクト
         brief: 現在メンバーが開発しているオープンソースのプロジェクトや新しいプロジェクトの提案はこちら。
-      register: 次のミートアップのRSVP
+      register: RSVP
       more:
         html: さらに &raquo;
 
