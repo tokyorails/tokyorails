@@ -47,7 +47,7 @@ module Tokyorails::MeetupTasks
   def self.update_member(record, data)
       record.uid = data['member_id']
       record.name = data['name']
-      record.bio = data['bio']
+      record.bio = data['bio'] || "I have no bio."
       record.photo_url = data['photo_url']
       record.github_username = get_github_username(data['additional'])
       record.image.destroy if record.image && record.photo_url_changed?
