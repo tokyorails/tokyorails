@@ -18,11 +18,12 @@ gem 'httparty'
 gem 'logglier'
 gem 'omniauth'
 gem 'omniauth-meetup'
+gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  # Current version of sass-rails produces error 
+  # Current version of sass-rails produces error
   # 'rake aborted! stack level too deep'
   # https://github.com/rails/sass-rails/issues/78
   # Temporarily specify version to make it work
@@ -32,7 +33,6 @@ group :assets do
 end
 
 group :production do
-  gem 'pg'
   gem 'fog'
 end
 
