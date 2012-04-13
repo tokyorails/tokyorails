@@ -13,7 +13,7 @@ class Member < ActiveRecord::Base
   scope :name_like, lambda {|query| where("name  LIKE ?", "%#{query}%")}
 
   def self.authenticate(auth)
-    member = Member.find_by_uid(auth['uid'])
+    member = Member.find_by_uid(auth['uid'].to_s)
     if member
       member.access_token = auth['credentials']['token']
       member.save!
