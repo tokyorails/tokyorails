@@ -13,8 +13,20 @@ body.homepage.index {
     @include active
   }
   .well {
-    border: 1px solid #555;
+    border: 1px dashed #555;
     margin: 20px 100px;
+    padding: 0 20px 20px 20px;
+    .next-event {
+      background-color: #5BB75B;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      border: 1px solid black;
+      position: relative;
+      width: 100px;
+      top: -12px;
+      left: 234px;
+    }
   }
   .event-date {
     border: 1px solid #555;

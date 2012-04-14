@@ -13,9 +13,10 @@ ja:
       projects:
         title: プロジェクト
         brief: 現在メンバーが開発しているオープンソースのプロジェクトや新しいプロジェクトの提案はこちら。
-      register: RSVP
       more:
         html: さらに &raquo;
+    next_event:
+      register: RSVP
 
   events:
     index:

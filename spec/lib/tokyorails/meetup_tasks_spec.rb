@@ -11,12 +11,12 @@ describe Tokyorails::MeetupTasks do
       stub_request(:get, /.*/).to_return(:body => get_response('members.json'))
       Tokyorails::MeetupTasks.import_members
       WebMock.reset!
-    end    
-    
+    end
+
     it 'should create new members' do
       Member.count.should == 2
     end
-   
+
     it 'should update existing members if their meetup profile is newer than their member record' do
       stub_request(:get, /.*/).to_return(:body => get_response('members_future.json'))
       Tokyorails::MeetupTasks.import_members
@@ -54,9 +54,9 @@ describe Tokyorails::MeetupTasks do
 
     it 'should remove members no longer in the meetup group' do
       stub_request(:get, /.*/).to_return(:body => get_response('members_one.json'))
-      Tokyorails::MeetupTasks.import_members      
+      Tokyorails::MeetupTasks.import_members
       Member.count.should == 1
-      Member.first.name.should == 'Adam Akhtar'      
+      Member.first.name.should == 'Adam Akhtar'
     end
 
     it 'should do nothing if an exception is encountered' do
@@ -67,9 +67,8 @@ describe Tokyorails::MeetupTasks do
       Tokyorails::MeetupTasks.import_members
       member1.should == Member.first
       member2.should == Member.last
-      
     end
-    
+
   end
 
 end

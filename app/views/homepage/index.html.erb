@@ -3,17 +3,7 @@
 </div>
 <div class="hero-unit">
 
-  <div class="well">
-    <div class="event-date">
-      <div class="event-month">May</div>
-      <div class="event-day">10</div>
-    </div>
-    <div class="event-details">
-      <div class="title">TOKYO Rails Meetup #10 @ COOKPAD</div>
-      <div class="subtitle">Thursday, May 10th, 2012 7.30pm</div>
-      <div class="rsvp"><%= link_to t('.register'), "http://meetup.com/tokyo-rails/events/59784102/", :class => "btn btn-success btn-large pull-right" %></div>
-    </div>
-  </div>
+  <%= render 'next_event' %>
 
   <p><%= t '.intro1' %></p>
 

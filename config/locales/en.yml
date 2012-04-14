@@ -13,9 +13,10 @@ en:
       projects:
         title: Projects
         brief: Current open source projects members are working on, and ideas for new projects you can join are listed here.
-      register: RSVP
       more:
         html: More &raquo;
+    next_event:
+      register: RSVP
 
   events:
     index:

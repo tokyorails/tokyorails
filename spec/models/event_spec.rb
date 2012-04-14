@@ -3,7 +3,7 @@ require 'spec_helper'
 
 describe Event do
   context "given there are events on meetup.com" do
-  
+
     before(:each) do
       WebMock.reset!
       WebMock.disable_net_connect!
@@ -13,9 +13,9 @@ describe Event do
     # request is made) Any more than that and we start re-testing ActiveResource
     describe ".upcoming" do
       it "returns a list of upcoming events" do
-        stub_request(:get, api_url('upcoming')).to_return(:body => get_response('events_upcoming.json'))       
+        stub_request(:get, api_url('upcoming')).to_return(:body => get_response('events_upcoming.json'))
         events = Event.upcoming
-        events.size.should > 0        
+        events.size.should > 0
       end
 
       it "returns nil in case of API timeout" do
@@ -28,12 +28,12 @@ describe Event do
         stub_request(:get, api_url('upcoming')).to_return(:status => 400)
         events = Event.upcoming
         events.should == nil
-      end      
-    end    
+      end
+    end
 
     describe ".past" do
       it "returns a list of previous events" do
-        stub_request(:get, api_url('past')).to_return(:body => get_response('events_past.json'))        
+        stub_request(:get, api_url('past')).to_return(:body => get_response('events_past.json'))
         events = Event.past
         events.size.should > 0
       end
@@ -48,7 +48,7 @@ describe Event do
         stub_request(:get, api_url('upcoming')).to_return(:status => 400)
         events = Event.upcoming
         events.should == nil
-      end       
+      end
     end
 
     describe ".date" do
