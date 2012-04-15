@@ -1,6 +1,10 @@
 # -*- encoding : utf-8 -*-
 Tokyorails::Application.routes.draw do
 
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   scope "(:locale)", :locale => /en|ja/ do
     resources :members
     resources :events

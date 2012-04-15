@@ -15,6 +15,17 @@ GEM
       rack-mount (~> 0.8.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.0.2)
+    activeadmin (0.4.3)
+      bourbon (>= 1.0.0)
+      devise (>= 1.1.2)
+      fastercsv
+      formtastic (>= 2.0.0)
+      inherited_resources (> 0)
+      jquery-rails (>= 1.0.0)
+      kaminari (>= 0.13.0)
+      meta_search (>= 0.9.2)
+      rails (>= 3.0.0)
+      sass (>= 3.1.0)
     activemodel (3.1.1)
       activesupport (= 3.1.1)
       builder (~> 3.0.0)
@@ -34,6 +45,9 @@ GEM
       activesupport
       builder
     arel (2.2.1)
+    bcrypt-ruby (3.0.1)
+    bourbon (1.4.0)
+      sass (>= 3.1)
     builder (3.0.0)
     capybara (1.1.1)
       mime-types (>= 1.16)
@@ -56,6 +70,11 @@ GEM
     coffee-script-source (1.1.2)
     crack (0.3.1)
     database_cleaner (0.6.7)
+    devise (2.0.4)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.0.3)
+      railties (~> 3.1)
+      warden (~> 1.1.1)
     diff-lcs (1.1.3)
     dragonfly (0.9.8)
       rack
@@ -72,6 +91,7 @@ GEM
       addressable (~> 2.2.6)
       multipart-post (~> 1.1.3)
       rack (>= 1.1.0, < 2)
+    fastercsv (1.5.4)
     ffi (1.0.9)
     fog (1.0.0)
       builder
@@ -84,10 +104,13 @@ GEM
       nokogiri (~> 1.5.0)
       ruby-hmac
     formatador (0.2.1)
+    formtastic (2.1.1)
+      actionpack (~> 3.0)
     guard (0.8.8)
       thor (~> 0.14.6)
     guard-rspec (0.5.0)
       guard (>= 0.8.4)
+    has_scope (0.5.1)
     hashie (1.2.0)
     heroku (2.11.0)
       launchy (>= 0.3.2)
@@ -99,11 +122,18 @@ GEM
       multi_json
       multi_xml
     i18n (0.6.0)
+    inherited_resources (1.3.1)
+      has_scope (~> 0.5.0)
+      responders (~> 0.6)
     jquery-rails (1.0.19)
       railties (~> 3.0)
       thor (~> 0.14)
     json (1.6.6)
     json_pure (1.6.1)
+    kaminari (0.13.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      railties (>= 3.0.0)
     launchy (2.0.5)
       addressable (~> 2.2.6)
     libv8 (3.3.10.4)
@@ -112,6 +142,11 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta_search (1.1.3)
+      actionpack (~> 3.1)
+      activerecord (~> 3.1)
+      activesupport (~> 3.1)
+      polyamorous (~> 0.5.0)
     method_source (0.6.6)
       ruby_parser (~> 2.0.5)
     mime-types (1.16)
@@ -135,7 +170,10 @@ GEM
     omniauth-oauth2 (1.0.0)
       oauth2 (~> 0.5.0)
       omniauth (~> 1.0)
+    orm_adapter (0.0.7)
     pg (0.11.0)
+    polyamorous (0.5.0)
+      activerecord (~> 3.0)
     polyglot (0.3.2)
     pry (0.9.6.2)
       coderay (~> 0.9.8)
@@ -171,6 +209,8 @@ GEM
     rb-fsevent (0.9.1)
     rdoc (3.12)
       json (~> 1.4)
+    responders (0.9.1)
+      railties (~> 3.1)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rspec (2.6.0)
@@ -227,6 +267,8 @@ GEM
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
     vcr (1.11.3)
+    warden (1.1.1)
+      rack (>= 1.0)
     webmock (1.7.6)
       addressable (~> 2.2, > 2.2.5)
       crack (>= 0.1.7)
@@ -237,6 +279,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activeadmin
   airbrake
   capybara
   capybara-webkit
@@ -246,6 +289,7 @@ DEPENDENCIES
   factory_girl
   factory_girl_rails
   fog
+  formtastic (~> 2.1.1)
   guard-rspec
   heroku
   httparty
