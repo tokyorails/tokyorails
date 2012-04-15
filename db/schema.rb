@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111223123843) do
+ActiveRecord::Schema.define(:version => 20120415042423) do
+
+  create_table "events", :force => true do |t|
+    t.string   "name"
+    t.string   "uid"
+    t.string   "status"
+    t.string   "address"
+    t.text     "description"
+    t.datetime "time"
+    t.integer  "yes_rsvp_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "events", ["uid"], :name => "index_events_on_uid"
 
   create_table "images", :force => true do |t|
     t.integer  "member_id"
@@ -34,5 +48,18 @@ ActiveRecord::Schema.define(:version => 20111223123843) do
   end
 
   add_index "members", ["uid"], :name => "index_members_on_uid"
+
+  create_table "rsvps", :force => true do |t|
+    t.string   "uid"
+    t.string   "member_id"
+    t.string   "meetup_id"
+    t.string   "response"
+    t.integer  "guests"
+    t.datetime "modified_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rsvps", ["uid"], :name => "index_rsvps_on_uid"
 
 end

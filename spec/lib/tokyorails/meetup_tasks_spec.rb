@@ -71,4 +71,41 @@ describe Tokyorails::MeetupTasks do
 
   end
 
+  context '.import_events' do
+    before(:each) do
+      WebMock.reset!
+      WebMock.disable_net_connect!
+      stub_request(:get, /.*/).to_return(:body => get_response('events.json'))
+      Tokyorails::MeetupTasks.import_events
+      WebMock.reset!
+    end
+
+    it 'should create new events' do
+      Event.count.should == 9
+    end
+
+    it 'should do nothing if api is not available' do
+      event1 = Event.first
+      event2 = Event.last
+      stub_request(:get, /.*/).to_timeout
+      Tokyorails::MeetupTasks.import_events
+      event1.should == Event.first
+      event2.should == Event.last
+    end
+  end
+
+  context '.import_rsvps' do
+    before(:each) do
+      WebMock.reset!
+      WebMock.disable_net_connect!
+      stub_request(:get, /.*/).to_return(:body => get_response('rsvps_59784102.json'))
+      Tokyorails::MeetupTasks.import_rsvps_for_event(59784102)
+      WebMock.reset!
+    end
+
+    it 'should create rsvps for the supplied event uid' do
+      Rsvp.count.should == 32
+    end
+
+  end
 end

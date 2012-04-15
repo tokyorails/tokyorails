@@ -9,10 +9,10 @@
       </p>
     <% else %>
       <% @upcoming_events.each do |event| %>
-        <h1><%= t '.next_meetup', :days => distance_of_time_in_words_to_now(event.date) %></h1>
+        <h1><%= t '.next_meetup', :days => distance_of_time_in_words_to_now(event.time) %></h1>
         <h2><%= link_to event.name, event.event_url %></h3>
         <h3><%= t '.attending', :number => event.yes_rsvp_count %></h3>
-        <p><%= l event.date, :format => :long %></p>
+        <p><%= l event.time, :format => :long %></p>
         <p>
           <%= link_to t('.join'), event.event_url, :class => "btn btn-success btn-large pull-right" %>
         </p>
@@ -24,11 +24,11 @@
     <h2><%= t '.previous', :number => @past_events.size %></h1>
   </div>
 
-  <% @past_events.reverse.each do |event| %>
+  <% @past_events.recent.each do |event| %>
     <div class="row">
       <h2><%= link_to event.name, event.event_url %></h3>
       <h3><%= t '.attended', :number => event.yes_rsvp_count %></h3>
-      <p> <%= l event.date, :format => :long %> </p>
+      <p> <%= l event.time, :format => :long %> </p>
     </div>
   <% end %>
 <% end %>

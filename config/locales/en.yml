@@ -16,6 +16,7 @@ en:
       more:
         html: More &raquo;
     next_event:
+      title: NEXT EVENT
       register: RSVP
 
   events:
@@ -68,3 +69,10 @@ en:
       default: "%Y-%m-%d"
       short: "%b %d"
       long: "%B %d, %Y"
+  time:
+    am: am
+    formats:
+      default: '%a, %d %b %Y %H:%M:%S %z'
+      long: '%A, %B %d, %Y %H:%M'
+      short: '%d %b %H:%M'
+    pm: pm

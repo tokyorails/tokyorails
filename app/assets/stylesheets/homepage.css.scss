@@ -5,6 +5,11 @@ body.homepage.index {
   div.logo {
     display: block;
     text-align: center;
+    margin-bottom: 10px;
+    img {
+      width: 400px;
+      height: 193px;
+    }
   }
   div.hero-unit {
     padding: 10px 60px 20px 60px;
@@ -48,17 +53,29 @@ body.homepage.index {
   }
   .event-details {
     .title {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
     }
     .subtitle {
       font-size: 14px;
-      color: #aaa;
+      color: #000;
+      padding-top: 4px;
     }
     .rsvp {
       position: relative;
       right: 0;
       top: -35px;
+    }
+  }
+  ul.attending {
+    padding: 4px 25px;
+    li {
+      display: inline;
+      img {
+        width: 30px;
+        height: 30px;
+        padding: 1px 0;
+      }
     }
   }
 }

@@ -1,9 +1,9 @@
 <div class="logo">
-  <%= image_tag "tokyo-rails-600x290.png", :alt => 'TOKYO Rails Meetup' %>
+  <%= image_tag "tokyo-rails-400x193.png", :alt => 'TOKYO Rails Meetup' %>
 </div>
 <div class="hero-unit">
 
-  <%= render 'next_event' %>
+  <%= render 'next_event', :event => Event.upcoming.recent.last %>
 
   <p><%= t '.intro1' %></p>
 
