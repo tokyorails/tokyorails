@@ -42,15 +42,17 @@ module Tokyorails::MeetupTasks
     if event_list.present?
       event_list.each do |api_event|
         event = Event.find_or_initialize_by_uid(api_event['id'].to_s)
-        event.name = api_event['name']
-        event.status = api_event['status']
-        event.time = Time.at(api_event['time'].to_i / 1000)
-        venue = api_event['venue']
-        event.address = "#{venue['name']}, #{venue['address_1']}, #{venue['address_2']}, #{venue['city']}"
-        event.description = api_event['description']
-        event.yes_rsvp_count = api_event['yes_rsvp_count']
-        event.save
+        # only update upcoming or previously unknown events
         unless event.status == 'past'
+          event.name = api_event['name']
+          event.status = api_event['status']
+          event.time = Time.at(api_event['time'].to_i / 1000)
+          venue = api_event['venue']
+          event.address = "#{venue['name']}, #{venue['address_1']}, #{venue['address_2']}, #{venue['city']}"
+          event.description = api_event['description']
+          event.yes_rsvp_count = api_event['yes_rsvp_count']
+          event.save
+
           import_rsvps_for_event(event.uid)
         end
       end
