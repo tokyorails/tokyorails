@@ -9,7 +9,7 @@
     <div class="subtitle"><%= l event.time, :format => :long %></div>
     <ul class="attending">
       <% Rsvp.where(:meetup_id => event.uid).each do |rsvp| %>
-        <li class="member"><%= image_tag(rsvp.member.photo.thumb('30x30#').url) %></li>
+        <li class="member"><%= image_tag(rsvp.member.photo.thumb('30x30#').url) if rsvp.member.present? %></li>
       <% end %>
     </ul>
     <div class="rsvp"><%= link_to t('.register'), event.event_url, :class => "btn btn-success btn-large pull-right" %></div>

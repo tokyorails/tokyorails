@@ -1,5 +1,9 @@
 require 'spec_helper'
 
-describe Rsvp do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe '.member' do
+  it "finds the member from the rsvp" do
+    member = Factory(:member)
+    rsvp = Factory(:rsvp, :member_id => member.uid)
+    rsvp.member.should == member
+  end
 end
