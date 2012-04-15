@@ -3,7 +3,7 @@
 </div>
 <div class="hero-unit">
 
-  <%= render 'next_event', :event => Event.upcoming.recent.last %>
+  <%= render 'next_event', :event => Event.upcoming.recent.last if Event.upcoming.present? %>
 
   <p><%= t '.intro1' %></p>
 

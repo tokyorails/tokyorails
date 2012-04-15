@@ -75,7 +75,8 @@ describe Tokyorails::MeetupTasks do
     before(:each) do
       WebMock.reset!
       WebMock.disable_net_connect!
-      stub_request(:get, /.*/).to_return(:body => get_response('events.json'))
+      stub_request(:get, /.*events.json/).to_return(:body => get_response('events.json'))
+      stub_request(:get, /.*rsvps.json/).to_return(:body => get_response('rsvps_59784102.json'))
       Tokyorails::MeetupTasks.import_events
       WebMock.reset!
     end
