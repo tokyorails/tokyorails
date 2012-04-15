@@ -1,0 +1,17 @@
+<div class="well">
+  <div class="next-event"><%= t '.title' %></div>
+  <div class="event-date">
+    <div class="event-month"><%= l event.time, :format => '%b' %></div>
+    <div class="event-day"><%= l event.time, :format => '%d' %></div>
+  </div>
+  <div class="event-details">
+    <div class="title"><%= link_to event.name, event.event_url %></div>
+    <div class="subtitle"><%= l event.time, :format => :long %></div>
+    <ul class="attending">
+      <% Rsvp.where(:meetup_id => event.uid).each do |rsvp| %>
+        <li class="member"><%= image_tag(rsvp.member.photo.thumb('30x30#').url) if rsvp.member.present? %></li>
+      <% end %>
+    </ul>
+    <div class="rsvp"><%= link_to t('.register'), event.event_url, :class => "btn btn-success btn-large pull-right" %></div>
+  </div>
+</div>

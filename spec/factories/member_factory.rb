@@ -1,11 +1,12 @@
-# -*- encoding : utf-8 -*-
-FactoryGirl.define do
-  factory :member do
-    sequence(:uid) {|n| n }
-    sequence(:name) {|n| "User #{n}" }
-    sequence(:bio) {|n| "Bio of user #{n}" }
-    sequence(:github_username) {|n| "user#{n}" }
-    photo_url 'http://localhost/photo.jpg'
-    image
-  end
+Factory.define :member do |f|
+  f.uid  { Factory.next(:uid) }
+  f.name { Factory.next(:name) }
+  f.bio 'my bio'
+  f.github_username { Factory.next(:github_username) }
+  f.photo_url 'http://localhost/photo.jpg'
+  f.image
+end
+
+Factory.sequence :github_username do |n|
+  "github_#{n}"
 end

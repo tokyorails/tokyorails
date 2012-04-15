@@ -16,7 +16,7 @@ module Tokyorails::MeetupTasks
   #   documentation
   def self.import_members
 
-    meetup_member_list = get_members_list
+    meetup_member_list = get_meetup_api('https://api.meetup.com/2/profiles.json')
     return unless meetup_member_list
     present_members = []
     meetup_member_list.each do |meetup_member|
@@ -37,6 +37,41 @@ module Tokyorails::MeetupTasks
 
   end
 
+  def self.import_events
+    event_list = get_meetup_api('https://api.meetup.com/2/events.json', :status => 'upcoming,past')
+    if event_list.present?
+      event_list.each do |api_event|
+        event = Event.find_or_initialize_by_uid(api_event['id'].to_s)
+        event.name = api_event['name']
+        event.status = api_event['status']
+        event.time = Time.at(api_event['time'].to_i / 1000)
+        venue = api_event['venue']
+        event.address = "#{venue['name']}, #{venue['address_1']}, #{venue['address_2']}, #{venue['city']}"
+        event.description = api_event['description']
+        event.yes_rsvp_count = api_event['yes_rsvp_count']
+        event.save
+        unless event.status == 'past'
+          import_rsvps_for_event(event.uid)
+        end
+      end
+    end
+  end
+
+  def self.import_rsvps_for_event(event_uid)
+    rsvp_list = get_meetup_api('https://api.meetup.com/2/rsvps.json', :event_id => event_uid)
+    if rsvp_list.present?
+      rsvp_list.each do |api_rsvp|
+        rsvp = Rsvp.find_or_initialize_by_uid(api_rsvp['rsvp_id'].to_s)
+        rsvp.response = api_rsvp['response']
+        rsvp.member_id = api_rsvp['member']['member_id']
+        rsvp.guests = api_rsvp['guests']
+        rsvp.meetup_id = api_rsvp['event']['id']
+        rsvp.modified_at = Time.at(api_rsvp['mtime'].to_i / 1000)
+        rsvp.save
+      end
+    end
+  end
+
   protected
 
   # Update a single member record
@@ -54,19 +89,16 @@ module Tokyorails::MeetupTasks
       record.save!
   end
 
-  # Retrieve the member list from meetup
+  # Retrieve data from Meetup API
   #
-  # This method actually does the job of retreiving the member list from meetup
-  # via the API.
-  #
-  # @return [Array] An array of hashes; each one represents a meetup profile
-  # @note currently hardcoded to retrieve a maximum of 200 members, should
+  # @return [Array] An array of hashes; each one represents a meetup item
+  # @note currently hardcoded to retrieve a maximum of 250 items, should
   #   probably improve to retrieve all members in batches etc.
-  def self.get_members_list
+  def self.get_meetup_api(endpoint, params = {})
 
-    uri = URI('https://api.meetup.com/2/profiles.json')
-    uri.query = URI.encode_www_form( { :key => Rails.application.config.meetup_com_api_key, :page => 200, :group_id => '2270561'})
-    http = Net::HTTP.new(uri.host,uri.port)
+    uri = URI(endpoint)
+    uri.query = URI.encode_www_form( { :key => Rails.application.config.meetup_com_api_key, :page => 250, :group_id => '2270561'}.merge(params))
+    http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
 
     request = Net::HTTP::Get.new(uri.path + '?' + uri.query)
@@ -83,6 +115,7 @@ module Tokyorails::MeetupTasks
     rescue => e
       Airbrake.notify(e)
       nil
+
   end
 
   # Parse out the github username for this member

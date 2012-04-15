@@ -5,6 +5,11 @@ body.homepage.index {
   div.logo {
     display: block;
     text-align: center;
+    margin-bottom: 10px;
+    img {
+      width: 400px;
+      height: 193px;
+    }
   }
   div.hero-unit {
     padding: 10px 60px 20px 60px;
@@ -13,8 +18,20 @@ body.homepage.index {
     @include active
   }
   .well {
-    border: 1px solid #555;
+    border: 1px dashed #555;
     margin: 20px 100px;
+    padding: 0 20px 20px 20px;
+    .next-event {
+      background-color: #5BB75B;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      border: 1px solid black;
+      position: relative;
+      width: 100px;
+      top: -12px;
+      left: 234px;
+    }
   }
   .event-date {
     border: 1px solid #555;
@@ -36,17 +53,29 @@ body.homepage.index {
   }
   .event-details {
     .title {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
     }
     .subtitle {
       font-size: 14px;
-      color: #aaa;
+      color: #000;
+      padding-top: 4px;
     }
     .rsvp {
       position: relative;
       right: 0;
       top: -35px;
+    }
+  }
+  ul.attending {
+    padding: 4px 25px;
+    li {
+      display: inline;
+      img {
+        width: 30px;
+        height: 30px;
+        padding: 1px 0;
+      }
     }
   }
 }
