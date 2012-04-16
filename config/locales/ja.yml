@@ -7,8 +7,8 @@ ja:
       members:
         title: メンバー
         brief: TOKYO Railsコミュニティは誰でも歓迎です。現在参加していただいているメンバーたちをご覧ください。
-      meetups:
-        title: ミートアップ
+      events:
+        title: イベント
         brief: これからのミートアップや今までのすべてのイベントはこちら。参加していただける方は早めに申込んでください。
       projects:
         title: プロジェクト
@@ -18,6 +18,7 @@ ja:
     next_event:
       title: 次のイベント
       register: RSVP
+      attending: 出席する予定
 
   events:
     index:
@@ -53,8 +54,8 @@ ja:
         profile: 私のプロフィール
       photos:
         title: 写真
-      meetups:
-        title: ミートアップ
+      events:
+        title: イベント
       projects:
         title: プロジェクト
       locales:

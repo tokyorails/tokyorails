@@ -4,4 +4,33 @@ body.events.index {
   li.events {
     @include active
   }
+  .hero-unit {
+    ul.attending {
+      padding: 4px 0px;
+      margin-left: 0px;
+      li {
+        display: inline;
+        img {
+          width: 50px;
+          height: 50px;
+          padding: 1px 0;
+        }
+      }
+    }
+  }
+  .row {
+    ul.attending {
+      padding: 4px 0px;
+      margin: 0px;
+      li {
+        display: inline;
+        img {
+          width: 30px;
+          height: 30px;
+          padding: 1px 0;
+        }
+      }
+    }
+  }
+
 }

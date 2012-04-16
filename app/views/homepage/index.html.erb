@@ -29,19 +29,19 @@
 <div class="row">
 
   <div class="span4">
-    <h2><%= t '.members.title' %></h2>
+    <h2><%= link_to t('.members.title'), members_path %></h2>
     <p><%= t '.members.brief' %>
     <p><%= link_to t('.more.html'), members_path, :class => "btn btn-info" %></p>
   </div>
 
   <div class="span4">
-    <h2><%= t '.meetups.title' %></h2>
-    <p><%= t '.meetups.brief' %></p>
+    <h2><%= link_to t('.events.title'), events_path %></h2>
+    <p><%= t '.events.brief' %></p>
     <p><%= link_to t('.more.html'), events_path, :class => "btn btn-info" %></p>
   </div>
 
   <div class="span4">
-    <h2><%= t '.projects.title' %></h2>
+    <h2><%= link_to t('.projects.title'), "#" %></h2>
     <p><%= t '.projects.brief' %></p>
     <p><%= link_to t('.more.html'), "#", :class => "btn btn-info" %></p>
   </div>
