@@ -45,6 +45,10 @@ en:
       title: Photos
       api_error: Sorry, the meetup.com Photos API is not available right now. Please check back a bit later.
 
+  projects:
+    index:
+      title: Member Projects
+
   layouts:
     application:
       home:

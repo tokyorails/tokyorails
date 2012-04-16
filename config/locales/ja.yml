@@ -45,6 +45,10 @@ ja:
       title: 写真
       api_error: 申し訳ありませんが、meetup.com写真APIは現在利用できません。少し後で確認してください。
 
+  projects:
+    index:
+      title: メンバープロジェクト
+
   layouts:
     application:
       home:
