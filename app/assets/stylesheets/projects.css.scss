@@ -11,5 +11,8 @@ body.projects.index {
   }
   .media-grid {
     margin-left: 0;
+    li {
+      display: inline;
+    }
   }
 }
