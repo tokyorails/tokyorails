@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120415185034) do
+ActiveRecord::Schema.define(:version => 20120416135826) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -82,6 +82,16 @@ ActiveRecord::Schema.define(:version => 20120415185034) do
   end
 
   add_index "members", ["uid"], :name => "index_members_on_uid"
+
+  create_table "projects", :force => true do |t|
+    t.string   "member_id"
+    t.string   "title"
+    t.string   "github_url"
+    t.text     "description"
+    t.string   "photo_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "rsvps", :force => true do |t|
     t.string   "uid"

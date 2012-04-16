@@ -1,0 +1,7 @@
+@import 'mixins';
+
+body.projects.index {
+  li.projects {
+    @include active
+  }
+}

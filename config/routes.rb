@@ -9,6 +9,7 @@ Tokyorails::Application.routes.draw do
     resources :members
     resources :events
     resources :photos
+    resources :projects
   end
 
   match '/auth/:provider/callback' => 'sessions#create'
