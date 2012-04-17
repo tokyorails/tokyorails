@@ -15,5 +15,6 @@ app.configure do |c|
     process :thumb, size
     encode  :jpg, '-strip -quality 80'
   end
+  c.url_host = Rails.application.config.dragonfly_cloudfront_url
   c.url_format = '/media/:job.:format'
 end

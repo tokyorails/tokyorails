@@ -30,4 +30,6 @@ Tokyorails::Application.configure do
   config.assets.debug = true
 
   config.default_url = 'localhost:3000'
+
+  config.dragonfly_cloudfront_url = nil
 end

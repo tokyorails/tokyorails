@@ -59,5 +59,7 @@ Tokyorails::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  config.default_url = 'tokyorails.herokuapp.com'
+  config.default_url = 'tokyorails.org'
+
+  config.dragonfly_cloudfront_url = 'http://d3lrup5e12lrut.cloudfront.net'
 end
