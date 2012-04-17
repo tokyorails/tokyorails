@@ -9,7 +9,7 @@ class Member < ActiveRecord::Base
 
   has_one :image, :dependent => :destroy
 
-  scope :authenticated, where('access_token is not null')
+  scope :authenticated, where("access_token IS NOT NULL AND access_token != ''")
   scope :name_like, lambda {|query| where("name  LIKE ?", "%#{query}%")}
 
   def self.authenticate(auth)
