@@ -31,7 +31,7 @@ a.login {
 }
 
 a.visit_meetup {
-  position: absolute;
+  position: fixed;
   top: 50px;
   right: 10px;
   padding: 4px;
@@ -43,6 +43,14 @@ a.visit_meetup {
     text-decoration: none;
     background: #fff;
   }
+}
+
+.fork_me {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border: 0;
+  z-index: 2000;
 }
 
 // Missing from Bootstrap 2.0

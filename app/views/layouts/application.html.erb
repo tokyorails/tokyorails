@@ -33,6 +33,7 @@
   </div>
 
   <div class="container">
+    <%= link_to image_tag('fork_me.png'), "http://www.github.com/tokyorails/tokyorails", :class => 'fork_me' %>
     <%= link_to t('.visit_meetup_dot_com'), "http://www.meetup.com/tokyo-rails", :class => 'visit_meetup' %>
     <% if current_user %>
       <%= link_to t('.logout'), logout_path, :class => 'login' %>
