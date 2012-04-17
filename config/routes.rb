@@ -5,6 +5,8 @@ Tokyorails::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
+  match "/events/:id" => redirect("http://www.meetup.com/tokyo-rails/events/%{id}/")
+
   scope "(:locale)", :locale => /en|ja/ do
     resources :members
     resources :events
