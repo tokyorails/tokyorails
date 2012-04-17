@@ -30,6 +30,21 @@ a.login {
   }
 }
 
+a.visit_meetup {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  padding: 4px;
+  color: white;
+  background: #aaa;
+  font-size: 14px;
+  &:hover {
+    color: #aaa;
+    text-decoration: none;
+    background: #fff;
+  }
+}
+
 // Missing from Bootstrap 2.0
 
 footer {

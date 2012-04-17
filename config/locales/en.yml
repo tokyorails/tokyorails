@@ -68,6 +68,7 @@ en:
       page_title: TOKYO Rails | Ruby on Rails Meetup Group
       login: Member Login
       logout: Logout
+      visit_meetup_dot_com: Visit our Meetup.com Site
 
   date:
     formats:
