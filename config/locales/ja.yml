@@ -1,12 +1,12 @@
 ja:
   homepage:
     index:
-      intro1: TOKYO Rails Meetupはルビーオンレイルズフレームワークに興味を持っているウェブエンジニアたちのためのグループです。
-      intro2: 毎月第一木曜日、東京白金台のクックパッドの事務所でルビーやレールズの仲間と、おいしい食事とドリンクで盛り上がりましょう。
+      intro1: TOKYO Rails Meetup は Ruby on Rails フレームワークに興味を持っているウェブエンジニアたちのためのグループです。
+      intro2: 毎月第一木曜日、東京白金台のクックパッドの事務所で Ruby や Rails の仲間と、おいしい食事とドリンクで盛り上がりましょう。
       intro3: イベントは事前申込いただければ参加無料です。日本語、英語問わず、トークやプレゼンテーションしていただける方歓迎です。是非ご参加ください。
       members:
         title: メンバー
-        brief: TOKYO Railsコミュニティは誰でも歓迎です。現在参加していただいているメンバーたちをご覧ください。
+        brief: TOKYO Rails コミュニティは誰でも歓迎です。現在参加しているメンバーをご覧ください。
       events:
         title: イベント
         brief: これからのミートアップや今までのすべてのイベントはこちら。参加していただける方は早めに申込んでください。
@@ -24,26 +24,26 @@ ja:
     index:
       upcoming: 今後のイベント (%{number})
       previous: 過去のイベント (%{number})
-      api_error: 申し訳ありませんが、meetup.comイベントAPIは現在利用できません。少し後で確認してください。
-      next_meetup: "%{days}の次のミートアップ"
-      no_upcoming_meetups: 次のミートはまだ予定ですが、通知を受け取るために登録してくださいされていません。
-      attending: "%{number} これまでに出席する予定"
-      attended: "%{number} 出席"
-      join: 次のミートアップのRSVP
+      api_error: 申し訳ありませんが、meetup.com イベントAPI は現在利用できません。少し後で確認してください。
+      next_meetup: "次のミートアップは%{days}後"
+      no_upcoming_meetups: 次のミートアップはまだ未定ですが、通知を受け取るために是非登録してください。
+      attending: "%{number} 人が参加表明しています"
+      attended: "%{number} 人が参加しました"
+      join: 次のミートアップに参加申し込み
       register: 次のイベントに申込む
 
   members:
     index:
       roster: 現在メンバー%{number}人
-      api_error: 申し訳ありませんが、meetup.comメンバーAPIは現在利用できません。少し後で確認してください。
+      api_error: 申し訳ありませんが、meetup.com メンバーAPI は現在利用できません。少し後で確認してください。
     show:
       interests: 他の趣味
-      github_projects: GitHubのプロジェクト
+      github_projects: GitHub 上のプロジェクト
 
   photos:
     index:
       title: 写真
-      api_error: 申し訳ありませんが、meetup.com写真APIは現在利用できません。少し後で確認してください。
+      api_error: 申し訳ありませんが、meetup.com 写真API は現在利用できません。少し後で確認してください。
 
   projects:
     index:
@@ -65,7 +65,7 @@ ja:
       locales:
         en: English
         ja: 日本語
-      page_title: TOKYO Rails | ルビーオンレイルズルミートアプグループ
+      page_title: TOKYO Rails | Ruby on Rails Meetup グループ
       login: メンバーのログイン
       logout: ログアウト
       visit_meetup_dot_com: 私たちのMeetup.comサイトをご覧ください
