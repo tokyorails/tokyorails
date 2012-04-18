@@ -24,6 +24,7 @@ feature "Viewing users" do
     page.should have_no_selector("img[alt=#{member_b.name}]")
 
     click_on "Show All"
-    page.should have_selector("img", :count => 2)
+    page.should have_selector("img[alt=#{member_a.name}]")
+    page.should have_selector("img[alt=#{member_b.name}]")
   end
 end

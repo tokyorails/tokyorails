@@ -10,6 +10,6 @@ feature "Internationalization" do
   scenario "clicking the '日本語' tab should show the page in Japanese" do
     visit root_url
     click_link('日本語')
-    page.should have_content('TOKYO Rails Meetupはルビーオンレイルズフレームワーク')
+    page.should have_content('TOKYO Rails Meetup は Ruby on Rails フレームワークに興味を持っているウェブエンジニアたちのためのグループです')
   end
 end
