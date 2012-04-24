@@ -2,7 +2,7 @@
 
   <div class="row">
     <div class="span2">
-      <%= image_tag(@member.photo.thumb('150x150#').url, :alt => @member.name) %>
+      <%= image_tag(@member.photo.thumb('150x150#').url, :alt => @member.name) if @member.photo %>
     </div>
     <div class="span8">
       <h1><%= @member.name %></h1>
@@ -17,11 +17,11 @@
   <% if !projects(@member).empty? %>
     <h2><%= t('.github_projects') %></h2>
     <% projects(@member).each do |item| %>
-   	  <h3><%= link_to item["name"], item["html_url"] %></h3>
-	  <%= item["description"] %>
+      <h3><%= link_to item["name"], item["html_url"] %></h3>
+      <%= item["description"] %>
     <% end %>
   <% end %>
-  
+
   </div>
 </div>
 
