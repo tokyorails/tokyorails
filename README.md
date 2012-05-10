@@ -46,7 +46,7 @@ Next fork the repo and clone your fork to your dev machine:
 We're using capybara-webkit which depends on QT. To install QT, refer to
 the article here (OSX/Linux):
 
-    https://github.com/thoughtbot/capybara-webkit/wiki/Installing-QT
+    https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit
 
 The project uses ImageMagick for image manipulation
 
