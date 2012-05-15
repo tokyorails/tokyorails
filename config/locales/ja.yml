@@ -29,6 +29,7 @@ ja:
       no_upcoming_meetups: 次のミートアップはまだ未定ですが、通知を受け取るために是非登録してください。
       attending: "%{number} 人が参加表明しています"
       attended: "%{number} 人が参加しました"
+      photos:  写真
       join: 次のミートアップに参加申し込み
       register: 次のイベントに申込む
 

@@ -76,7 +76,9 @@ describe Tokyorails::MeetupTasks do
       WebMock.reset!
       WebMock.disable_net_connect!
       stub_request(:get, /.*events.json/).to_return(:body => get_response('events.json'))
+      stub_request(:get, /.*.jpeg/).to_return(:body => File.new(Rails.root.join('spec','fixtures','example.jpg')), :status => 200)
       stub_request(:get, /.*rsvps.json/).to_return(:body => get_response('rsvps_59784102.json'))
+      stub_request(:get, /.*photos.json/).to_return(:body => get_response('photos_for_event.json'))
       Tokyorails::MeetupTasks.import_events
       WebMock.reset!
     end
@@ -92,6 +94,10 @@ describe Tokyorails::MeetupTasks do
       Tokyorails::MeetupTasks.import_events
       event1.should == Event.first
       event2.should == Event.last
+    end
+    
+    it 'should also create images for each event' do
+      Image.count.should == 18
     end
   end
 
