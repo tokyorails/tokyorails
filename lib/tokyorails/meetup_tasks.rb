@@ -38,6 +38,9 @@ module Tokyorails::MeetupTasks
   end
 
   def self.import_events
+    
+    puts "Please be patient, as event photos are also imported during this import" unless Rails.env.test?
+    
     event_list = get_meetup_api('https://api.meetup.com/2/events.json', :status => 'upcoming,past')
     if event_list.present?
       event_list.each do |api_event|
@@ -55,6 +58,18 @@ module Tokyorails::MeetupTasks
 
           import_rsvps_for_event(event.uid)
         end
+
+        event.images.each do |old_image|
+          old_image.destroy
+        end
+
+        api_event_photos = Tokyorails::MeetupTasks.get_meetup_api('https://api.meetup.com/2/photos.json', :event_id => event.uid, :page => 100) || []
+        unless api_event_photos.empty?
+          api_event_photos.each do |api_event_photo|
+            event.images.create(:file_url => api_event_photo["highres_link"])
+          end
+        end
+
       end
     end
   end
