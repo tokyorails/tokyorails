@@ -76,7 +76,9 @@ describe Tokyorails::MeetupTasks do
       WebMock.reset!
       WebMock.disable_net_connect!
       stub_request(:get, /.*events.json/).to_return(:body => get_response('events.json'))
+      stub_request(:get, /.*.jpeg/).to_return(:body => File.new(Rails.root.join('spec','fixtures','example.jpg')), :status => 200)
       stub_request(:get, /.*rsvps.json/).to_return(:body => get_response('rsvps_59784102.json'))
+      stub_request(:get, /.*photos.json/).to_return(:body => get_response('photos_for_event.json'))
       Tokyorails::MeetupTasks.import_events
       WebMock.reset!
     end
@@ -93,6 +95,36 @@ describe Tokyorails::MeetupTasks do
       event1.should == Event.first
       event2.should == Event.last
     end
+
+    it 'should also create images for each event' do
+      Image.count.should == 18
+    end
+
+    it 'should not result in more images if nothing has changed' do
+      lambda do
+        stub_request(:get, /.*events.json/).to_return(:body => get_response('events.json'))
+        stub_request(:get, /.*.jpeg/).to_return(:body => File.new(Rails.root.join('spec','fixtures','example.jpg')), :status => 200)
+        stub_request(:get, /.*photos.json/).to_return(:body => get_response('photos_for_event.json'))
+        Tokyorails::MeetupTasks.import_events
+      end.should_not change(Image, :count)
+    end
+
+    it 'should decrease the image count if the new response no longer has those URLs' do
+      stub_request(:get, /.*events.json/).to_return(:body => get_response('events.json'))
+      stub_request(:get, /.*.jpeg/).to_return(:body => File.new(Rails.root.join('spec','fixtures','example.jpg')), :status => 200)
+      stub_request(:get, /.*photos.json/).to_return(:body => get_response('photos_for_event_less.json'))
+      Tokyorails::MeetupTasks.import_events
+      Image.count.should == 9
+    end
+
+    it 'should increase the image count if the new response new URLs' do
+      stub_request(:get, /.*events.json/).to_return(:body => get_response('events.json'))
+      stub_request(:get, /.*.jpeg/).to_return(:body => File.new(Rails.root.join('spec','fixtures','example.jpg')), :status => 200)
+      stub_request(:get, /.*photos.json/).to_return(:body => get_response('photos_for_event_more.json'))
+      Tokyorails::MeetupTasks.import_events
+      Image.count.should == 27
+    end
+
   end
 
   context '.import_rsvps' do
