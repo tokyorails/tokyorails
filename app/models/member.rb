@@ -7,7 +7,7 @@ class Member < ActiveRecord::Base
   validates_uniqueness_of :uid
   validates_uniqueness_of :github_username, :allow_blank => true
 
-  has_one :image, :dependent => :destroy
+  has_one :image, :as => :imageable, :dependent => :destroy
 
   scope :authenticated, where("access_token IS NOT NULL AND access_token != ''")
   scope :name_like, lambda {|query| where("UPPER(name) LIKE UPPER(?)", "%#{query}%")}

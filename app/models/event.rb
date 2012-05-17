@@ -1,6 +1,8 @@
 class Event < ActiveRecord::Base
   include Tokyorails::GithubMethods
 
+  has_many :images, :as => :imageable, :dependent => :destroy
+
   scope :upcoming, where(:status => 'upcoming')
   scope :past, where(:status => 'past')
   scope :recent, order('time DESC')

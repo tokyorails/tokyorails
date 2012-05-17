@@ -38,6 +38,9 @@ module Tokyorails::MeetupTasks
   end
 
   def self.import_events
+
+    puts "Please be patient, as event photos are also imported during this import" unless Rails.env.test?
+
     event_list = get_meetup_api('https://api.meetup.com/2/events.json', :status => 'upcoming,past')
     if event_list.present?
       event_list.each do |api_event|
@@ -55,6 +58,8 @@ module Tokyorails::MeetupTasks
 
           import_rsvps_for_event(event.uid)
         end
+
+        update_event_photos(event)
       end
     end
   end
@@ -89,6 +94,38 @@ module Tokyorails::MeetupTasks
       record.github_username = get_github_username(data['additional'])
       record.image.destroy if record.image && record.photo_url_changed?
       record.save!
+  end
+
+  # Update a single event's photos
+  #
+  # @param [Event] record An instance of the {Event} class
+  def self.update_event_photos(record)
+    # grab the images for the event from the Meetup API
+    api_event_photos = Tokyorails::MeetupTasks.get_meetup_api('https://api.meetup.com/2/photos.json', :event_id => record.uid, :page => 100)
+
+    if api_event_photos.present?
+
+      # grab the UID from the photo collection retured from the API call
+      api_event_photos_uids = api_event_photos.map do |api_event_photo|
+        api_event_photo["photo_id"].to_s
+      end
+
+      # delete the obsolete photos associated with event (their UID is not returned in the API call)
+      record.images.where("uid NOT IN (?)", api_event_photos_uids).destroy_all
+
+      # now, create an array from the UID attribute of the event's existing images and use it to find all the new UIDs
+      existing_event_photos_uids = record.images.map(&:uid)
+      new_event_photos_uids = api_event_photos_uids - existing_event_photos_uids
+
+      # based on our collection of new UIDs, create new Images for the event
+      if new_event_photos_uids.present?
+        new_api_event_photos = api_event_photos.select{|api_event_photo| new_event_photos_uids.include?(api_event_photo['photo_id'].to_s)}
+        new_api_event_photos.each do |new_api_event_photo|
+          record.images.create(:file_url => new_api_event_photo['highres_link'], :uid => new_api_event_photo['photo_id'].to_s)
+        end
+      end
+
+    end
   end
 
   # Retrieve data from Meetup API
