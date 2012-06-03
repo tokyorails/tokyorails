@@ -16,7 +16,7 @@ module Tokyorails::MeetupTasks
   #   documentation
   def self.import_members
 
-    meetup_member_list = get_meetup_api('https://api.meetup.com/2/profiles.json')
+    meetup_member_list = get_meetup_api_results('https://api.meetup.com/2/profiles.json')
     return unless meetup_member_list
     present_members = []
     meetup_member_list.each do |meetup_member|
@@ -41,7 +41,7 @@ module Tokyorails::MeetupTasks
 
     puts "Please be patient, as event photos are also imported during this import" unless Rails.env.test?
 
-    event_list = get_meetup_api('https://api.meetup.com/2/events.json', :status => 'upcoming,past')
+    event_list = get_meetup_api_results('https://api.meetup.com/2/events.json', :status => 'upcoming,past')
     if event_list.present?
       event_list.each do |api_event|
         event = Event.find_or_initialize_by_uid(api_event['id'].to_s)
@@ -65,7 +65,7 @@ module Tokyorails::MeetupTasks
   end
 
   def self.import_rsvps_for_event(event_uid)
-    rsvp_list = get_meetup_api('https://api.meetup.com/2/rsvps.json', :event_id => event_uid)
+    rsvp_list = get_meetup_api_results('https://api.meetup.com/2/rsvps.json', :event_id => event_uid)
     if rsvp_list.present?
       rsvp_list.each do |api_rsvp|
         rsvp = Rsvp.find_or_initialize_by_uid(api_rsvp['rsvp_id'].to_s)
@@ -101,7 +101,7 @@ module Tokyorails::MeetupTasks
   # @param [Event] record An instance of the {Event} class
   def self.update_event_photos(record)
     # grab the images for the event from the Meetup API
-    api_event_photos = Tokyorails::MeetupTasks.get_meetup_api('https://api.meetup.com/2/photos.json', :event_id => record.uid, :page => 100)
+    api_event_photos = get_meetup_api_results('https://api.meetup.com/2/photos.json', :event_id => record.uid, :page => 100)
 
     if api_event_photos.present?
 
@@ -128,15 +128,15 @@ module Tokyorails::MeetupTasks
     end
   end
 
-  # Retrieve data from Meetup API
+  # Retrieve data (results AND meta) from Meetup API
   #
   # @return [Array] An array of hashes; each one represents a meetup item
   # @note currently hardcoded to retrieve a maximum of 250 items, should
   #   probably improve to retrieve all members in batches etc.
-  def self.get_meetup_api(endpoint, params = {})
+  def self.get_meetup_api_meta_and_results(endpoint, params = {})
 
     uri = URI(endpoint)
-    uri.query = URI.encode_www_form( { :key => Rails.application.config.meetup_com_api_key, :page => 250, :group_id => '2270561'}.merge(params))
+    uri.query = URI.encode_www_form( { :key => Rails.application.config.meetup_com_api_key, :group_id => '2270561'}.merge(params))
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
 
@@ -150,7 +150,35 @@ module Tokyorails::MeetupTasks
     # So first we have to force the correct encoding (ISO-8859-1) THEN change it
     # to UTF-8 which is what this site is using.
     encoded_response = response.body.force_encoding(Encoding::ISO_8859_1).encode(Encoding::UTF_8)
-    JSON.parse(encoded_response)['results']
+
+    {
+      :meta => JSON.parse(encoded_response)['meta'],
+      :results => JSON.parse(encoded_response)['results']
+    }
+
+  end
+
+  # Retrieve all results (only) from a given endpoint using paging + offsets
+
+  def self.get_meetup_api_results(endpoint, params = {})
+
+    # Let's store the page size for later use, if it doesn't exist, set to 200
+    page_size = params.delete(:page) || 200
+
+    # Call get the first
+    response_hash = get_meetup_api_meta_and_results(endpoint, params.merge({:page => page_size, :offset => 0}))
+
+    total_results = response_hash[:results] || []
+    meta = response_hash[:meta] || {}
+
+    if ! meta.empty? and ! meta['total_count'].nil? and meta['total_count'] > page_size
+      (meta['total_count'] / page_size.to_f).ceil.times do |iteration|
+        total_results += get_meetup_api_meta_and_results(endpoint, params.merge({:page => page_size, :offset => iteration}))[:results]
+      end
+    end
+
+    return total_results
+
     rescue => e
       Airbrake.notify(e)
       nil
