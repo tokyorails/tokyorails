@@ -1,0 +1,252 @@
+{
+   "results":[
+      {
+         "visited":"1328176788000",
+         "profile_url":"http:\/\/www.meetup.com\/tokyo-rails\/members\/37193792\/",
+         "bio":"Web Developer @ Rakuten",
+         "status":"active",
+         "updated":"1328176788000",
+         "created":"1328176788000",
+         "photo_url":"http:\/\/photos1.meetupstatic.com\/photos\/member\/1\/0\/a\/6\/member_39940262.jpeg",
+         "name":"waldemar quevedo",
+         "answers":[
+            {
+               "answer":"Yes",
+               "question":"are you working with Rails at the moment?",
+               "question_id":762091
+            },
+            {
+               "answer":"Looking forward to the presentations",
+               "question":"what activities would you most like to see at this event?",
+               "question_id":762081
+            }
+         ],
+         "member_id":37193792
+      },
+      {
+         "visited":"1333725920000",
+         "profile_url":"http:\/\/www.meetup.com\/tokyo-rails\/members\/29907442\/",
+         "bio":"I was developing video games before moving to web development with rails. I'm working mostly as a freelance and I always have a few startup projects in mind.",
+         "status":"active",
+         "updated":"1332568218000",
+         "created":"1332568218000",
+         "photo_url":"http:\/\/photos1.meetupstatic.com\/photos\/member\/4\/e\/e\/member_30607262.jpeg",
+         "name":"Yann",
+         "answers":[
+            {
+               "answer":"Yes.",
+               "question":"are you working with Rails at the moment?",
+               "question_id":762091
+            },
+            {
+               "answer":"Learn new things and meet people in the Tokyo startup scene.",
+               "question":"what activities would you most like to see at this event?",
+               "question_id":762081
+            }
+         ],
+         "member_id":29907442
+      },
+      {
+         "visited":"1338555992000",
+         "profile_url":"http:\/\/www.meetup.com\/tokyo-rails\/members\/12296418\/",
+         "bio":"Hi everyone\r\n\r\nMy name is Yassine EL BADAOUI, and I am a developer based in Tokyo.\r\n\r\nI used to be a web developer, but I'm learning mobile development, while thinking about a new web service.\r\n\r\nI'm excited to meet everyone in person!\r\n\r\nThanks :-)",
+         "status":"active",
+         "updated":"1337354606000",
+         "created":"1337354606000",
+         "photo_url":"http:\/\/photos1.meetupstatic.com\/photos\/member\/9\/1\/5\/member_11042325.jpeg",
+         "name":"Yassine EL BADAOUI",
+         "answers":[
+            {
+               "answer":"I was just fired from a company that is using Rails to provide its service, after 8 months of fun.",
+               "question":"are you working with Rails at the moment?",
+               "question_id":762091
+            },
+            {
+               "answer":"Meet developers like me, and share knowledge with them.",
+               "question":"what activities would you most like to see at this event?",
+               "question_id":762081
+            }
+         ],
+         "member_id":12296418
+      },
+      {
+         "visited":"1336971887000",
+         "profile_url":"http:\/\/www.meetup.com\/tokyo-rails\/members\/28609972\/",
+         "bio":"Hi, I'm Yasuhiro. I'm a web developer. I've long been interested in Ruby and RoR. My new year's resolution for this year is to have hands-on experience in Ruby. Hope this group will help me find a direction I want to go with the language.",
+         "status":"active",
+         "updated":"1327764995000",
+         "created":"1327764994000",
+         "photo_url":"http:\/\/photos1.meetupstatic.com\/photos\/member\/1\/8\/8\/member_37896392.jpeg",
+         "name":"Yasuhiro Yoshida",
+         "answers":[
+            {
+               "answer":"No.",
+               "question":"are you working with Rails at the moment?",
+               "question_id":762091
+            },
+            {
+               "answer":"Everything. Nothing particular at this moment. Hack on code sounds interesting.",
+               "question":"what activities would you most like to see at this event?",
+               "question_id":762081
+            }
+         ],
+         "member_id":28609972
+      },
+      {
+         "visited":"1338558875000",
+         "profile_url":"http:\/\/www.meetup.com\/tokyo-rails\/members\/34276632\/",
+         "bio":"I'm a Engineer who loves Rails after work. I have been a C programmer of electronic equipment manufacturers for 5 years.",
+         "status":"active",
+         "updated":"1325776244000",
+         "created":"1325775346000",
+         "photo_url":"http:\/\/photos1.meetupstatic.com\/photos\/member\/6\/5\/6\/member_35803622.jpeg",
+         "name":"Yasunori Suzuki",
+         "member_id":34276632
+      },
+      {
+         "visited":"1337402495000",
+         "profile_url":"http:\/\/www.meetup.com\/tokyo-rails\/members\/42487632\/",
+         "bio":"A web\/iOS\/Mac developer. A newbie to RoR.",
+         "status":"active",
+         "updated":"1332597664000",
+         "created":"1332597663000",
+         "photo_url":"http:\/\/photos1.meetupstatic.com\/photos\/member\/8\/2\/2\/member_47144082.jpeg",
+         "name":"Yi Gu",
+         "answers":[
+            {
+               "answer":"No. I just started learning ruby and RoR.",
+               "question":"are you working with Rails at the moment?",
+               "question_id":762091
+            },
+            {
+               "answer":"Listen to presentations.",
+               "question":"what activities would you most like to see at this event?",
+               "question_id":762081
+            }
+         ],
+         "member_id":42487632
+      },
+      {
+         "visited":"1334648355000",
+         "profile_url":"http:\/\/www.meetup.com\/tokyo-rails\/members\/23352891\/",
+         "bio":"&#65290;&#65290;",
+         "status":"active",
+         "updated":"1313991851000",
+         "created":"1313991851000",
+         "photo_url":"http:\/\/photos1.meetupstatic.com\/photos\/member\/1\/7\/0\/3\/member_22085891.jpeg",
+         "name":"Yoshitaka Hazeyama",
+         "member_id":23352891
+      },
+      {
+         "visited":"1337005146000",
+         "profile_url":"http:\/\/www.meetup.com\/tokyo-rails\/members\/14355055\/",
+         "bio":"Hi, I'm a japanese rubyist in Tokyo.",
+         "status":"active",
+         "updated":"1317887608000",
+         "created":"1317887607000",
+         "photo_url":"http:\/\/photos1.meetupstatic.com\/photos\/member\/1\/0\/e\/e\/member_12418334.jpeg",
+         "name":"Yuki Nishijima",
+         "answers":[
+            {
+               "answer":"Yes!",
+               "question":"are you working with Rails at the moment?",
+               "question_id":762091
+            }
+         ],
+         "member_id":14355055
+      },
+      {
+         "visited":"1337740965000",
+         "profile_url":"http:\/\/www.meetup.com\/tokyo-rails\/members\/35247442\/",
+         "bio":"I am new.",
+         "status":"active",
+         "updated":"1332237939000",
+         "created":"1332237937000",
+         "photo_url":"http:\/\/photos1.meetupstatic.com\/photos\/member\/c\/a\/0\/member_46581232.jpeg",
+         "name":"Yuri",
+         "member_id":35247442
+      },
+      {
+         "visited":"1330614681000",
+         "profile_url":"http:\/\/www.meetup.com\/tokyo-rails\/members\/38341042\/",
+         "bio":"I'm social entrepreneur in Tokyo, and learning Rails.",
+         "status":"active",
+         "updated":"1329131730000",
+         "created":"1329131729000",
+         "photo_url":"http:\/\/photos1.meetupstatic.com\/photos\/member\/1\/1\/0\/a\/member_41458362.jpeg",
+         "name":"Yusuke Ohsaki",
+         "member_id":38341042
+      },
+      {
+         "visited":"1333715671000",
+         "profile_url":"http:\/\/www.meetup.com\/tokyo-rails\/members\/22298811\/",
+         "bio":"game developper\r\ni can't speak and write english.",
+         "status":"active",
+         "updated":"1332123801000",
+         "created":"1332123801000",
+         "photo_url":"http:\/\/photos1.meetupstatic.com\/photos\/member\/8\/3\/f\/member_20912111.jpeg",
+         "name":"Yutaka Kamono",
+         "answers":[
+            {
+               "answer":"no.bugtrack system on \"ruby on rails\"\r\nweb&#12288;&#65363;&#65369;&#65363;tem Operation&#12288;only.\r\n",
+               "question":"are you working with Rails at the moment?",
+               "question_id":762091
+            },
+            {
+               "answer":"eat or session ",
+               "question":"what activities would you most like to see at this event?",
+               "question_id":762081
+            }
+         ],
+         "member_id":22298811
+      },
+      {
+         "visited":"1336982472000",
+         "profile_url":"http:\/\/www.meetup.com\/tokyo-rails\/members\/39816232\/",
+         "bio":"CTO at MediWeb, Inc.",
+         "status":"active",
+         "updated":"1330328293000",
+         "created":"1330328292000",
+         "photo_url":"http:\/\/photos1.meetupstatic.com\/photos\/member\/d\/c\/c\/member_43425532.jpeg",
+         "name":"Yves-Eric Martin",
+         "member_id":39816232
+      },
+      {
+         "visited":"1336628882000",
+         "profile_url":"http:\/\/www.meetup.com\/tokyo-rails\/members\/46233612\/",
+         "bio":"Programmer at QNYP, LLC.",
+         "status":"active",
+         "updated":"1335707475000",
+         "created":"1335707475000",
+         "photo_url":"http:\/\/photos1.meetupstatic.com\/photos\/member\/7\/f\/a\/member_52106042.jpeg",
+         "name":"朝倉 寛史",
+         "member_id":46233612
+      },
+      {
+         "visited":"1338348731000",
+         "profile_url":"http:\/\/www.meetup.com\/tokyo-rails\/members\/46669942\/",
+         "bio":"I'm a Ruby on Rails developer.",
+         "status":"active",
+         "updated":"1338348732000",
+         "created":"1338348731000",
+         "photo_url":"http:\/\/photos1.meetupstatic.com\/photos\/member\/1\/2\/2\/2\/member_55984642.jpeg",
+         "name":"水谷 裕生",
+         "member_id":46669942
+      }
+   ],
+   "meta":{
+      "lon":"",
+      "count":14,
+      "signed_url":"http:\/\/api.meetup.com\/2\/profiles?group_id=2270561&order=name&offset=1&format=json&page=200&sig_id=24495222&sig=ee76a839d331b1104a554dacfaffa00233091ea6",
+      "link":"https:\/\/api.meetup.com\/2\/profiles",
+      "next":"",
+      "total_count":214,
+      "url":"https:\/\/api.meetup.com\/2\/profiles?group_id=2270561&key=505b6c7f3d5d3536596d811806c1e60&order=name&offset=1&format=json&page=200&sign=true",
+      "id":"",
+      "title":"Member Profile",
+      "updated":"Thu May 31 04:02:46 EDT 2012",
+      "description":"API method for accessing group member profiles",
+      "method":"Profiles",
+      "lat":""
+   }
+}
