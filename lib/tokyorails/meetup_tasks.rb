@@ -171,7 +171,7 @@ module Tokyorails::MeetupTasks
     total_results = response_hash[:results] || []
     meta = response_hash[:meta] || {}
 
-    if ! meta.empty? and ! meta['total_count'].nil? and meta['total_count'] > page_size
+    if meta.present? && meta['total_count'].present? && meta['total_count'] > page_size
       (1 .. (meta['total_count'] / page_size)).each do |iteration|
         total_results += get_meetup_api_meta_and_results(endpoint, params.merge({:page => page_size, :offset => iteration}))[:results]
       end
