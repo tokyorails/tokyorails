@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120528133954) do
+ActiveRecord::Schema.define(:version => 20120610053447) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20120528133954) do
     t.integer  "yes_rsvp_count"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.text     "html"
   end
 
   add_index "events", ["uid"], :name => "index_events_on_uid"

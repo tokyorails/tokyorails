@@ -4,6 +4,8 @@ Factory.define :event do |f|
   f.status  'past'
   f.time 5.days.ago
   f.yes_rsvp_count 3
+  f.description '<p>Please RSVP for this event</p>'
+  f.html '<p>Additional HTML</p>'
 end
 
 Factory.sequence :uid do |n|

@@ -1,0 +1,35 @@
+<div class="hero-unit">
+
+  <div class="row">
+    <div class="span8">
+      <h1><%= @event.name %></h1>
+    </div>
+  </div>
+
+  <% unless @event.html.nil? %>
+    <div class="embed_html">
+      <%= @event.html.try(:html_safe) %>
+    </div>
+    <br/>
+  <% end %>
+
+  <% unless @event.yes_rsvp_count == 0%>
+    <h3><%= t '.attended', :number => @event.yes_rsvp_count %></h3>
+    <%= render :partial => 'shared/event_attendee_photos', :locals => { :event => @event, :photo_options => '30x30#'} %>
+    <br/>
+  <% end %>
+
+  <% unless @event.images.empty? %>
+    <h3><%= t '.photos' %></h3>
+    <%= render :partial => "event_photos", :locals => { :event => @event }%>
+    <br/>
+  <% end %>
+
+  <% unless @event.description.nil? %>
+    <h3><%= t '.summary' %></h3>
+    <%= @event.description.try(:html_safe) %>
+  <% end %>
+
+  </div>
+</div>
+

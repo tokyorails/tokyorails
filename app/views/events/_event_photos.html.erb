@@ -1,0 +1,9 @@
+<% photo_options ||= '90x90#' %>
+
+<ul class="thumbnails">
+  <% event.images.each do |photo| %>
+    <li class="photo_photo">
+    <%= link_to image_tag(photo.thumb(photo_options).url, :alt => "", :'data-original-title' => "", :'data-content' => ""), photo.file.jpg.url, :class => "thumbnail", :target => "_blank" if photo %>
+    </li>
+  <% end %>
+</ul>

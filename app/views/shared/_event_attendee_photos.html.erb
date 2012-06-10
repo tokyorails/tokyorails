@@ -1,0 +1,7 @@
+<% photo_options ||= '50x50#' %>
+
+<ul class="attending">
+  <% Rsvp.where(:meetup_id => event.uid).attending.each do |rsvp| %>
+    <li class="member"><%= image_tag(rsvp.member.photo.thumb(photo_options).url) if rsvp.member.present? && rsvp.member.photo %></li>
+  <% end %>
+</ul>

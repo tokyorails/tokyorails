@@ -13,11 +13,7 @@
         <h2><%= link_to event.name, event.event_url %></h3>
         <p><%= l event.time, :format => :long %></p>
         <h3><%= t '.attending', :number => event.yes_rsvp_count %></h3>
-        <ul class="attending">
-          <% Rsvp.where(:meetup_id => event.uid).attending.each do |rsvp| %>
-            <li class="member"><%= image_tag(rsvp.member.photo.thumb('50x50#').url) if rsvp.member.present? %></li>
-          <% end %>
-        </ul>
+        <%= render :partial => "shared/event_attendee_photos", :locals => { :event => event, :photo_options => '50x50#'} %>
         <p>
           <%= link_to t('.join'), event.event_url, :class => "btn btn-success btn-large pull-right" %>
         </p>
@@ -31,22 +27,12 @@
 
   <% @past_events.recent.each do |event| %>
     <div class="row">
-      <h2><%= link_to event.name, event.event_url %></h3>
+      <h2><%= link_to event.name, event_path(event.id) %></h3>
       <h3><%= t '.attended', :number => event.yes_rsvp_count %></h3>
-      <ul class="attending">
-        <% Rsvp.where(:meetup_id => event.uid).attending.each do |rsvp| %>
-          <li class="member"><%= image_tag(rsvp.member.photo.thumb('30x30#').url) if rsvp.member.present? && rsvp.member.photo %></li>
-        <% end %>
-      </ul>
+      <%= render :partial => 'shared/event_attendee_photos', :locals => { :event => event, :photo_options => '30x30#'} %>
       <% unless event.images.empty? %>
         <h3><%= t '.photos' %></h3>
-        <ul class="thumbnails">
-          <% event.images.each do |photo| %>
-            <li class="photo_photo">
-            <%= link_to image_tag(photo.thumb('90x90#').url, :alt => "", :'data-original-title' => "", :'data-content' => ""), photo.file.jpg.url, :class => "thumbnail", :target => "_blank" if photo %>
-            </li>
-          <% end %>
-        </ul>
+        <%= render :partial => "event_photos", :locals => { :event => event, :photo_options => '50x50#' }%>
       <% end %>
 
     </div>
