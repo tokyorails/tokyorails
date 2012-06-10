@@ -32,6 +32,10 @@ ja:
       photos: イベントの写真
       join: 次のミートアップに参加申し込み
       register: 次のイベントに申込む
+    show:
+      attended: "%{number} 人が参加しました"
+      photos: イベントの写真
+      summary: 概要
 
   members:
     index:

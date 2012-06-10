@@ -1,6 +1,6 @@
 @import 'mixins';
 
-body.events.index {
+body.events {
   li.events {
     @include active
   }
@@ -33,5 +33,10 @@ body.events.index {
       }
     }
   }
+}
 
+body.events.show {
+  .embed_html {
+    padding-top: 10px;
+  }
 }
