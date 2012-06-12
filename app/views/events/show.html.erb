@@ -15,7 +15,7 @@
 
   <% unless @event.yes_rsvp_count == 0 %>
     <h3><%= t '.attended', :number => @event.yes_rsvp_count %></h3>
-    <%= render :partial => 'shared/event_attendee_photos', :locals => { :event => @event, :photo_options => '30x30#'} %>
+    <%= render :partial => 'shared/event_attendee_photos', :locals => { :event => @event, :photo_options => '50x50#'} %>
     <br/>
   <% end %>
 
