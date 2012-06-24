@@ -1,4 +1,8 @@
 ja:
+  translation:
+    en: 英語
+    ja: 日本語
+
   homepage:
     index:
       intro1: TOKYO Rails Meetup は Ruby on Rails フレームワークに興味を持っているウェブエンジニアたちのためのグループです。

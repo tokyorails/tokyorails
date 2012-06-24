@@ -1,4 +1,8 @@
 en:
+  translation:
+    en: English
+    ja: Japanese
+
   homepage:
     index:
       intro1: The TOKYO Rails Meetup Group is for web engineers who are using, or are interested in learning more about the Ruby on Rails framework.
