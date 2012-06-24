@@ -7,20 +7,20 @@
 
   <p><%= t '.intro1' %></p>
 
-  <ul class="thumbnails">
-    <li>
-      <%= link_to image_tag("crowd-180.jpg"), "#", :class => "thumbnail" %>
-    </li>
-    <li>
-      <%= link_to image_tag("tofu-180.jpg"), "#", :class => "thumbnail" %>
-    </li>
-    <li>
-      <%= link_to image_tag("info-180.jpg"), "#", :class => "thumbnail" %>
-    </li>
-    <li>
-      <%= link_to image_tag("roomba-180.jpg"), "#", :class => "thumbnail" %>
-    </li>
-  </ul>
+  <div id="myCarousel" class="carousel slide">
+    <div class="carousel-inner">
+        <% Image.event_photos.each_with_index do |image, index| %>
+            <div class = "item<%= index == 0 ? ' active' : '' %>">
+                <img src="<%= image.thumb("820x400#").url %>" alt="">
+                <div class="carousel-caption">
+                  <h4><%= image.imageable.name %></h4>
+                </div>
+            </div>
+        <% end %>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+  </div>
 
   <p><%= t '.intro3' %></p>
 
