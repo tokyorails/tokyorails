@@ -1,4 +1,0 @@
-#rvm ruby-1.9.3-p0
-#rvm gemset use rails31-ruby193
-rvm ruby-1.9.2-p290
-rvm gemset use rails31-ruby192-p290
