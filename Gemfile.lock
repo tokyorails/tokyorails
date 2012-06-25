@@ -1,6 +1,9 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    ActiveAdmin-Globalize3-inputs (0.0.1)
+      activeadmin
+      globalize3
     actionmailer (3.2.6)
       actionpack (= 3.2.6)
       mail (~> 2.4.4)
@@ -105,6 +108,10 @@ GEM
     formatador (0.2.1)
     formtastic (2.1.1)
       actionpack (~> 3.0)
+    globalize3 (0.2.0)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      paper_trail (~> 2)
     guard (0.8.8)
       thor (~> 0.14.6)
     guard-rspec (0.5.0)
@@ -171,6 +178,9 @@ GEM
       oauth2 (~> 0.5.0)
       omniauth (~> 1.0)
     orm_adapter (0.0.7)
+    paper_trail (2.6.3)
+      activerecord (~> 3.0)
+      railties (~> 3.0)
     pg (0.11.0)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
@@ -274,6 +284,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ActiveAdmin-Globalize3-inputs
   activeadmin
   airbrake
   capybara
@@ -285,6 +296,7 @@ DEPENDENCIES
   factory_girl_rails
   fog
   formtastic (~> 2.1.1)
+  globalize3
   guard-rspec
   heroku
   httparty
