@@ -22,7 +22,7 @@
   <% unless @event.images.empty? %>
     <h3><%= t '.photos' %></h3>
     <%= render :partial => "event_photos", :locals => { :event => @event }%>
-    <%= render :partial => 'shared/bootstrap_gallery_modal_and_scripts' %>
+    <%= render :partial => 'shared/bootstrap_gallery_modal' %>
     <br/>
   <% end %>
 
