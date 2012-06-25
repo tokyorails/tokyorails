@@ -1,4 +1,15 @@
 ActiveAdmin.register Event do
+
+    controller do
+        def create
+            super do |format|
+                @event.translations.each {|translation|
+                    translation.delete if translation.html.nil?
+                }
+            end
+        end
+    end
+
     index do
         column :name
         column :status

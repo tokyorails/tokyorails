@@ -1,4 +1,15 @@
 ActiveAdmin.register Project do
+
+    controller do
+        def create
+            super do |format|
+                @project.translations.each {|translation|
+                    translation.delete if translation.title.nil? && translation.description.nil? && translation.html.nil?
+                }
+            end
+        end
+    end
+
     index do
         column :title
         column :github_url
