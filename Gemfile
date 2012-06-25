@@ -11,7 +11,6 @@ gem 'heroku'
 gem 'dragonfly'
 gem 'rack-cache', :require => 'rack/cache'
 gem 'newrelic_rpm'
-gem 'psych'
 gem 'airbrake'
 gem 'therubyracer', :platform => :ruby
 gem 'httparty'
