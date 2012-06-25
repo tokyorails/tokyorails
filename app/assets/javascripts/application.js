@@ -6,6 +6,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-tooltip.js
-//= require bootstrap-popover.js
-//= require_tree .
+//= require bootstrap
+//= require bootstrap-tooltip
+//= require bootstrap-popover
+//= require bootstrap-tooltip
+//= require load-image
+//= require bootstrap-image-gallery
