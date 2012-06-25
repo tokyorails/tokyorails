@@ -2,6 +2,7 @@ ActiveAdmin.register Event do
 
     controller do
         def create
+            # Since Globalize3 doesn't inherently support tabbed UI locale creation/editing, clean up is required
             super do |format|
                 @event.translations.each {|translation|
                     translation.delete if translation.html.nil?
