@@ -106,6 +106,21 @@ describe "AdminAdmin Projects" do
                 page.should have_content("日本語 HTML Edited")
                 page.should have_content("日本語 description Edited")
             end
+
+            it "should have proper fallback to English when there is no Japanese version" do
+                project = Project.first
+
+                visit edit_admin_project_path(project.id)
+                fill_in 'project[project_translations_attributes][1][title]', :with => ""
+                click_button('project_submit')
+
+                I18n.locale = :ja
+
+                project.title.should eq("English Title Edited")
+
+                visit projects_path(:locale => :ja)
+                page.should have_content("English Title Edited")
+            end
         end
   end
 end
