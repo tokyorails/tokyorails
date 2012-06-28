@@ -1,7 +1,0 @@
-@import 'mixins';
-
-body.photos.index {
-  li.photos {
-    @include active
-  }
-}
