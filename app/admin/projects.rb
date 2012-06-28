@@ -1,4 +1,16 @@
 ActiveAdmin.register Project do
+
+    controller do
+        def create
+            # Since Globalize3 doesn't inherently support tabbed UI locale creation/editing, clean up is required
+            super do |format|
+                @project.translations.each {|translation|
+                    translation.delete if translation.title.nil? && translation.description.nil? && translation.html.nil?
+                }
+            end
+        end
+    end
+
     index do
         column :title
         column :github_url
