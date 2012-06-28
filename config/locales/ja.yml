@@ -49,11 +49,6 @@ ja:
       interests: 他の趣味
       github_projects: GitHub 上のプロジェクト
 
-  photos:
-    index:
-      title: 写真
-      api_error: 申し訳ありませんが、meetup.com 写真API は現在利用できません。少し後で確認してください。
-
   projects:
     index:
       title: メンバープロジェクト

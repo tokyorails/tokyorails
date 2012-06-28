@@ -12,3 +12,5 @@
 //= require bootstrap-tooltip
 //= require load-image
 //= require bootstrap-image-gallery
+//= require members
+//= require homepage
