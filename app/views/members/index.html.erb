@@ -1,5 +1,5 @@
 <div class="hero-unit">
-  <h1><%= t '.roster', :number => @members.size %></h1>
+  <h1><%= t '.roster', :number => Member.all.size %></h1>
 
   <%= form_tag members_path, :method => :get, :class => "form-inline" do %>
     <%= text_field_tag :query, params[:query] %>
@@ -7,8 +7,9 @@
     <%= link_to "Show All", members_path() %>
   <% end %>
 
+  <%= paginate @members %>
   <ul class="thumbnails">
-    <% @members.shuffle.each_with_index do |member, i| %>
+    <% @members.each_with_index do |member, i| %>
       <% if member.photo %>
         <li class="member_photo ">
           <%= link_to image_tag(member.photo.thumb('90x90#').url, :alt => member.name), member, :class => thumbnail_class(i), :'title' => member.name, :'data-content' => member.bio %>
@@ -16,4 +17,5 @@
       <% end %>
     <% end %>
   </ul>
+  <%= paginate @members %>
 </div>
