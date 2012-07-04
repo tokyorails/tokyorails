@@ -27,3 +27,9 @@ production:
 
 cucumber:
   <<: *test
+
+# travis
+postgres:
+  adapter: postgresql
+  database: tokyorails_test
+  username: postgres

@@ -1,2 +1,5 @@
 rvm:
   - 1.9.3
+before_script:
+  - psql -c 'create database tokyorails_test;' -U postgres
+  - cp config/database.yml.sample config/database.yml
