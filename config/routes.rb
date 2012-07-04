@@ -1,6 +1,8 @@
 # -*- encoding : utf-8 -*-
 Tokyorails::Application.routes.draw do
 
+  resources :spikes
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120624085037) do
+ActiveRecord::Schema.define(:version => 20120704041712) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(:version => 20120624085037) do
     t.integer  "author_id"
     t.string   "author_type"
     t.text     "body"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "namespace"
   end
 
@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(:version => 20120624085037) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
@@ -65,8 +65,8 @@ ActiveRecord::Schema.define(:version => 20120624085037) do
     t.text     "description"
     t.datetime "time"
     t.integer  "yes_rsvp_count"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.text     "html"
   end
 
@@ -74,8 +74,8 @@ ActiveRecord::Schema.define(:version => 20120624085037) do
 
   create_table "images", :force => true do |t|
     t.string   "file_uid"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "imageable_id"
     t.string   "imageable_type"
     t.string   "uid"
@@ -90,8 +90,8 @@ ActiveRecord::Schema.define(:version => 20120624085037) do
     t.string   "bio"
     t.string   "github_username"
     t.string   "photo_url"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "access_token"
     t.string   "email"
   end
@@ -117,8 +117,8 @@ ActiveRecord::Schema.define(:version => 20120624085037) do
     t.string   "github_url"
     t.text     "description"
     t.string   "photo_url"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.text     "html"
   end
 
@@ -129,11 +129,18 @@ ActiveRecord::Schema.define(:version => 20120624085037) do
     t.string   "response"
     t.integer  "guests"
     t.datetime "modified_at"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "rsvps", ["meetup_id", "response"], :name => "index_rsvps_on_meetup_id_and_response"
   add_index "rsvps", ["uid"], :name => "index_rsvps_on_uid"
+
+  create_table "spikes", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
 end
