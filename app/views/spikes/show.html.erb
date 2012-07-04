@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @spike.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @spike.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_spike_path(@spike) %> |
+<%= link_to 'Back', spikes_path %>

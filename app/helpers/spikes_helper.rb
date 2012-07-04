@@ -1,0 +1,2 @@
+module SpikesHelper
+end
