@@ -53,6 +53,14 @@ en:
     index:
       title: Member Projects
 
+  spikes:
+    index:
+      title: Bringing your laptop and want some help with something?
+      subtitle: Add your idea, project, feature or question you want help with here and we'll make sure there's someone ready and willing to help you get going!
+      new_spike: Get Started!
+    form:
+      cancel: Cancel
+
   layouts:
     application:
       home:
@@ -73,6 +81,23 @@ en:
       login: Member Login
       logout: Logout
       visit_meetup_dot_com: Visit our Meetup.com Site
+
+  helpers:
+    submit:
+      spike:
+        create: Okay!
+
+  simple_form:
+    yes: Yes
+    no: No
+    required:
+      text: required
+    error_notification:
+      default_message: 'Please review the problems below:'
+    labels:
+      spike:
+        name: Your name
+        description: Idea, project or question
 
   date:
     formats:

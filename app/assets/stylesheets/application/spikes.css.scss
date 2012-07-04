@@ -1,0 +1,14 @@
+#spikes {
+  font-size:1.2em;
+  td, th { padding:1.1em; }
+}
+form.spike {
+  margin:60px auto 0;
+  width:400px;
+  label { font-size:1.2em; }
+  .form-inputs input { margin-bottom:10px; }
+  .form-inputs {
+    input, textarea { width:98%; }
+  }
+  #spike_description { height:70px; }
+}

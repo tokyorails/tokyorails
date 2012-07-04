@@ -249,6 +249,9 @@ GEM
       rubyzip
     sexp_processor (3.0.7)
     shoulda-matchers (1.0.0)
+    simple_form (2.0.2)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     simplecov (0.5.4)
       multi_json (~> 1.0.3)
       simplecov-html (~> 0.5.3)
@@ -316,6 +319,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (= 3.2.5)
   shoulda-matchers
+  simple_form
   simplecov
   sqlite3
   therubyracer

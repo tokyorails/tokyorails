@@ -53,6 +53,14 @@ ja:
     index:
       title: メンバープロジェクト
 
+  spikes:
+    index:
+      title: Railsをヘルプします！
+      subtitle: Railsに関する質問や手伝って欲しいプロジェクトがあれば、下のフォームに登録し、TOKYO Railsにパソコン持ってきましょう。Railsの先生ボランティアがヘルプをします！
+      new_spike: 登録
+    form:
+      cancel: キャンセル
+
   layouts:
     application:
       home:
@@ -72,7 +80,24 @@ ja:
       page_title: TOKYO Rails | Ruby on Rails Meetup グループ
       login: メンバーのログイン
       logout: ログアウト
-      visit_meetup_dot_com: 私たちのMeetup.comサイトをご覧ください
+      visit_meetup_dot_com: Meetup.comもチェック！
+
+  helpers:
+    submit:
+      spike:
+        create: 登録
+
+  simple_form:
+    yes: Yes
+    no: No
+    required:
+      text: 必須
+    error_notification:
+      default_message: 登録できませんでした...
+    labels:
+      spike:
+        name: お名前
+        description: 聞きたいこと・ヘルプして欲しいこと
 
   date:
     abbr_day_names:

@@ -1,7 +1,6 @@
 # -*- encoding : utf-8 -*-
 Tokyorails::Application.routes.draw do
 
-  resources :spikes
 
   ActiveAdmin.routes(self)
 
@@ -12,6 +11,7 @@ Tokyorails::Application.routes.draw do
     resources :events
     resources :photos
     resources :projects
+    resources :spikes, only: [:index, :new, :create]
   end
 
   match '/auth/:provider/callback' => 'sessions#create'
