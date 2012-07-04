@@ -1,3 +1,7 @@
+[![Build
+Status](https://secure.travis-ci.org/[YOUR_GITHUB_USERNAME]/[YOUR_PROJECT_NAME].png)](http://travis-ci.org/tokyorails/tokyorails) [![Code
+Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/tokyorails/tokyorails)
+
 Welcome to TOKYO Rails
 =========================
 
