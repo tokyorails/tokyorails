@@ -10,4 +10,17 @@ feature "Projects" do
     page.should have_content('Cool Project')
   end
 
+  scenario "joining a project" do
+    pending
+    project = Factory(:project)
+    member = Factory(:member)
+    login(member)
+
+    project.members.should == []
+    visit projects_path
+
+    click_link 'Join Project'
+    project.members.should == [member]
+
+  end
 end

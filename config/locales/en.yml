@@ -52,6 +52,9 @@ en:
   projects:
     index:
       title: Member Projects
+    project:
+      join_project: Join Project
+      leave_project: Leave Project
 
   spikes:
     index:

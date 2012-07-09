@@ -52,6 +52,9 @@ ja:
   projects:
     index:
       title: メンバープロジェクト
+    project:
+      join_project: Join Project
+      leave_project: Leave Project
 
   spikes:
     index:

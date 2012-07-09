@@ -9,8 +9,26 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= Member.authenticated.find_by_access_token!(cookies[:access_token])
-    rescue ActiveRecord::RecordNotFound
-      cookies[:access_token] = nil
+  rescue ActiveRecord::RecordNotFound
+    cookies[:access_token] = nil
+  end
+
+  def logged_in?
+    !!current_user
+  end
+
+  def require_login
+    unless logged_in?
+      respond_to do |format|
+        format.html do
+          session[:return_to] = request.path
+          redirect_to root_path, :alert => "You need to be signed in to do that! Sign in above."
+        end
+        format.json do
+          head :unauthorized
+        end
+      end
+    end
   end
 
   def set_locale

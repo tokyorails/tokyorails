@@ -62,4 +62,36 @@ describe Member do
       member.access_token.should == nil
     end
   end
+
+  describe '#toggle_membership' do
+    let(:member)  { Factory(:member) }
+    let(:project) { Factory(:project) }
+
+    it "creates a membership to a project for the member if they were not previously joined" do
+      member.memberships.should == []
+      member.toggle_membership(project.id)
+      member.memberships.count.should == 1
+      member.memberships.last.project.should == project
+    end
+
+    it "removes an existing membership to a project for the member" do
+      member.memberships.create!(:project_id => project)
+      member.memberships.last.project.should == project
+      member.toggle_membership(project.id)
+      member.memberships.reload
+      member.memberships.count.should == 0
+      member.memberships.should == []
+    end
+  end
+
+  describe '#member_of?' do
+    let(:member)     { Factory(:member) }
+    let(:project)    { Factory(:project) }
+    let(:other_project)    { Factory(:project) }
+    let!(:membership) { member.memberships.create!(:project_id => project) }
+    it 'returns if a member has a membership to a specific project' do
+      member.member_of?(project).should be_true
+      member.member_of?(other_project).should_not be_true
+    end
+  end
 end

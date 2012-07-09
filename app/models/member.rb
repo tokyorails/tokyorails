@@ -8,6 +8,7 @@ class Member < ActiveRecord::Base
   validates_uniqueness_of :github_username, :allow_blank => true
 
   has_one :image, :as => :imageable, :dependent => :destroy
+  has_many :memberships
   has_many :projects, :through => :memberships
 
   scope :authenticated, where("access_token IS NOT NULL AND access_token != ''")
@@ -24,6 +25,14 @@ class Member < ActiveRecord::Base
 
   def photo
     self.image || self.create_image(:file_url => photo_url) unless photo_url.blank?
+  end
+
+  def toggle_membership(project_id)
+    member_of?(project_id) ? memberships.find_by_project_id(project_id).destroy : memberships.create!(:project_id => project_id)
+  end
+
+  def member_of?(project_id)
+    memberships.find_by_project_id(project_id).present?
   end
 
   def interests
