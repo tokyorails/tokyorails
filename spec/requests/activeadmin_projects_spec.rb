@@ -13,7 +13,6 @@ describe "AdminAdmin Projects" do
             page.should have_content('Signed in successfully.')
 
             visit new_admin_project_path
-            fill_in 'project[member_id]', :with => '3'
             fill_in 'project[github_url]', :with => 'http://github.com/sample_guy/sample_project'
             fill_in 'project[photo_url]', :with => 'http://www.tokyorails.org/assets/tokyo-rails-400x193.png'
             fill_in 'project[project_translations_attributes][0][title]', :with => "English Title"

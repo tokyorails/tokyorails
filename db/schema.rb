@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120709074031) do
+ActiveRecord::Schema.define(:version => 20120709144201) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -118,7 +118,6 @@ ActiveRecord::Schema.define(:version => 20120709074031) do
   add_index "project_translations", ["project_id"], :name => "index_project_translations_on_project_id"
 
   create_table "projects", :force => true do |t|
-    t.string   "member_id"
     t.string   "title"
     t.string   "github_url"
     t.text     "description"

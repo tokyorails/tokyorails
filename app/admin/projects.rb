@@ -23,7 +23,6 @@ ActiveAdmin.register Project do
   form do |f|
 
     f.inputs do
-      f.input :member_id
       f.input :github_url
       f.input :photo_url
       f.has_many :memberships do |member_f|
