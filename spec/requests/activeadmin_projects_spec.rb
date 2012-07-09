@@ -17,10 +17,8 @@ describe "AdminAdmin Projects" do
             fill_in 'project[github_url]', :with => 'http://github.com/sample_guy/sample_project'
             fill_in 'project[photo_url]', :with => 'http://www.tokyorails.org/assets/tokyo-rails-400x193.png'
             fill_in 'project[project_translations_attributes][0][title]', :with => "English Title"
-            fill_in 'project[project_translations_attributes][0][html]', :with => "<h2>Sample HTML</h2>"
             fill_in 'project[project_translations_attributes][0][description]', :with => "Sample description"
             fill_in 'project[project_translations_attributes][1][title]', :with => "日本語タイトル"
-            fill_in 'project[project_translations_attributes][1][html]', :with => "<h2>日本語 HTML</h2>"
             fill_in 'project[project_translations_attributes][1][description]', :with => "日本語 description"
             click_button('project_submit')
         end
@@ -36,12 +34,10 @@ describe "AdminAdmin Projects" do
                 I18n.locale = :en
 
                 project.title.should eq("English Title")
-                project.html.should eq("<h2>Sample HTML</h2>")
                 project.description.should eq("Sample description")
 
                 visit projects_path(:locale => :en)
                 page.should have_content("English Title")
-                page.should have_content("Sample HTML")
                 page.should have_content("Sample description")
             end
 
@@ -50,12 +46,10 @@ describe "AdminAdmin Projects" do
                 I18n.locale = :ja
 
                 project.title.should eq("日本語タイトル")
-                project.html.should eq("<h2>日本語 HTML</h2>")
                 project.description.should eq("日本語 description")
 
                 visit projects_path(:locale => :ja)
                 page.should have_content("日本語タイトル")
-                page.should have_content("日本語 HTML")
                 page.should have_content("日本語 description")
             end
         end
@@ -66,10 +60,8 @@ describe "AdminAdmin Projects" do
                 project = Project.first
                 visit edit_admin_project_path(project.id)
                 fill_in 'project[project_translations_attributes][0][title]', :with => "English Title Edited"
-                fill_in 'project[project_translations_attributes][0][html]', :with => "<h2>Sample HTML Edited</h2>"
                 fill_in 'project[project_translations_attributes][0][description]', :with => "Sample description Edited"
                 fill_in 'project[project_translations_attributes][1][title]', :with => "日本語タイトル Edited"
-                fill_in 'project[project_translations_attributes][1][html]', :with => "<h2>日本語 HTML Edited</h2>"
                 fill_in 'project[project_translations_attributes][1][description]', :with => "日本語 description Edited"
                 click_button('project_submit')
             end
@@ -84,12 +76,10 @@ describe "AdminAdmin Projects" do
                 I18n.locale = :en
 
                 project.title.should eq("English Title Edited")
-                project.html.should eq("<h2>Sample HTML Edited</h2>")
                 project.description.should eq("Sample description Edited")
 
                 visit projects_path(:locale => :en)
                 page.should have_content("English Title Edited")
-                page.should have_content("Sample HTML Edited")
                 page.should have_content("Sample description Edited")
             end
 
@@ -98,12 +88,10 @@ describe "AdminAdmin Projects" do
                 I18n.locale = :ja
 
                 project.title.should eq("日本語タイトル Edited")
-                project.html.should eq("<h2>日本語 HTML Edited</h2>")
                 project.description.should eq("日本語 description Edited")
 
                 visit projects_path(:locale => :ja)
                 page.should have_content("日本語タイトル Edited")
-                page.should have_content("日本語 HTML Edited")
                 page.should have_content("日本語 description Edited")
             end
 
