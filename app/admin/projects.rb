@@ -26,6 +26,15 @@ ActiveAdmin.register Project do
       f.input :member_id
       f.input :github_url
       f.input :photo_url
+      f.has_many :memberships do |member_f|
+        member_f.inputs "Members" do
+          if !member_f.object.nil?
+            member_f.input :_destroy, :as => :boolean, :label => "Destroy?"
+          end
+
+          member_f.input :member
+        end
+      end
     end
 
     f.globalize_inputs :project_translations do |lf|
