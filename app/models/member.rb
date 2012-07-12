@@ -35,6 +35,13 @@ class Member < ActiveRecord::Base
     memberships.find_by_project_id(project_id).present?
   end
 
+  def upcoming_rsvp_response
+    if event = Event.upcoming.first
+      rsvp = Rsvp.where(member_id: uid, meetup_id: event.uid).first
+    end
+    rsvp.present? ? rsvp.response : 'unknown'
+  end
+
   def interests
     [] # coming from somewhere
   end

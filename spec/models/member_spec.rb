@@ -94,4 +94,24 @@ describe Member do
       member.member_of?(other_project).should_not be_true
     end
   end
+
+  describe '#upcoming_rsvp_response' do
+    let(:event) { Factory(:event, :status => 'upcoming', :time => Time.now) }
+    let(:member) { Factory(:member) }
+
+    it 'returns yes if the member has RSVPd YES to the next upcoming meetup' do
+      rsvp = Factory(:rsvp, member_id: member.uid, meetup_id: event.uid, response: 'yes')
+      member.upcoming_rsvp_response.should == 'yes'
+    end
+
+    it 'returns no if the member has RSVPd NO to the next upcoming meetup' do
+      rsvp = Factory(:rsvp, member_id: member.uid, meetup_id: event.uid, response: 'no')
+      member.upcoming_rsvp_response.should == 'no'
+    end
+
+    it 'returns unknown if the member has NOT RSVPd to the next upcoming meetup' do
+      member.upcoming_rsvp_response.should == 'unknown'
+    end
+
+  end
 end

@@ -4,7 +4,29 @@ body.projects.index {
   li.projects {
     @include active
   }
+  ul.attending {
+    padding: 4px 0px;
+    margin-left: 0px;
+    li {
+      /*display: inline;*/
+      img {
+        width: 50px;
+        height: 50px;
+        padding: 1px 0;
+      }
+      .yes {
+        background-color: green;
+      }
+      .no {
+        background-color: red;
+      }
+      .unknown {
+        background-color: yellow;
+      }
+    }
+  }
   .row {
+    width: 47%;
     border: 1px solid #000;
     padding: 10px;
     margin: 0 0 20px 0;

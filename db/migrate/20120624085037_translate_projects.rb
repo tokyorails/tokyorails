@@ -2,8 +2,7 @@ class TranslateProjects < ActiveRecord::Migration
     def self.up
       Project.create_translation_table!({
         :title => :string,
-        :description => :text,
-        :html => :text
+        :description => :text
       }, {
         :migrate_data => true
       })
