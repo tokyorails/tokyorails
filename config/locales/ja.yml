@@ -52,7 +52,7 @@ ja:
   projects:
     index:
       title: プロジェクト
-      description: "Below are the projects we're working on at the meetup hackathons. You can show you're interested in joining by clicking the 'Join Project' button. You can also see here if members are planning to come to the next event."
+      description: "Below are the projects we're working on at the meetup hackathons. If you want to join in the discussion or coding of a project, click the 'Join Project' button. You can also see here if members are planning to come to the next event."
     project:
       join_project: Join Project
       leave_project: Leave Project
