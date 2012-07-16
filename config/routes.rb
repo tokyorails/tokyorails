@@ -15,6 +15,7 @@ Tokyorails::Application.routes.draw do
   end
 
   match '/auth/:provider/callback' => 'sessions#create'
+  match '/auth/:provider/setup' => 'sessions#setup'
   match '/auth/failure' => 'sessions#failure'
   match '/logout' => 'sessions#destroy', :as => :logout
 
