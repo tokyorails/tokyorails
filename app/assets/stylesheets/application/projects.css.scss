@@ -18,9 +18,7 @@
     padding: 0px;
     margin-left: 0px;
     width:190px;
-    li {
-      margin-bottom:10px;
-    }
+    li { margin-bottom:10px; }
     img {
       width:40px;
       float: left;
@@ -33,5 +31,6 @@
   .action {
     text-align: center;
     vertical-align:middle;
+    width: 100px;
   }
 }
