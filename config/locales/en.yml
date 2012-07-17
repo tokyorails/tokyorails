@@ -52,7 +52,7 @@ en:
   projects:
     index:
       title: Collaborate!
-      description: "Below are the projects we're working on at the meetup hackathons. If you want to join in the discussion or coding of a project, click the 'Join Project' button. You can also see here if members are planning to come to the next event."
+      description: "Every month members hack on these projects or ideas. If you want to collaborate on any of them next time, let everyone know by clicking 'Join' below!"
       members: Team
       project: Project
       subtitle: "Projects for next meetup on %{date}"
