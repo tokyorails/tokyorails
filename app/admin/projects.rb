@@ -20,8 +20,23 @@ ActiveAdmin.register Project do
     default_actions
   end
 
-  form do |f|
+  show do
+    attributes_table do
+      row :title
+      row :github_url
+      row :description
+      row :team do
+        ul do
+          project.members.each do |member|
+            li member.name
+          end
+        end
+      end
+      row :created_at
+    end
+  end
 
+  form do |f|
     f.inputs do
       f.input :github_url
       f.input :photo_url
