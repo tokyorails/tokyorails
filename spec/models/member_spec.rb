@@ -63,24 +63,10 @@ describe Member do
     end
   end
 
-  describe '#toggle_membership' do
-    let(:member)  { Factory(:member) }
-    let(:project) { Factory(:project) }
-
-    it "creates a membership to a project for the member if they were not previously joined" do
-      member.memberships.should == []
-      member.toggle_membership(project.id)
-      member.memberships.count.should == 1
-      member.memberships.last.project.should == project
-    end
-
-    it "removes an existing membership to a project for the member" do
-      member.memberships.create!(:project_id => project)
-      member.memberships.last.project.should == project
-      member.toggle_membership(project.id)
-      member.memberships.reload
-      member.memberships.count.should == 0
-      member.memberships.should == []
+  describe '#first_name' do
+    it "returns the first name of the member's full name" do
+      Member.new(name: 'Joe Montana').first_name.should == 'Joe'
+      Member.new(name: 'Steve').first_name.should == 'Steve'
     end
   end
 

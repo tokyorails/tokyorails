@@ -1,31 +1,25 @@
-<div class="row">
-  <% if current_user %>
-    <%= form_for(current_user.memberships.build(project_id: project.id)) do |f| %>
-      <div><%= f.hidden_field :project_id %></div>
-      <% if current_user.member_of?(project) %>
-        <%= f.submit t('.leave_project'), class: "btn btn-large btn-danger pull-right" %>
-      <% else %>
-        <%= f.submit t('.join_project'), class: "btn btn-large btn-success pull-right" %>
+<tr>
+  <td><%= project_counter + 1 %></td>
+  <td>
+    <h3><%= project.title %></h3>
+    <p class="description"><%= project.description %> - <%= link_to project.github_url, project.github_url %></p>
+  </td>
+  <td>
+    <ul>
+      <% project.members.each do |member| %>
+        <li class="clearfix">
+          <%= image_tag(member.photo.thumb('50x50#').url) if member.photo %>
+          <p><%= member.first_name %></p>
+          <span class='label <%= member.upcoming_rsvp_response %>'><%= t(".rsvp_#{member.upcoming_rsvp_response}") %></span>
+        </li>
       <% end %>
+    </ul>
+  </td>
+  <td class="action">
+    <% if logged_in? && current_user.member_of?(project) %>
+      <p><em><%= t('.joined')%> <%= link_to t('.leave'), current_user.memberships.where(project_id: project).first, method: :delete, class: 'danger', data: { confirm: 'Leave this project?' } %></em></p>
+    <% else %>
+      <%= link_to icon(:user, :white) + t('.join'), memberships_path(membership: { project_id: project }), method: :post, class: "btn btn-large btn-success" %>
     <% end %>
-  <% else %>
-    <%= link_to t('.join_project'), '/auth/meetup?redirect_back=yes', class: "btn btn-large btn-success pull-right" %>
-  <% end %>
-  <h2><%= project.title %></h3>
-  <p><%= project.description %></p>
-  <p><%= link_to project.github_url, project.github_url %></p>
-
-  <ul class="attending">
-    <% project.members.each do |member| %>
-      <li class="member">
-        <%= image_tag(member.photo.thumb('50x50#').url) if member.photo %>
-        <span class="<%= member.upcoming_rsvp_response %>">Is <%= member.name %> comming to the next meetup? : <%= member.upcoming_rsvp_response %></span>
-      </li>
-    <% end %>
-  </ul>
-  <ul class="media-grid">
-    <li>
-    <%#= image_tag project.photo_url, :width => 80 %>
-    </li>
-  </ul>
-</div>
+  </td>
+</tr>

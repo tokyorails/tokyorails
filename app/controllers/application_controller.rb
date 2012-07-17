@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_filter :set_locale
-  helper_method :current_user
+  helper_method :current_user, :logged_in?
 
   private
 
@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
       respond_to do |format|
         format.html do
           session[:return_to] = request.path
-          redirect_to root_path, :alert => "You need to be signed in to do that! Sign in above."
+          redirect_to '/auth/meetup?redirect_back=yes'
         end
         format.json do
           head :unauthorized
