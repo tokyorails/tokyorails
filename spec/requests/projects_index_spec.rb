@@ -6,7 +6,7 @@ feature "Projects" do
     project = Factory(:project)
 
     visit projects_path
-    page.should have_content('Projects')
+    page.should have_content('Collaborate!')
     page.should have_content('Cool Project')
   end
 
@@ -19,7 +19,7 @@ feature "Projects" do
     project.members.should == []
     visit projects_path
 
-    click_link 'Join Project'
+    click_link 'Join'
     project.members.should == [member]
 
   end
