@@ -3,7 +3,7 @@
   <p><%= t '.description' %></p>
 </div>
 
-<h2><%= t('.subtitle', date: l(Event.upcoming.recent.last.time, format: :long)) if Event.upcoming.present? %></h2>
+<h2><%= Event.upcoming.present? ? t('.subtitle', date: l(Event.upcoming.recent.last.time, format: :long)) : t('.subtitle_no_schedule') %></h2>
 <table id='projects' class="table table-striped table-bordered">
   <thead>
     <tr>

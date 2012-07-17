@@ -16,7 +16,7 @@ en:
         brief: See what meetups we have scheduled and review all the previous events here. Register early for the next event if you plan to come.
       projects:
         title: Collaborate!
-        brief: Every month members hack on these projects or ideas. If you want to collaborate on any of them next time, you can join here!
+        brief: Every month members hack on these projects or tasks. If you want to collaborate on any of them next time, you can join here!
       more:
         html: More &raquo;
     next_event:
@@ -52,10 +52,11 @@ en:
   projects:
     index:
       title: Collaborate!
-      description: "Every month members hack on these projects or ideas. If you want to collaborate on any of them next time, let everyone know by clicking 'Join' below!"
+      description: "Every month members hack on these projects or tasks. If you want to collaborate on any of them next time, let everyone know by clicking 'Join' below!"
       members: Team
       project: Project
       subtitle: "Projects for next meetup on %{date}"
+      subtitle_no_schedule: "The next meetup is not yet scheduled. When it is, you'll be able to see what team members are planning to attend below."
     project:
       join: Join
       joined: 'You have joined this project.'
