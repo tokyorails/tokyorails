@@ -15,8 +15,8 @@ ja:
         title: イベント
         brief: これからのミートアップや今までのすべてのイベントはこちら。参加していただける方は早めに申込んでください。
       projects:
-        title: プロジェクト
-        brief: 現在メンバーが開発しているオープンソースのプロジェクトや新しいプロジェクトの提案はこちら。
+        title: コラボレート！
+        brief: "毎月TOKYO Railsのメンバーが集まってコラボレーションをします。以下のリストで興味があるプロジェクトがあれば、Joinをクリックして、次のイベントでコラボしましょう！"
       more:
         html: さらに &raquo;
     next_event:
@@ -79,12 +79,10 @@ ja:
       members:
         title: メンバー
         profile: 私のプロフィール
-      photos:
-        title: 写真
       events:
         title: イベント
       projects:
-        title: プロジェクト
+        title: コラボレート！
       locales:
         en: English
         ja: 日本語

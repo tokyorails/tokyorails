@@ -16,7 +16,7 @@ en:
         brief: See what meetups we have scheduled and review all the previous events here. Register early for the next event if you plan to come.
       projects:
         title: Collaborate!
-        brief: Current open source projects members are working on, and ideas for new projects you can join are listed here.
+        brief: Every month members hack on these projects or ideas. If you want to collaborate on any of them next time, you can join here!
       more:
         html: More &raquo;
     next_event:
