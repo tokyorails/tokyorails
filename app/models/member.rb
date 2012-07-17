@@ -27,12 +27,12 @@ class Member < ActiveRecord::Base
     self.image || self.create_image(:file_url => photo_url) unless photo_url.blank?
   end
 
-  def toggle_membership(project_id)
-    member_of?(project_id) ? memberships.find_by_project_id(project_id).destroy : memberships.create!(:project_id => project_id)
+  def member_of?(project)
+    memberships.exists?(project_id: project)
   end
 
-  def member_of?(project_id)
-    memberships.find_by_project_id(project_id).present?
+  def first_name
+    name.split(' ').first
   end
 
   def upcoming_rsvp_response
