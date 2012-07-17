@@ -15,7 +15,7 @@ en:
         title: Events
         brief: See what meetups we have scheduled and review all the previous events here. Register early for the next event if you plan to come.
       projects:
-        title: Projects
+        title: Collaborate!
         brief: Current open source projects members are working on, and ideas for new projects you can join are listed here.
       more:
         html: More &raquo;
@@ -51,8 +51,11 @@ en:
 
   projects:
     index:
-      title: Projects
+      title: Collaborate!
       description: "Below are the projects we're working on at the meetup hackathons. If you want to join in the discussion or coding of a project, click the 'Join Project' button. You can also see here if members are planning to come to the next event."
+      members: Team
+      project: Project
+      subtitle: "Projects for next meetup on %{date}"
     project:
       join: Join
       joined: 'You have joined this project.'
@@ -81,7 +84,7 @@ en:
       events:
         title: Events
       projects:
-        title: Projects
+        title: Collaborate!
       locales:
         en: English
         ja: 日本語

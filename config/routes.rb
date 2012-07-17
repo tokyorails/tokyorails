@@ -9,7 +9,7 @@ Tokyorails::Application.routes.draw do
     resources :members
     resources :events
     resources :photos
-    resources :projects
+    resources :projects, :path => :collaborate
     resources :spikes, only: [:index, :new, :create]
     resources :memberships, only: [:create, :destroy, :new]
   end
