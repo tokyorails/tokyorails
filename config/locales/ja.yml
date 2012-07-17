@@ -51,11 +51,18 @@ ja:
 
   projects:
     index:
-      title: プロジェクト
-      description: "Every month members hack on these projects or ideas. If you want to collaborate on any of them next time, let everyone know by clicking 'Join' below!"
+      title: コラボレート！
+      description: "毎月TOKYO Railsのメンバーが集まってコラボレーションをします。以下のリストで興味があるプロジェクトがあれば、Joinをクリックして、次のイベントでコラボしましょう！"
+      members: チーム
+      project: プロジェクト
+      subtitle: "次回のTOKYO Railsプロジェクト一覧（%{date}）"
     project:
-      join_project: Join Project
-      leave_project: Leave Project
+      join: Join
+      joined: 'このプロジェクトにJoinしました。'
+      leave: 退会する
+      rsvp_yes: '次回出席'
+      rsvp_no: '欠席'
+      rsvp_unknown: '考え中'
 
   spikes:
     index:
