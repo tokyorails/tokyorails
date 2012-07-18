@@ -10,7 +10,9 @@
         <li class="clearfix">
           <%= image_tag(member.photo.thumb('50x50#').url) if member.photo %>
           <p><%= member.first_name %></p>
-          <span class='label <%= member.upcoming_rsvp_response %>'><%= t(".rsvp_#{member.upcoming_rsvp_response}") %></span>
+          <% unless Event.upcoming.blank? %>
+            <span class='label <%= member.upcoming_rsvp_response %>'><%= t(".rsvp_#{member.upcoming_rsvp_response}") %></span>
+          <% end %>
         </li>
       <% end %>
     </ul>
