@@ -55,7 +55,7 @@ ja:
       description: "毎月TOKYO Railsのメンバーが集まってコラボレーションをします。以下のリストで興味があるプロジェクトがあれば、Joinをクリックして、次のイベントでコラボしましょう！"
       members: チーム
       project: プロジェクト
-      subtitle: "次回のTOKYO Railsプロジェクト一覧（%{date}）"
+      subtitle_html: "次回のTOKYO Railsプロジェクト一覧 <a href='%{url}'>%{date}</a>"
       subtitle_no_schedule: 次のミートはまだ予定されていません。それがあるときは、チームメンバーは下記の参加を計画しているものを見ることができるでしょう。
     project:
       join: Join

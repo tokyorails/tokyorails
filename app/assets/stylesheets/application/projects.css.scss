@@ -1,36 +1,44 @@
 @import 'mixins';
 
-#projects {
-  font-size:1.2em;
-  margin-top:8px;
-  h3 {
-    margin-bottom:6px;
-    line-height:1em;
+
+body.projects.index {
+  h2 a {
+    background: image-url('meetup.png') no-repeat 100% 50%;
+    padding-right: 34px;
+    font-weight:normal;
   }
-  .description {
-    font-size:0.9em;
-    color:#777;
-  }
-  td, th { padding:0.9em; }
-  p { margin: 0px; }
-  ul {
-    list-style: none;
-    padding: 0px;
-    margin-left: 0px;
-    width:190px;
-    li { margin-bottom:10px; }
-    img {
-      width:40px;
-      float: left;
-      margin-right:8px;
+  table {
+    font-size:1.2em;
+    margin-top:8px;
+    h3 {
+      margin-bottom:6px;
+      line-height:1em;
     }
-    .no { background-color: #CA2F2F; }
-    .yes { background-color: #168116; }
-    .unknown { background-color: #C0C0BF; }
-  }
-  .action {
-    text-align: center;
-    vertical-align:middle;
-    width: 100px;
+    .description {
+      font-size:0.9em;
+      color:#777;
+    }
+    td, th { padding:0.9em; }
+    p { margin: 0px; }
+    ul {
+      list-style: none;
+      padding: 0px;
+      margin-left: 0px;
+      width:190px;
+      li { margin-bottom:10px; }
+      img {
+        width:40px;
+        float: left;
+        margin-right:8px;
+      }
+      .no { background-color: #CA2F2F; }
+      .yes { background-color: #168116; }
+      .unknown { background-color: #C0C0BF; }
+    }
+    .action {
+      text-align: center;
+      vertical-align:middle;
+      width: 100px;
+    }
   }
 }
