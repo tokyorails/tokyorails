@@ -63,7 +63,7 @@ ja:
       leave: 退会する
       rsvp_yes: '次回出席'
       rsvp_no: '欠席'
-      rsvp_unknown: '考え中'
+      rsvp_unknown: '返事待ち'
 
   spikes:
     index:

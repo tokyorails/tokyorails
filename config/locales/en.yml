@@ -55,7 +55,7 @@ en:
       description: "Every month members hack on these projects or tasks. If you want to collaborate on any of them next time, let everyone know by clicking 'Join' below!"
       members: Team
       project: Project
-      subtitle_html: "Projects for next meetup on: <a href='%{url}'>%{date}</a>"
+      subtitle: "Projects for next meetup on %{date}"
       subtitle_no_schedule: "The next meetup is not yet scheduled. When it is, you'll be able to see what team members are planning to attend below."
     project:
       join: Join
@@ -63,7 +63,7 @@ en:
       leave: 'Leave?'
       rsvp_yes: 'Attending next meetup'
       rsvp_no: 'Not Attending'
-      rsvp_unknown: 'Undecided'
+      rsvp_unknown: 'Awaiting RSVP'
 
   spikes:
     index:
