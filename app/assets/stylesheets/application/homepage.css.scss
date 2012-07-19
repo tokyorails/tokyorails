@@ -19,7 +19,7 @@ body.homepage.index {
   }
   .well {
     border: 1px dashed #555;
-    margin: 20px 100px;
+    margin: 20px 80px;
     padding: 0 20px 20px 20px;
     .next-event {
       background-color: #5BB75B;
@@ -55,6 +55,8 @@ body.homepage.index {
     .title {
       font-size: 20px;
       font-weight: bold;
+      background: image-url('meetup.png') no-repeat 100% 50%;
+      padding-right: 24px;
     }
     .subtitle {
       font-size: 14px;
