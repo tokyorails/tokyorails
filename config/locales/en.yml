@@ -61,7 +61,7 @@ en:
       join: Join
       joined: 'You have joined this project.'
       leave: 'Leave?'
-      rsvp_yes: 'Attending next meetup'
+      rsvp_yes: 'Attending'
       rsvp_no: 'Not Attending'
       rsvp_unknown: 'Awaiting RSVP'
 
