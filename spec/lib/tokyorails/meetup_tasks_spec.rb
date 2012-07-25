@@ -138,8 +138,19 @@ describe Tokyorails::MeetupTasks do
 
     it 'should create rsvps for the supplied event uid' do
       Rsvp.count.should == 32
+      Rsvp.attending.count.should == 27
+      Rsvp.not_attending.count.should == 4
+      Rsvp.waiting.count.should == 1
     end
 
+    it 'should update existing RSVPs when the status changes' do
+      stub_request(:get, /.*/).to_return(:body => get_response('rsvps_59784102_changes.json'))
+      Tokyorails::MeetupTasks.import_rsvps_for_event(59784102)
+      Rsvp.count.should == 32
+      Rsvp.attending.count.should == 27
+      Rsvp.not_attending.count.should == 5
+      Rsvp.waiting.count.should == 0
+    end
   end
 
   context 'API paging and offsets' do
