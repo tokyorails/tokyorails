@@ -21,7 +21,7 @@
     <% if logged_in? && current_user.member_of?(project) %>
       <p><em><%= t('.joined')%> <%= link_to t('.leave'), current_user.memberships.where(project_id: project).first, method: :delete, class: 'danger', data: { confirm: 'Leave this project?' } %></em></p>
     <% elsif logged_in? && current_user.memberships.any? %>
-      <%= link_to icon(:user, :white) + t('.join'), '#', class: "btn btn-large btn-success disabled" %>
+      <p></p>
     <% else %>
       <%= link_to icon(:user, :white) + t('.join'), memberships_path(membership: { project_id: project }), method: :post, class: "btn btn-large btn-success" %>
     <% end %>
