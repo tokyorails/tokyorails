@@ -10,9 +10,10 @@ Tokyorails::Application.routes.draw do
     resources :events
     resources :photos
     resources :projects, :path => :collaborate
-    resources :spikes, only: [:index, :new, :create]
     resources :memberships, only: [:create, :destroy, :new]
   end
+
+  match "/spikes" => redirect("/collaborate")
 
   match '/auth/:provider/callback' => 'sessions#create'
   match '/auth/:provider/setup' => 'sessions#setup'
