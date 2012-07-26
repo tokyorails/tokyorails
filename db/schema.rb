@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120709144201) do
+ActiveRecord::Schema.define(:version => 20120726073744) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -139,12 +139,5 @@ ActiveRecord::Schema.define(:version => 20120709144201) do
 
   add_index "rsvps", ["meetup_id", "response"], :name => "index_rsvps_on_meetup_id_and_response"
   add_index "rsvps", ["uid"], :name => "index_rsvps_on_uid"
-
-  create_table "spikes", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
 
 end
