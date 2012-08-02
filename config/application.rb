@@ -45,7 +45,7 @@ module Tokyorails
     # Enable the asset pipeline
     config.assets.enabled = true
 
-    config.assets.precompile += %w[active_admin.css active_admin.js]
+    config.assets.precompile += %w[active_admin.css active_admin.js print.css]
 
     config.assets.initialize_on_precompile = false
 
