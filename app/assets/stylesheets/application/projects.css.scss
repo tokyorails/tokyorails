@@ -31,9 +31,11 @@ body.projects.index {
         float: left;
         margin-right:8px;
       }
-      .no { background-color: #CA2F2F; }
-      .yes { background-color: #168116; }
-      .unknown { background-color: #C0C0BF; }
+      span {
+        &.no { background-color: #CA2F2F; }
+        &.yes { background-color: #168116; }
+        &.unknown { background-color: #C0C0BF; }
+      }
     }
     .action {
       text-align: center;

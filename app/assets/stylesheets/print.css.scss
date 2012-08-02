@@ -1,0 +1,19 @@
+.navbar, td.action, .fork_me, .login, .hero-unit, h2, thead, li.unknown, li.no, .label { display: none }
+table#projects {
+  tr { page-break-before:always; }
+  td { padding:20px; }
+  td, th { vertical-align:top; }
+}
+h3 {
+  margin:0 0 0 10px;
+}
+p {
+  margin:0px;
+}
+li {
+  list-style: none;
+}
+
+body {
+  font-size: 70px;
+}

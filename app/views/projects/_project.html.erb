@@ -7,7 +7,7 @@
   <td>
     <ul>
       <% project.members.each do |member| %>
-        <li class="clearfix">
+        <li class="clearfix <%= member.upcoming_rsvp_response %>">
           <%= image_tag(member.photo.thumb('50x50#').url) if member.photo %>
           <p><%= member.first_name %></p>
           <% unless Event.upcoming.blank? %>
