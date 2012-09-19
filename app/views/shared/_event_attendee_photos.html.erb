@@ -3,7 +3,7 @@
 <ul class="attending">
   <% Rsvp.where(:meetup_id => event.uid).attending.each do |rsvp| %>
     <li class="member">
-      <%= link_to(image_tag(rsvp.member.photo.thumb(photo_options).url), member_path(rsvp.member), :title => rsvp.member.name) if rsvp.member.present? && rsvp.member.photo %>
+      <%= link_to image_tag(rsvp.member.photo.thumb(photo_options).url), member_path(rsvp.member), :title => rsvp.member.name if rsvp.member.present? && rsvp.member.photo %>
     </li>
   <% end %>
 </ul>
