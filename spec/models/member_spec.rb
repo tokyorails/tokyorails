@@ -71,12 +71,17 @@ describe Member do
   end
 
   describe '#member_of?' do
-    let(:member)     { Factory(:member) }
-    let(:project)    { Factory(:project) }
-    let(:other_project)    { Factory(:project) }
-    let!(:membership) { member.memberships.create!(:project_id => project) }
-    it 'returns if a member has a membership to a specific project' do
+    let(:member)        { Factory(:member) }
+    let(:project)       { Factory(:project) }
+    let(:other_project) { Factory(:project) }
+    let(:old_project)   { Factory(:project) }
+    let!(:membership)   { member.memberships.create!(:project_id => project.id) }
+    let!(:membership_2) { member.memberships.create!(:project_id => old_project.id) }
+
+    it 'returns if a member has a current membership to a specific project' do
+      membership_2.retire
       member.member_of?(project).should be_true
+      member.member_of?(old_project).should_not be_true
       member.member_of?(other_project).should_not be_true
     end
   end

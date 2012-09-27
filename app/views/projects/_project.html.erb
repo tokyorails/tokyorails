@@ -6,6 +6,16 @@
   </td>
   <td>
     <ul>
+      <% project.alumni.each do |alumnus| %>
+        <li class="clearfix <%= alumnus.upcoming_rsvp_response %>">
+          <%= image_tag(alumnus.photo.thumb('50x50#').url) if alumnus.photo %>
+          <p><%= alumnus.first_name %></p>
+        </li>
+      <% end %>
+    </ul>
+  </td>
+  <td>
+    <ul>
       <% project.members.each do |member| %>
         <li class="clearfix <%= member.upcoming_rsvp_response %>">
           <%= image_tag(member.photo.thumb('50x50#').url) if member.photo %>
@@ -20,7 +30,7 @@
   <td class="action">
     <% if logged_in? && current_user.member_of?(project) %>
       <p><em><%= t('.joined')%> <%= link_to t('.leave'), current_user.memberships.where(project_id: project).first, method: :delete, class: 'danger', data: { confirm: 'Leave this project?' } %></em></p>
-    <% elsif logged_in? && current_user.memberships.any? %>
+    <% elsif logged_in? && current_user.memberships.active.any? %>
       <p></p>
     <% else %>
       <%= link_to icon(:user, :white) + t('.join'), memberships_path(membership: { project_id: project }), method: :post, class: "btn btn-large btn-success" %>

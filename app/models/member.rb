@@ -28,7 +28,7 @@ class Member < ActiveRecord::Base
   end
 
   def member_of?(project)
-    memberships.exists?(project_id: project)
+    memberships.exists?(project_id: project, deleted_at: nil)
   end
 
   def first_name
