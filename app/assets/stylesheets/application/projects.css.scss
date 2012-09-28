@@ -37,6 +37,18 @@ body.projects.index {
         &.unknown { background-color: #C0C0BF; }
       }
     }
+    h4.subtitle {
+      border-bottom: 1px solid #ccc;
+    }
+    ul.alumni {
+      list-style: none;
+      img {
+        margin-right: 0;
+        opacity:0.6;
+        filter:alpha(opacity=60);
+        width: 30px;
+      }
+    }
     .action {
       text-align: center;
       vertical-align:middle;

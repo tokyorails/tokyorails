@@ -6,16 +6,6 @@
   </td>
   <td>
     <ul>
-      <% project.alumni.each do |alumnus| %>
-        <li class="clearfix <%= alumnus.upcoming_rsvp_response %>">
-          <%= image_tag(alumnus.photo.thumb('50x50#').url) if alumnus.photo %>
-          <p><%= alumnus.first_name %></p>
-        </li>
-      <% end %>
-    </ul>
-  </td>
-  <td>
-    <ul>
       <% project.members.each do |member| %>
         <li class="clearfix <%= member.upcoming_rsvp_response %>">
           <%= image_tag(member.photo.thumb('50x50#').url) if member.photo %>
@@ -26,6 +16,16 @@
         </li>
       <% end %>
     </ul>
+    <% if project.alumni.any? %>
+    <h4 class="subtitle">Alumni</h4>
+    <ul class="alumni">
+      <% project.alumni.each do |alumnus| %>
+        <li>
+          <%= image_tag(alumnus.photo.thumb('30x30#').url, title: alumnus.first_name) if alumnus.photo %>
+        </li>
+      <% end %>
+    </ul>
+    <% end %>
   </td>
   <td class="action">
     <% if logged_in? && current_user.member_of?(project) %>
