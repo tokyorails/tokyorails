@@ -8,7 +8,7 @@ class Member < ActiveRecord::Base
   validates_uniqueness_of :github_username, :allow_blank => true
 
   has_one :image, :as => :imageable, :dependent => :destroy
-  has_many :memberships
+  has_many :memberships, :dependent => :destroy
   has_many :projects, :through => :memberships
 
   scope :authenticated, where("access_token IS NOT NULL AND access_token != ''")
