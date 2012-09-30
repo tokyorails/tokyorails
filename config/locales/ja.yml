@@ -64,7 +64,9 @@ ja:
       rsvp_yes: '次回出席'
       rsvp_no: '欠席'
       rsvp_unknown: '返事待ち'
-
+      alumni: 同窓生
+    collaborators:
+      title: 'これらの%{count}人のメンバーは、現在のプロジェクトに協力しています。あなたは？'
   spikes:
     index:
       title: Railsをヘルプします！

@@ -1,6 +1,9 @@
 <div class="hero-unit">
   <h1><%= t '.title' %></h1>
   <p><%= t '.description' %></p>
+
+  <%= render 'collaborators' %>
+
 </div>
 
 <h2><%= @event ? t('.subtitle_html', date: l(@event.time, format: :long), url: @event.event_url) : t('.subtitle_no_schedule') %></h2>

@@ -2,6 +2,9 @@
 
 
 body.projects.index {
+  .hero-unit {
+    padding: 60px 60px 20px 60px;
+  }
   h2 a {
     background: image-url('meetup.png') no-repeat 100% 50%;
     padding-right: 34px;

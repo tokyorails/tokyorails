@@ -64,6 +64,9 @@ en:
       rsvp_yes: 'Attending'
       rsvp_no: 'Not Attending'
       rsvp_unknown: 'Awaiting RSVP'
+      alumni: Alumni
+    collaborators:
+      title: "These %{count} members are currently collaborating on projects. Are you?"
 
   spikes:
     index:

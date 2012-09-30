@@ -1,0 +1,18 @@
+#collaborators {
+  h2 {
+    color: #C70000;
+  }
+  background-color: white;
+  border: solid 1px #ccc;
+  padding: 10px;
+  ul {
+    list-style: none;
+    margin-left: 0;
+    li {
+      display: inline;
+      img {
+        width: 50px;
+      }
+    }
+  }
+}
