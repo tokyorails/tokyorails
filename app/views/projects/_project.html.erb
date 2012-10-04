@@ -5,9 +5,10 @@
     <p class="description"><%= project.description %> - <%= link_to project.github_url, project.github_url %></p>
   </td>
   <td>
-    <ul>
+    <ul class="members">
       <% project.members.each do |member| %>
         <li class="clearfix <%= member.upcoming_rsvp_response %>">
+          <%= image_tag "medal.png", :alt => "Project Leader", :class => "leader" if project.leader?(member) %>
           <%= image_tag(member.photo.thumb('50x50#').url) if member.photo %>
           <p><%= member.first_name %></p>
           <% unless Event.upcoming.blank? %>

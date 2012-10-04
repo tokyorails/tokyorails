@@ -41,5 +41,20 @@ describe Project do
       project.alumni.should == [member_3]
     end
   end
+
+  describe ".leader?" do
+    let(:project) { Factory(:project) }
+    let(:member) { Factory(:member) }
+
+    it "returns true if the passed in member is a lead on the project" do
+      Membership.create(project_id: project, member_id: member, leader: true)
+      project.leader?(member).should be_true
+    end
+
+    it "returns false if the passed in member is not a lead on the project" do
+      Membership.create(project_id: project, member_id: member, leader: false)
+      project.leader?(member).should be_false
+    end
+  end
 end
 

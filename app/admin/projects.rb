@@ -47,6 +47,7 @@ ActiveAdmin.register Project do
           end
 
           member_f.input :member
+          member_f.input :leader, :as => :boolean, :label => "Project Leader?"
         end
       end
     end

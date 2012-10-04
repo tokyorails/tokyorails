@@ -7,4 +7,8 @@ class Project < ActiveRecord::Base
   accepts_nested_attributes_for :project_translations, :allow_destroy => true
 
   translates :title, :description, :fallbacks_for_empty_translations => true
+
+  def leader?(member)
+    memberships.where(member_id: member).first.leader?
+  end
 end
