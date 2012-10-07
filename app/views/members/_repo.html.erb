@@ -1,4 +1,4 @@
 <h3><%= repo["name"] %></h3>
 <%= repo["description"] %>
-<p><%= image_tag "github.png", class: 'github' %> <%= link_to repo["html_url"] %></p>
+<p><%= image_tag "github.png", class: 'github' %> <%= link_to repo["html_url"], repo["html_url"] %></p>
 <em class="muted"><%= t('.updated', when: distance_of_time_in_words_to_now(repo["updated_at"])) %></em>
