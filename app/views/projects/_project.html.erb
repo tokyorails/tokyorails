@@ -8,9 +8,8 @@
     <ul class="members">
       <% project.members.each do |member| %>
         <li class="clearfix <%= member.upcoming_rsvp_response %>">
-          <%= image_tag "medal.png", :alt => "Project Leader", :class => "leader" if project.leader?(member) %>
           <%= image_tag(member.photo.thumb('50x50#').url) if member.photo %>
-          <p><%= member.first_name %></p>
+          <p><%= member.first_name %> <%= content_tag :em, " - founder" if project.leader?(member) %></p>
           <% unless Event.upcoming.blank? %>
             <span class='label <%= member.upcoming_rsvp_response %>'><%= t(".rsvp_#{member.upcoming_rsvp_response}") %></span>
           <% end %>
