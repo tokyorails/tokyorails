@@ -18,4 +18,9 @@ body.members.show {
     margin-bottom: 1px;
     a { font-size: 14px;}
   }
+  span {
+    &.no { background-color: #CA2F2F; }
+    &.yes { background-color: #168116; }
+    &.unknown { background-color: #C0C0BF; }
+  }
 }

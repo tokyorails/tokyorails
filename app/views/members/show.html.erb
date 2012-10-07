@@ -6,6 +6,12 @@
     </div>
     <div class="span8">
       <h1><%= @member.name %></h1>
+      <div class="stats">
+        <div class="attended"><%= t('.attended', count: Rsvp.where(member_id: @member.uid).count) %></div>
+        <% unless Event.upcoming.blank? %>
+          <%= t('.next_event', date: l(Event.upcoming.first.time, format: :short)) %>: <span class='label <%= @member.upcoming_rsvp_response %>'><%= t(".rsvp_#{@member.upcoming_rsvp_response}") %></span>
+        <% end %>
+      </div>
       <!-- twitter_username here? -->
     </div>
   </div>
@@ -16,7 +22,7 @@
 
   <% if @project %>
     <div id="collaborators">
-      <h2><%= @member.name %> is collaborating on the "<%= @project.title %>" project at TOKYO Rails</h2>
+      <h2><%= t('.collaborating', name: @member.name, project: @project.title) %></h2>
       <ul>
         <% @project.members.each do |member| %>
           <li>
@@ -24,7 +30,7 @@
           </li>
         <% end %>
       </ul>
-      <p><%= link_to "View All", projects_path, class: 'btn btn-small btn-success' %> of the 'Collaborate!' projects, get involved, level up, join in!</p>
+      <p><%= link_to t('.view_all'), projects_path, class: 'btn btn-small btn-success' %></p>
     </div>
   <% end %>
 

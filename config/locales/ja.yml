@@ -46,9 +46,16 @@ ja:
       roster: 現在メンバー%{number}人
       api_error: 申し訳ありませんが、meetup.com メンバーAPI は現在利用できません。少し後で確認してください。
     show:
+      attended: "%{count}のイベントに出席"
+      next_event: "次のイベント%{date}"
+      collaborating: "%{name}は、TOKYO Railsで「%{project}」プロジェクトに協力しています"
+      view_all: "すべてを表示"
       interests: 他の趣味
       github_projects: GitHub 上のプロジェクト
       github_forked_repos: フォークスGithubに
+      rsvp_yes: '次回出席'
+      rsvp_no: '欠席'
+      rsvp_unknown: '返事待ち'
     repo:
       updated: "%{when}前に更新."
 

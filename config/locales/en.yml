@@ -46,9 +46,18 @@ en:
       roster: Group Members (%{number})
       api_error: Sorry, the meetup.com Members API is not available right now. Please check back a bit later.
     show:
+      attended:
+        one: "Attended 1 Event"
+        other: "Attended %{count} Events"
+      next_event: "Next Event on %{date}"
+      collaborating: "%{name} is collaborating on the '%{project}' project at TOKYO Rails!"
+      view_all: "View All"
       interests: Other Interests
       github_projects: Projects on GitHub
       github_forked_repos: Forked Repos on Github
+      rsvp_yes: 'Attending'
+      rsvp_no: 'Not Attending'
+      rsvp_unknown: 'Awaiting RSVP'
     repo:
       updated: "Updated %{when} ago."
 
