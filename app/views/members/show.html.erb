@@ -14,11 +14,17 @@
     <%= @member.bio %>
   </div>
 
-  <% if !projects(@member).empty? %>
+  <% if @repos.any? %>
     <h2><%= t('.github_projects') %></h2>
-    <% projects(@member).each do |item| %>
-      <h3><%= link_to item["name"], item["html_url"] %></h3>
-      <%= item["description"] %>
+    <% @repos.each do |repo| %>
+      <%= render 'repo', repo: repo %>
+    <% end %>
+  <% end %>
+
+  <% if @forks.any? %>
+    <h2><%= t('.github_forked_repos') %></h2>
+    <% @forks.each do |repo| %>
+      <%= render 'repo', repo: repo %>
     <% end %>
   <% end %>
 

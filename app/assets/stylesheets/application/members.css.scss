@@ -7,11 +7,15 @@ body.members.index {
 }
 
 body.members.show {
-  .bio {
-    margin: 15px 0px
+  .bio { margin: 15px 0px }
+  h3 { margin-top : 10px }
+  h2 { margin-top: 20px; }
+  img.github {
+    height: 20px;
+    width: 20px;
   }
-
-  h3 {
-    margin-top : 10px
+  p {
+    margin-bottom: 1px;
+    a { font-size: 14px;}
   }
 }

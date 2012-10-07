@@ -48,6 +48,9 @@ en:
     show:
       interests: Other Interests
       github_projects: Projects on GitHub
+      github_forked_repos: Forked Repos on Github
+    repo:
+      updated: "Updated %{when} ago."
 
   projects:
     index:

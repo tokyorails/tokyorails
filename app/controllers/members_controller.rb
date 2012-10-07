@@ -12,5 +12,8 @@ class MembersController < ApplicationController
 
   def show
     @member = Member.find(params[:id])
+    github_repos = view_context.projects(@member)
+    @repos = github_repos.select{|h| h["fork"] == false}
+    @forks = github_repos.select{|h| h["fork"] == true}
   end
 end
