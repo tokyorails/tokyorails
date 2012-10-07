@@ -14,18 +14,36 @@
     <%= @member.bio %>
   </div>
 
+  <% if @project %>
+    <div id="collaborators">
+      <h2><%= @member.name %> is collaborating on the "<%= @project.title %>" project at TOKYO Rails</h2>
+      <ul>
+        <% @project.members.each do |member| %>
+          <li>
+            <%= link_to image_tag(member.photo.thumb('50x50#').url), member_path(member) if member.photo %>
+          </li>
+        <% end %>
+      </ul>
+      <p><%= link_to "View All", projects_path, class: 'btn btn-small btn-success' %> of the 'Collaborate!' projects, get involved, level up, join in!</p>
+    </div>
+  <% end %>
+
   <% if @repos.any? %>
+    <div class="well">
     <h2><%= t('.github_projects') %></h2>
     <% @repos.each do |repo| %>
       <%= render 'repo', repo: repo %>
     <% end %>
+    </div>
   <% end %>
 
   <% if @forks.any? %>
+    <div class="well">
     <h2><%= t('.github_forked_repos') %></h2>
     <% @forks.each do |repo| %>
       <%= render 'repo', repo: repo %>
     <% end %>
+    </div>
   <% end %>
 
   </div>

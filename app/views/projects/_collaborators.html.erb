@@ -2,9 +2,9 @@
 <div id="collaborators">
   <h2><%= t('.title', count: Membership.where(deleted_at: nil).count) %></h2>
   <ul>
-    <% Membership.where(deleted_at: nil).each do |membership| %>
+    <% Membership.active.each do |membership| %>
       <li>
-        <%= image_tag(membership.member.photo.thumb('50x50#').url) if membership.member.photo %>
+        <%= link_to image_tag(membership.member.photo.thumb('50x50#').url), member_path(membership.member) if membership.member.photo %>
       </li>
     <% end %>
   </ul>

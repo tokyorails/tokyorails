@@ -15,5 +15,6 @@ class MembersController < ApplicationController
     github_repos = view_context.projects(@member)
     @repos = github_repos.select{|h| h["fork"] == false}
     @forks = github_repos.select{|h| h["fork"] == true}
+    @project = Membership.active.where(member_id: @member).first.try(:project)
   end
 end
