@@ -78,7 +78,7 @@ en:
       rsvp_unknown: 'Awaiting RSVP'
       alumni: Alumni
     collaborators:
-      title: "These %{members_count} members are currently collaborating on %{projects_count} projects. Are you?"
+      title: "These %{members_count} members are collaborating on %{projects_count} projects. Are you?"
 
   spikes:
     index:
