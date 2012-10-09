@@ -1,6 +1,6 @@
 <% if Membership.where(deleted_at: nil).count > 0 %>
 <div id="collaborators">
-  <h2><%= t('.title', count: Membership.where(deleted_at: nil).count) %></h2>
+  <h2><%= t('.title', members_count: Membership.where(deleted_at: nil).count, projects_count: Membership.where(deleted_at: nil).select(:project_id).count(distinct: true)) %></h2>
   <ul>
     <% Membership.active.each do |membership| %>
       <li>

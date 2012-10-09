@@ -76,7 +76,7 @@ ja:
       rsvp_unknown: '返事待ち'
       alumni: 同窓生
     collaborators:
-      title: 'これらの%{count}人のメンバーは、現在のプロジェクトに協力しています。あなたは？'
+      title: 'これらの%{members_count}人のメンバーは、現在の%{projects_count}プロジェクトに協力しています。あなたは？'
   spikes:
     index:
       title: Railsをヘルプします！
