@@ -5,7 +5,7 @@ require 'rails/all'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
-  Bundler.require *Rails.groups(:assets => %w(development test))
+  Bundler.require(*Rails.groups(:assets => %w(development test)))
   # If you want your assets lazily compiled in production, use this line
   # Bundler.require(:default, :assets, Rails.env)
 end
@@ -65,6 +65,6 @@ module Tokyorails
     }
 
     # Application specific
-    config.meetup_com_api_key = '4a23512f7d763695f69234442173162'
+    config.meetup_com_api_key = ENV['MEETUP_API_KEY']
   end
 end
