@@ -75,6 +75,7 @@ ja:
       rsvp_no: '欠席'
       rsvp_unknown: '返事待ち'
       alumni: 同窓生
+      leader_label: " - リーダー"
     collaborators:
       title: 'これらの%{members_count}人のメンバーは、現在の%{projects_count}プロジェクトに協力しています。あなたは？'
   spikes:
