@@ -2,10 +2,10 @@ require 'spec_helper'
 
 describe Project do
   describe '#members' do
-    let(:project) { Factory(:project) }
-    let(:member_1) { Factory(:member) }
-    let(:member_2) { Factory(:member) }
-    let(:member_3) { Factory(:member) }
+    let(:project) { create(:project) }
+    let(:member_1) { create(:member) }
+    let(:member_2) { create(:member) }
+    let(:member_3) { create(:member) }
 
     it "returns associated members in the order they were added" do
       project.members << member_1
@@ -27,10 +27,10 @@ describe Project do
   end
 
   describe '#alumni' do
-    let(:project) { Factory(:project) }
-    let(:member_1) { Factory(:member) }
-    let(:member_2) { Factory(:member) }
-    let(:member_3) { Factory(:member) }
+    let(:project) { create(:project) }
+    let(:member_1) { create(:member) }
+    let(:member_2) { create(:member) }
+    let(:member_3) { create(:member) }
 
     it "returns former members (alimni) in reverse date order that they retired" do
       project.members << member_1
@@ -43,8 +43,8 @@ describe Project do
   end
 
   describe ".leader?" do
-    let(:project) { Factory(:project) }
-    let(:member) { Factory(:member) }
+    let(:project) { create(:project) }
+    let(:member) { create(:member) }
 
     it "returns true if the passed in member is a lead on the project" do
       Membership.create(project_id: project.id, member_id: member.id, leader: true)

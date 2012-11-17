@@ -1,7 +1,9 @@
-Factory.define :rsvp do |f|
-  f.member_id { Factory.next(:member_id) }
-end
+FactoryGirl.define do
+  factory :rsvp do
+    member_id { generate(:member_id) }
+  end
 
-Factory.sequence :member_id do |n|
-  n
+  sequence :member_id do |n|
+    n
+  end
 end

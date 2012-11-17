@@ -4,7 +4,7 @@ require 'spec_helper'
 class DummyMember
   include Tokyorails::GithubMethods
 end
-   
+
 describe Tokyorails::GithubMethods do
 
   use_vcr_cassette
@@ -13,7 +13,7 @@ describe Tokyorails::GithubMethods do
     @dm = DummyMember.new
   end
 
-  context 'listing github projects' do    
+  context 'listing github projects' do
     it 'should return a list of repositories belonging to a member' do
       @dm.class_eval do
         def github_username
@@ -24,7 +24,7 @@ describe Tokyorails::GithubMethods do
       @dm.github_projects.size.should > 0
       @dm.github_projects.first['ssh_url'].include?('rurounijones').should be_true
     end
-    
+
     it 'should return an empty array if the member does not have a github username' do
       @dm.class_eval do
         def github_username
@@ -35,7 +35,7 @@ describe Tokyorails::GithubMethods do
       @dm.github_projects.should == []
     end
 
-    it 'should return an empty array if an exception is raised' do      
+    it 'should return an empty array if an exception is raised' do
       @dm.class_eval do
         def github_username
           'rurounijones'
@@ -45,7 +45,7 @@ describe Tokyorails::GithubMethods do
       stub_request(:get, /.*github.*/).to_timeout
 
       @dm.github_projects.should == []
-    end    
+    end
 
     it 'should return an empty array if the github username could not be found' do
       @dm.class_eval do
@@ -55,9 +55,9 @@ describe Tokyorails::GithubMethods do
       end
 
       @dm.github_projects.should == []
-    end    
-    
+    end
+
   end
-  
+
 
 end

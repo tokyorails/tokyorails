@@ -1,17 +1,19 @@
-Factory.define :event do |f|
-  f.uid  { Factory.next(:uid) }
-  f.name { Factory.next(:name) }
-  f.status  'past'
-  f.time 5.days.ago
-  f.yes_rsvp_count 3
-  f.description '<p>Please RSVP for this event</p>'
-  f.html '<p>Additional HTML</p>'
-end
+FactoryGirl.define do
+  factory :event do
+    uid  { generate(:uid) }
+    name { generate(:name) }
+    status  'past'
+    time 5.days.ago
+    yes_rsvp_count 3
+    description '<p>Please RSVP for this event</p>'
+    html '<p>Additional HTML</p>'
+  end
 
-Factory.sequence :uid do |n|
-  n
-end
+  sequence :uid do |n|
+    n
+  end
 
-Factory.sequence :name do |n|
-  "Meetup #{n}"
+  sequence :name do |n|
+    "Meetup #{n}"
+  end
 end

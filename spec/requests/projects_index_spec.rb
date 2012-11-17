@@ -3,7 +3,7 @@ require 'spec_helper'
 
 feature "Projects" do
   scenario "viewing the projects list" do
-    project = Factory(:project)
+    project = create(:project)
 
     visit projects_path
     page.should have_content('Collaborate!')
@@ -13,8 +13,8 @@ feature "Projects" do
 
   scenario "joining a project" do
     pending
-    project = Factory(:project)
-    member = Factory(:member)
+    project = create(:project)
+    member = create(:member)
     login(member)
 
     project.members.should == []

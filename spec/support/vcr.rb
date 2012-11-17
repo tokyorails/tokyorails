@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
-VCR.config do |c|
-  c.stub_with :webmock
+VCR.configure do |c|
+  c.hook_into :webmock
   c.default_cassette_options = {:record => :new_episodes}
 #  c.ignore_localhost = true
 end

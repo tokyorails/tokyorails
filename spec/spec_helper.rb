@@ -28,11 +28,13 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+
+  config.include FactoryGirl::Syntax::Methods
 end
 
-VCR.config do |c|
+VCR.configure do |c|
   c.cassette_library_dir = "#{::Rails.root}/spec/fixtures/vcr_cassettes"
-  c.stub_with :webmock # or :fakeweb
+  c.hook_into :webmock # or :fakeweb
 end
 
 def get_response(filename)

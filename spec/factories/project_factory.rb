@@ -1,3 +1,5 @@
-Factory.define :project do |f|
-  f.title 'Cool Project'
+FactoryGirl.define do
+  factory :project do
+    title 'Cool Project'
+  end
 end

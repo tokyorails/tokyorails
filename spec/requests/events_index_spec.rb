@@ -3,8 +3,8 @@ require 'spec_helper'
 
 feature "Viewing events" do
   scenario "A list of events" do
-    next_event = Factory(:event, :status => 'upcoming')
-    previous_event = Factory(:event, :status => 'past')
+    next_event = create(:event, :status => 'upcoming')
+    previous_event = create(:event, :status => 'past')
 
     visit events_path
     within('.hero-unit') do

@@ -1,9 +1,11 @@
-Factory.define(:admin_user) do |admin|
-  admin.email    { Factory.next(:email) }
-  admin.password "password"
-  admin.password_confirmation "password"
-end
+FactoryGirl.define do
+  factory :admin_user do
+    email    { generate(:email) }
+    password "password"
+    password_confirmation "password"
+  end
 
-Factory.sequence :email do |n|
-  "example_email#{n}@example.com"
+  sequence :email do |n|
+    "example_email#{n}@example.com"
+  end
 end

@@ -4,7 +4,7 @@ require 'spec_helper'
 feature "Viewing users" do
   scenario "A list of registered users" do
     10.times do
-      Factory(:member)
+      create(:member)
     end
     visit members_path
     page.should have_content("Group Members (#{Member.count}")
@@ -15,8 +15,8 @@ feature "Viewing users" do
   end
 
   scenario "Searching for registered users" do
-    member_a = Factory(:member, :name => "adam")
-    member_b = Factory(:member, :name => "miles")
+    member_a = create(:member, :name => "adam")
+    member_b = create(:member, :name => "miles")
     visit members_path
     fill_in "query", :with => member_a.name
     click_on "Search"

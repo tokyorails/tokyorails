@@ -8,8 +8,8 @@ describe Member do
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:bio) }
 
-    it { Factory(:member); should validate_uniqueness_of(:uid) }
-    it { Factory(:member); should validate_uniqueness_of(:github_username) }
+    it { create(:member); should validate_uniqueness_of(:uid) }
+    it { create(:member); should validate_uniqueness_of(:github_username) }
   end
 
   context "associations" do
@@ -18,9 +18,9 @@ describe Member do
 
   context "scopes" do
     it "should return users with names like given query" do
-      member_a = Factory(:member, :name => "Adam Akhtar")
-      member_b = Factory(:member, :name => "Adamski")
-      member_c = Factory(:member, :name => "Miles Newton")
+      member_a = create(:member, :name => "Adam Akhtar")
+      member_b = create(:member, :name => "Adamski")
+      member_c = create(:member, :name => "Miles Newton")
       Member.name_like("adam").size.should eq 2
       Member.name_like("adam").should include member_a
       Member.name_like("adam").should include member_b
@@ -30,33 +30,33 @@ describe Member do
 
   context 'photo' do
     it 'should return an existing photo' do
-      member = Factory(:member)
+      member = create(:member)
       member.photo.should == Image.first
     end
 
     it 'should create and return a new photo based on photo_url if present' do
       stub_request(:get, "localhost/photo.jpg").to_return(:body => File.new(Rails.root.join('spec','fixtures','example.jpg')), :status => 200)
 
-      member = Factory(:member, :image => nil)
+      member = create(:member, :image => nil)
       member.photo.should == Image.first
     end
 
     it 'should return nil if there is no photo or photo_url' do
-      member = Factory(:member, :photo_url => nil, :image => nil)
+      member = create(:member, :photo_url => nil, :image => nil)
       member.photo.should == nil
     end
   end
 
   describe '#authenticate' do
     it "finds an existing member based on uid and saves the token" do
-      member = Factory(:member, :uid => "654321", :access_token => nil)
+      member = create(:member, :uid => "654321", :access_token => nil)
       authenticated_member = Member.authenticate({"uid" => "654321", "credentials" => { "token" => "ab555"}})
       member.reload
       member.access_token.should == "ab555"
     end
 
     it "does not authenticate if there is no matching existing user" do
-      member = Factory(:member, :uid => "7531", :access_token => nil)
+      member = create(:member, :uid => "7531", :access_token => nil)
       authenticated_member = Member.authenticate({"uid" => "654321", "credentials" => { "token" => "ab555"}})
       member.reload
       member.access_token.should == nil
@@ -71,10 +71,10 @@ describe Member do
   end
 
   describe '#member_of?' do
-    let(:member)        { Factory(:member) }
-    let(:project)       { Factory(:project) }
-    let(:other_project) { Factory(:project) }
-    let(:old_project)   { Factory(:project) }
+    let(:member)        { create(:member) }
+    let(:project)       { create(:project) }
+    let(:other_project) { create(:project) }
+    let(:old_project)   { create(:project) }
     let!(:membership)   { member.memberships.create!(:project_id => project.id) }
     let!(:membership_2) { member.memberships.create!(:project_id => old_project.id) }
 
@@ -87,16 +87,16 @@ describe Member do
   end
 
   describe '#upcoming_rsvp_response' do
-    let(:event) { Factory(:event, :status => 'upcoming', :time => Time.now) }
-    let(:member) { Factory(:member) }
+    let(:event) { create(:event, :status => 'upcoming', :time => Time.now) }
+    let(:member) { create(:member) }
 
     it 'returns yes if the member has RSVPd YES to the next upcoming meetup' do
-      rsvp = Factory(:rsvp, member_id: member.uid, meetup_id: event.uid, response: 'yes')
+      rsvp = create(:rsvp, member_id: member.uid, meetup_id: event.uid, response: 'yes')
       member.upcoming_rsvp_response.should == 'yes'
     end
 
     it 'returns no if the member has RSVPd NO to the next upcoming meetup' do
-      rsvp = Factory(:rsvp, member_id: member.uid, meetup_id: event.uid, response: 'no')
+      rsvp = create(:rsvp, member_id: member.uid, meetup_id: event.uid, response: 'no')
       member.upcoming_rsvp_response.should == 'no'
     end
 

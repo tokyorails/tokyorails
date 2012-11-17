@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe Membership do
   describe '#active' do
-    let(:member)        { Factory(:member) }
-    let(:project)       { Factory(:project) }
-    let(:old_project)   { Factory(:project) }
+    let(:member)        { create(:member) }
+    let(:project)       { create(:project) }
+    let(:old_project)   { create(:project) }
     let!(:membership)   { member.memberships.create!(:project_id => project.id) }
     let!(:membership_2) { member.memberships.create!(:project_id => old_project.id) }
 
@@ -15,8 +15,8 @@ describe Membership do
   end
 
   describe '.retire' do
-    let(:project) { Factory(:project) }
-    let(:member) { Factory(:member) }
+    let(:project) { create(:project) }
+    let(:member) { create(:member) }
 
     it "marks a membership as with deleted at" do
       project.members << member
