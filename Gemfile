@@ -8,7 +8,6 @@ gem 'rails', '3.2.9'
 
 gem 'json'
 gem 'jquery-rails'
-gem 'heroku'
 gem 'dragonfly'
 gem 'rack-cache', :require => 'rack/cache'
 gem 'newrelic_rpm'
