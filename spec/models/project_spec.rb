@@ -47,12 +47,12 @@ describe Project do
     let(:member) { Factory(:member) }
 
     it "returns true if the passed in member is a lead on the project" do
-      Membership.create(project_id: project, member_id: member, leader: true)
+      Membership.create(project_id: project.id, member_id: member.id, leader: true)
       project.leader?(member).should be_true
     end
 
     it "returns false if the passed in member is not a lead on the project" do
-      Membership.create(project_id: project, member_id: member, leader: false)
+      Membership.create(project_id: project.id, member_id: member.id, leader: false)
       project.leader?(member).should be_false
     end
   end
