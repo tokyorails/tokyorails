@@ -5,8 +5,10 @@
     <p><%= image_tag "github.png", class: 'github' if project.github_url? %> <%= link_to project.github_url, project.github_url %></p>
   </td>
   <td>
+    <h4 class="subtitle"><%= t('.active') %></h4>
     <ul class="members">
-      <% project.members.each do |member| %>
+      <% project.active_members.each do |member| %>
+        <% if member.active? %>
         <li class="clearfix <%= member.upcoming_rsvp_response %>">
           <%= link_to image_tag(member.photo.thumb('50x50#').url), member_path(member) if member.photo %>
           <p><%= member.first_name %> <%= content_tag :em, t('.leader_label') if project.leader?(member) %></p>
@@ -14,8 +16,19 @@
             <span class='label <%= member.upcoming_rsvp_response %>'><%= t(".rsvp_#{member.upcoming_rsvp_response}") %></span>
           <% end %>
         </li>
+        <% end %>
       <% end %>
     </ul>
+    <% if project.noshows.any? %>
+    <h4 class="subtitle"><%= t('.noshows') %></h4>
+    <ul class="alumni">
+      <% project.noshows.each do |noshow| %>
+        <li>
+          <%= image_tag(noshow.photo.thumb('30x30#').url, title: noshow.first_name) if noshow.photo %>
+        </li>
+      <% end %>
+    </ul>
+    <% end %>
     <% if project.alumni.any? %>
     <h4 class="subtitle"><%= t('.alumni') %></h4>
     <ul class="alumni">

@@ -11,4 +11,20 @@ class Project < ActiveRecord::Base
   def leader?(member)
     memberships.where(member_id: member).first.leader?
   end
+
+  def active_members
+    actives = []
+    members.each do |member|
+      actives << member if member.active?
+    end
+    actives
+  end
+
+  def noshows
+    members - active_members
+  end
+
+  def active?
+    active_members.size > 0
+  end
 end

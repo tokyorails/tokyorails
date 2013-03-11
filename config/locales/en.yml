@@ -77,6 +77,8 @@ en:
       rsvp_no: 'Not Attending'
       rsvp_unknown: 'Awaiting RSVP'
       alumni: Alumni
+      active: 'Active Members'
+      noshows: '3 Month No-shows'
       leader_label: " - leader"
     collaborators:
       title: "These %{members_count} members are collaborating on %{projects_count} projects. Are you?"

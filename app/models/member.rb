@@ -35,6 +35,14 @@ class Member < ActiveRecord::Base
     name.split(' ').first
   end
 
+  def active?
+    rsvps.first && rsvps.first.created_at > 3.months.ago
+  end
+
+  def rsvps
+    Rsvp.where(member_id: uid, response: 'yes').order('created_at desc')
+  end
+
   def upcoming_rsvp_response
     if event = Event.upcoming.first
       rsvp = Rsvp.where(member_id: uid, meetup_id: event.uid).first
