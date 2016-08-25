@@ -60,3 +60,11 @@ footer {
   padding: 17px 0 0;
   border-top: 1px solid #eee;
 }
+
+.navbar-active {
+  background-color: rgba(0, 0, 0, 0.5);
+  a {
+    color: white !important;
+    text-decoration: none;
+  }
+}
