@@ -7,7 +7,7 @@ body.members.index {
 }
 
 body.members.show {
-  li.members {
+  li.myprofile {
     @include active
   }
   .bio { margin: 15px 0px }
