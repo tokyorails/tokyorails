@@ -12,6 +12,7 @@ gem 'dragonfly'
 gem 'rack-cache', :require => 'rack/cache'
 gem 'newrelic_rpm'
 gem 'airbrake'
+gem 'rake', '10.2.2'
 gem 'therubyracer', :platform => :ruby
 gem 'httparty'
 gem 'logglier'
