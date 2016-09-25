@@ -7,6 +7,9 @@ body.members.index {
 }
 
 body.members.show {
+  li.myprofile {
+    @include active
+  }
   .bio { margin: 15px 0px }
   .well { margin-top: 20px; }
   h3 { margin-top : 10px }

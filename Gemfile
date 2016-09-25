@@ -17,7 +17,6 @@ gem 'httparty'
 gem 'logglier'
 gem 'omniauth'
 gem 'omniauth-meetup'
-gem 'pg'
 gem 'activeadmin'
 gem 'formtastic', '~> 2.1.1'
 gem 'globalize3'
@@ -33,6 +32,7 @@ group :assets do
 end
 
 group :production do
+  gem 'pg'
   gem 'fog'
 end
 
