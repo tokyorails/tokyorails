@@ -159,7 +159,7 @@ GEM
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.1.4)
-    newrelic_rpm (3.3.0)
+    newrelic_rpm (3.5.3.24)
     nokogiri (1.5.0)
     oauth2 (0.8.1)
       faraday (~> 0.8)
