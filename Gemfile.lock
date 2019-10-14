@@ -78,7 +78,8 @@ GEM
       railties (~> 3.1)
       warden (~> 1.2.1)
     diff-lcs (1.1.3)
-    dragonfly (0.9.8)
+    dragonfly (0.9.13)
+      multi_json (~> 1.0)
       rack
     erubis (2.7.0)
     excon (0.7.6)
@@ -189,7 +190,7 @@ GEM
       method_source (~> 0.6.5)
       ruby_parser (~> 2.0.5)
       slop (~> 2.1.0)
-    rack (1.4.5)
+    rack (1.4.7)
     rack-cache (1.2)
       rack (>= 0.4)
     rack-ssl (1.3.3)
